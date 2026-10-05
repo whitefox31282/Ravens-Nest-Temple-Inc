@@ -1,0 +1,560 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Raven's Nest | Building Alternatives</title>
+<meta name="description" content="Raven's Nest Temple: A real sanctuary. Compassion as infrastructure. We are building communities where people don't have to face their hardest moments alone.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --gold: #d4af37;
+  --copper: #b87333;
+  --blue-deep: #1a3a52;
+  --blue-dark: #0f1f2e;
+  --warm-white: #f5ede3;
+  --text-light: #f5ede3;
+  --text-dim: #b8a895;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  background: linear-gradient(135deg, var(--blue-dark) 0%, var(--blue-deep) 40%, #051015 100%);
+  color: var(--text-light);
+  font-family: 'Courier Prime', monospace;
+  font-size: 16px;
+  line-height: 1.8;
+  overflow-x: hidden;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: rgba(15, 31, 46, 0.98);
+  backdrop-filter: blur(12px);
+  border-bottom: 3px solid var(--gold);
+  padding: 18px 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 0 40px rgba(212, 175, 55, 0.2);
+}
+
+.brand {
+  font-family: 'Cinzel', serif;
+  font-size: 20px;
+  font-weight: 900;
+  letter-spacing: 2px;
+  color: var(--gold);
+  text-decoration: none;
+  text-transform: uppercase;
+  text-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+}
+
+nav {
+  display: flex;
+  gap: 40px;
+}
+
+nav a {
+  color: var(--text-light);
+  text-decoration: none;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  position: relative;
+  transition: all 0.3s;
+}
+
+nav a:hover {
+  color: var(--gold);
+  text-shadow: 0 0 10px rgba(212, 175, 55, 0.4);
+}
+
+.hero {
+  min-height: 100vh;
+  margin-top: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 80px 40px;
+  background: linear-gradient(rgba(15, 31, 46, 0.7), rgba(15, 31, 46, 0.8)), linear-gradient(180deg, #8B7355 0%, #654321 50%, #3d2817 100%);
+  background-size: cover;
+  background-position: center;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+  animation: fadeInUp 1.2s ease-out;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(60px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.hero-symbol {
+  font-size: 3.5rem;
+  color: var(--gold);
+  margin-bottom: 25px;
+  text-shadow: 0 0 30px rgba(212, 175, 55, 0.4);
+}
+
+.hero-title {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(2.5rem, 8vw, 4.5rem);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--warm-white);
+  margin-bottom: 25px;
+  text-shadow: 0 8px 30px rgba(0, 0, 0, 0.8);
+  line-height: 1.2;
+}
+
+.hero-subtitle {
+  font-size: 1rem;
+  color: var(--gold);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 40px;
+  font-family: 'Cinzel', serif;
+}
+
+.hero-story {
+  font-size: 1.05rem;
+  line-height: 2;
+  margin-bottom: 50px;
+  color: var(--text-light);
+}
+
+.hero-story strong {
+  color: var(--gold);
+  font-weight: 700;
+}
+
+.hero-story em {
+  color: var(--copper);
+  font-style: italic;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 16px 50px;
+  background: linear-gradient(90deg, var(--gold) 0%, var(--copper) 100%);
+  color: #000;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 2px;
+  transition: all 0.4s;
+  font-family: 'Cinzel', serif;
+  font-size: 12px;
+  box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+}
+
+.cta-button:hover {
+  box-shadow: 0 15px 50px rgba(212, 175, 55, 0.5);
+  transform: translateY(-3px);
+}
+
+.divider {
+  width: 60px;
+  height: 3px;
+  background: var(--gold);
+  margin: 40px 0;
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+}
+
+.manifesto-section {
+  padding: 120px 40px;
+  max-width: 1000px;
+  margin: 0 auto;
+  border-top: 2px solid var(--gold);
+}
+
+.manifesto-title {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--gold);
+  margin-bottom: 40px;
+  text-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+}
+
+.manifesto-text {
+  font-size: 1rem;
+  line-height: 2;
+  margin-bottom: 35px;
+  color: var(--text-light);
+}
+
+.manifesto-text strong {
+  color: var(--gold);
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.section-title {
+  font-family: 'Cinzel', serif;
+  font-size: 2.8rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 15px;
+  color: var(--gold);
+  text-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+}
+
+.section-subtitle {
+  color: var(--text-dim);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.pillars-section {
+  padding: 100px 40px;
+  max-width: 1400px;
+  margin: 0 auto;
+  border-top: 2px solid var(--gold);
+}
+
+.pillar-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+}
+
+.pillar {
+  background: linear-gradient(135deg, rgba(26, 58, 82, 0.6) 0%, rgba(58, 74, 90, 0.3) 100%);
+  border: 2px solid var(--gold);
+  padding: 35px;
+  position: relative;
+  transition: all 0.4s;
+}
+
+.pillar::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--gold) 0%, var(--copper) 50%, transparent 100%);
+}
+
+.pillar:hover {
+  border-color: var(--copper);
+  box-shadow: 0 0 30px rgba(212, 175, 55, 0.4);
+  transform: translateY(-8px);
+  background: linear-gradient(135deg, rgba(26, 58, 82, 0.8) 0%, rgba(58, 74, 90, 0.5) 100%);
+}
+
+.pillar-icon {
+  font-size: 2.8rem;
+  margin-bottom: 15px;
+}
+
+.pillar-name {
+  font-family: 'Cinzel', serif;
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+  color: var(--gold);
+}
+
+.pillar-desc {
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: var(--text-dim);
+}
+
+.vision-section {
+  padding: 100px 40px;
+  background: linear-gradient(180deg, rgba(217, 119, 6, 0.05) 0%, rgba(26, 58, 82, 0.1) 100%);
+  border-top: 2px solid var(--gold);
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.vision-text {
+  font-size: 1.05rem;
+  line-height: 2;
+  margin-bottom: 30px;
+  color: var(--text-light);
+}
+
+.vision-text strong {
+  color: var(--gold);
+}
+
+.join-section {
+  padding: 120px 40px;
+  background: linear-gradient(180deg, rgba(217, 119, 6, 0.1) 0%, rgba(212, 175, 55, 0.05) 100%);
+  text-align: center;
+  border-top: 2px solid var(--gold);
+  border-bottom: 2px solid var(--gold);
+}
+
+.join-content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.join-title {
+  font-family: 'Cinzel', serif;
+  font-size: 2.8rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 30px;
+  color: var(--gold);
+  text-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+}
+
+.join-text {
+  font-size: 1.1rem;
+  line-height: 2;
+  margin-bottom: 25px;
+  color: var(--text-light);
+}
+
+.join-text strong {
+  color: var(--copper);
+}
+
+.raven-quote {
+  font-family: 'Cinzel', serif;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--gold);
+  margin: 40px 0;
+  font-weight: 700;
+  text-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+}
+
+footer {
+  padding: 40px;
+  text-align: center;
+  border-top: 2px solid var(--gold);
+  color: var(--text-dim);
+  font-size: 0.85rem;
+  background: rgba(15, 31, 46, 0.9);
+}
+
+@media (max-width: 768px) {
+  header {
+    padding: 12px 20px;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  nav {
+    gap: 20px;
+  }
+
+  .hero {
+    padding: 50px 20px;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .manifesto-section,
+  .pillars-section,
+  .vision-section,
+  .join-section {
+    padding: 60px 20px;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+  }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <a href="#" class="brand">⧘ Raven's Nest</a>
+  <nav>
+    <a href="#vision">Vision</a>
+    <a href="#how">How It Works</a>
+    <a href="#join">Join</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-symbol">⧘</div>
+    <h1 class="hero-title">We Never Give Up.<br>We Never Give In.</h1>
+    <p class="hero-subtitle">Raven's Nest • Sovereign Mutual Aid</p>
+
+    <div class="divider"></div>
+
+    <div class="hero-story">
+      <p>I was fourteen years old, standing in that pulpit, when I realized something:</p>
+      <p><em>"If God is love, why does He need this much fear and control?"</em></p>
+      <p>That question changed the direction of my life.</p>
+      <p>I learned what it feels like when <strong>institutions use fear as a tool of control</strong>. I learned what happens when someone who questions the rules is treated as a threat instead of a human being.</p>
+      <p>And I learned something else:</p>
+      <p>I never wanted to build a world where anyone else had to feel that alone.</p>
+    </div>
+
+    <a href="#join" class="cta-button">We're Building This. Join Us.</a>
+  </div>
+</section>
+
+<section class="manifesto-section" id="vision">
+  <h2 class="manifesto-title">The Power of Dependency</h2>
+
+  <p class="manifesto-text">
+    <strong>The power held by wealthy institutions and corporate monopolies is not magic.</strong> It is built on dependency.
+  </p>
+
+  <p class="manifesto-text">
+    Imagine a king holding a staff. The staff does not contain supernatural power. It represents the laws, systems, resources, and dependencies that allow one person to command everyone beneath them.
+  </p>
+
+  <p class="manifesto-text">
+    If you want to end that king's power, you do not have to become a new king and seize the staff for yourself. <strong>You take away what gives the staff meaning. You build alternatives.</strong>
+  </p>
+
+  <p class="manifesto-text">
+    Today, that staff is our dependence on centralized systems for the necessities of life: food, water, energy, housing, transportation, work, and everyday goods. When people have no choice but to rely on systems they cannot influence, those systems have leverage over them.
+  </p>
+
+  <p class="manifesto-text">
+    But when communities can produce and share more of what they need, that leverage begins to disappear. <strong>That is the work Raven's Nest is meant to do.</strong>
+  </p>
+</section>
+
+<section class="vision-section" id="vision2">
+  <h2 class="section-title" style="text-align: left;">The Vision</h2>
+
+  <p class="vision-text">
+    Picture a community where people work together to secure land, grow food, collect and protect water, develop renewable energy, learn trades, build practical housing, and care for one another.
+  </p>
+
+  <p class="vision-text">
+    A community where <strong>people grow food together. Where knowledge is shared instead of hoarded. Where people teach each other how to build, repair, grow, create, and survive.</strong>
+  </p>
+
+  <p class="vision-text">
+    A sanctuary where <strong>compassion isn't just a nice word. Where compassion becomes infrastructure.</strong>
+  </p>
+
+  <p class="vision-text">
+    Animals are treated with respect and compassion. Our elders, our disabled neighbors, our veterans, our families—the people society too often treats as disposable—are treated with dignity. <strong>A community should not measure a person's worth by how much profit can be extracted from them.</strong>
+  </p>
+
+  <p class="vision-text">
+    Raven's Nest is meant to be a home for peaceful people from many paths. Teachers, craftspeople, gardeners, healers, artists, priests, priestesses, elders, students, and neighbors all have something to offer.
+  </p>
+
+  <p class="vision-text">
+    <strong>We don't need everyone to believe the same things to recognize that hunger is wrong, homelessness is wrong, loneliness is wrong, exploitation is wrong, and community is worth building.</strong>
+  </p>
+</section>
+
+<section class="pillars-section" id="how">
+  <div class="section-header">
+    <h2 class="section-title">How It Works</h2>
+    <p class="section-subtitle">Four pillars. One vision.</p>
+  </div>
+
+  <div class="pillar-grid">
+    <div class="pillar">
+      <span class="pillar-icon">⧘</span>
+      <h3 class="pillar-name">Raven's Nest</h3>
+      <p class="pillar-desc">The sanctuary. Off-grid infrastructure, solar systems, aquaponics, and a mesh network independent of corporate control. Home base for the ecosystem.</p>
+    </div>
+
+    <div class="pillar">
+      <span class="pillar-icon">💱</span>
+      <h3 class="pillar-name">WitchMart</h3>
+      <p class="pillar-desc">Fair exchange. Cost-plus-15% cooperative economy. Makers, traders, and skilled practitioners exchange goods and services without exploitation.</p>
+    </div>
+
+    <div class="pillar">
+      <span class="pillar-icon">📡</span>
+      <h3 class="pillar-name">Mad Goose Show</h3>
+      <p class="pillar-desc">Knowledge shared. Educational media for trade skills, self-reliance, and practical knowledge. Learning for a world independent of corporate platforms.</p>
+    </div>
+
+    <div class="pillar">
+      <span class="pillar-icon">🛣️</span>
+      <h3 class="pillar-name">Ravens Roads</h3>
+      <p class="pillar-desc">Safe passage. Secure mutual aid travel infrastructure. A network of sanctuaries for the displaced and those seeking sovereignty.</p>
+    </div>
+  </div>
+</section>
+
+<section class="join-section" id="join">
+  <div class="join-content">
+    <h2 class="join-title">The Work Begins Now</h2>
+
+    <p class="join-text">
+      <strong>Raven's Nest Temple, Inc. is officially real.</strong> The paperwork is approved. The documents are in our hands. The vision has a legal foundation.
+    </p>
+
+    <p class="join-text">
+      We've spent years dreaming about it. Now we're going to spend the next years building it.
+    </p>
+
+    <p class="join-text">
+      This will not happen in a day, and it will not happen through one leader. <strong>It happens when we stop waiting for permission and start building.</strong>
+    </p>
+
+    <p class="join-text">
+      We need minds. We need hands. We need builders. We need believers.
+    </p>
+
+    <p class="join-text">
+      If you are tired of watching the system squeeze everything out of you and everyone you love, <strong>now is the time to act.</strong>
+    </p>
+
+    <div style="margin: 50px 0;">
+      <a href="#" class="cta-button">Build With Us</a>
+    </div>
+
+    <div class="raven-quote">
+      The Mad Goose does not want the throne.<br>
+      The Mad Goose wants to tear down the damn throne<br>
+      and build a table big enough for everybody.
+    </div>
+
+    <div class="raven-quote" style="margin-top: 60px; font-size: 1.3rem;">
+      We are Raven's Nest.<br>
+      We never give up.<br>
+      We never give in.<br>
+      <br>
+      Ravens Evermore.
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>Raven's Nest Temple, Inc. | Sovereign Mutual Aid Ecosystem | 2026</p>
+  <p style="margin-top: 15px; font-size: 0.9rem;">Building communities where compassion becomes infrastructure.</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Village | Raven's Nest Temple</title>
+<meta name="description" content="Explore the planned layout of the Raven's Nest village: longhouse, hearth, skill yard, education tent, marketplace and traveler's tents.">
+<meta property="og:title" content="The Village | Raven's Nest Temple">
+<meta property="og:description" content="Explore the planned layout of the Raven's Nest village: longhouse, hearth, skill yard, education tent, marketplace and traveler's tents.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.ravensnesttemple.com/village.html">
+<meta name="theme-color" content="#070914">
+<link rel="canonical" href="https://www.ravensnesttemple.com/village.html">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Noto+Sans+Runic&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body class="inner">
+<header class="solid">
+  <a class="brand" href="index.html"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M6 36c10-2 16-8 22-18 4-6 12-8 20-4-6 0-9 3-10 7 8 2 14 8 16 16-6-4-12-5-18-3 2 6 0 12-6 16 0-6-2-10-6-12-6 4-12 4-18 1z"/></svg>Raven's Nest</a>
+  <nav><a href="about.html">About</a><a href="workshops.html">Workshops</a><a href="village.html" class="on" aria-current="page">The Village</a><a href="join.html">Join</a></nav>
+</header>
+
+<div class="pagehead">
+  <p class="eyebrow">The Village</p>
+  <h1>Around the fire.</h1>
+  <p class="lead">This is the village we are working toward. Tap any part of the map to see what belongs there.</p>
+</div>
+<div class="wrap">
+  <div class="mapwrap reveal">
+    <svg id="vmap" viewBox="0 0 1000 640" role="group" aria-label="Interactive top-down map of the planned Raven's Nest village"></svg>
+    <aside class="panel" id="info" aria-live="polite">
+      <span class="tag soon">In the plan</span>
+      <h3>Choose a place</h3>
+      <p>Select any building or area on the map, or pick from the list below, to learn what it is for.</p>
+      <div class="chips" id="chips"></div>
+    </aside>
+  </div>
+  <p class="note" style="text-align:center">The village is a plan, not a finished place. Layout and features will change as we build.</p>
+</div>
+<div class="cta-band reveal"><h2>Help us build it.</h2><a class="btn" href="join.html">Join the Nest</a></div>
+
+<footer>
+  <div class="links"><a href="about.html">About</a><a href="workshops.html">Workshops</a><a href="village.html">The Village</a><a href="join.html">Join</a></div>
+  &copy; Raven's Nest Temple, Inc.
+</footer>
+<script src="site.js"></script>
+<script src="village.js"></script>
+</body>
+</html>

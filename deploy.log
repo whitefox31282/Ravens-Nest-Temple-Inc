@@ -1,0 +1,2 @@
+ »   Error: Authentication required. NETLIFY_AUTH_TOKEN is not set and `netlify login --request <message>` can be used to authenticate.
+Alternatively, use --allow-anonymous to deploy without an account.

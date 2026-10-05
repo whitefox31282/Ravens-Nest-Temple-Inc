@@ -1,0 +1,619 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Raven's Nest | Sovereign Mutual Aid Ecosystem</title>
+<meta name="description" content="Raven's Nest Temple: A sovereign mutual aid ecosystem. WitchMart. Mad Goose Show. Ravens Roads. Built for the future we're creating.">
+<meta name="theme-color" content="#0f1f2e">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --gold: #d4af37;
+  --copper: #b87333;
+  --blue-deep: #1a3a52;
+  --blue-dark: #0f1f2e;
+  --warm-white: #f5ede3;
+  --gray-metal: #4a5a6a;
+  --fire-orange: #d97706;
+  --text-light: #f5ede3;
+  --text-dim: #b8a895;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  background: linear-gradient(135deg, var(--blue-dark) 0%, var(--blue-deep) 40%, #051015 100%);
+  color: var(--text-light);
+  font-family: 'Courier Prime', monospace;
+  font-size: 16px;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: rgba(15, 31, 46, 0.97);
+  backdrop-filter: blur(12px);
+  border-bottom: 3px solid var(--gold);
+  padding: 18px 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 0 40px rgba(212, 175, 55, 0.2);
+}
+
+.brand {
+  font-family: 'Cinzel', serif;
+  font-size: 22px;
+  font-weight: 900;
+  letter-spacing: 2px;
+  color: var(--gold);
+  text-decoration: none;
+  text-transform: uppercase;
+  text-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+}
+
+nav {
+  display: flex;
+  gap: 40px;
+}
+
+nav a {
+  color: var(--text-light);
+  text-decoration: none;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  position: relative;
+  transition: all 0.3s;
+}
+
+nav a::before {
+  content: '⧘';
+  position: absolute;
+  left: -15px;
+  opacity: 0;
+  transition: opacity 0.3s;
+  color: var(--gold);
+}
+
+nav a:hover {
+  color: var(--gold);
+}
+
+nav a:hover::before {
+  opacity: 1;
+}
+
+.hero {
+  min-height: 100vh;
+  margin-top: 70px;
+  padding: 80px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -20%;
+  width: 150%;
+  height: 150%;
+  background: radial-gradient(circle, rgba(217, 119, 6, 0.15) 0%, transparent 70%);
+  z-index: 0;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  max-width: 1000px;
+  animation: fadeInUp 1s ease-out;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.hero-rune {
+  font-size: 4rem;
+  margin-bottom: 20px;
+  color: var(--gold);
+  text-shadow: 0 0 30px rgba(212, 175, 55, 0.5);
+}
+
+.hero-title {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(2.5rem, 10vw, 5rem);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: var(--warm-white);
+  margin-bottom: 15px;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.hero-subtitle {
+  font-size: clamp(1rem, 2.5vw, 1.3rem);
+  color: var(--gold);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin: 25px 0;
+  font-family: 'Cinzel', serif;
+}
+
+.hero-pillars {
+  font-size: 0.95rem;
+  color: var(--text-dim);
+  letter-spacing: 2px;
+  margin: 20px 0;
+  text-transform: uppercase;
+}
+
+.hero-text {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  margin: 40px 0;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  color: var(--text-light);
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 14px 45px;
+  background: linear-gradient(90deg, var(--gold) 0%, var(--copper) 100%);
+  color: #000;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 2px;
+  transition: all 0.4s;
+  font-family: 'Cinzel', serif;
+  font-size: 12px;
+  border: 2px solid transparent;
+  box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3), inset 0 1px 0 rgba(255,255,255,0.2);
+}
+
+.cta-button:hover {
+  box-shadow: 0 15px 50px rgba(212, 175, 55, 0.5), inset 0 1px 0 rgba(255,255,255,0.3);
+  transform: translateY(-3px);
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.section-title {
+  font-family: 'Cinzel', serif;
+  font-size: 2.8rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 15px;
+  color: var(--gold);
+  text-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+}
+
+.section-subtitle {
+  color: var(--text-dim);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.ecosystem-section {
+  padding: 100px 40px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.pillar-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+}
+
+.pillar {
+  background: linear-gradient(135deg, rgba(26, 58, 82, 0.6) 0%, rgba(58, 74, 90, 0.3) 100%);
+  border: 2px solid var(--gold);
+  padding: 35px;
+  position: relative;
+  transition: all 0.4s;
+}
+
+.pillar::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--gold) 0%, var(--copper) 50%, transparent 100%);
+}
+
+.pillar:hover {
+  border-color: var(--copper);
+  box-shadow: 0 0 30px rgba(212, 175, 55, 0.4), inset 0 0 20px rgba(212, 175, 55, 0.1);
+  transform: translateY(-8px);
+  background: linear-gradient(135deg, rgba(26, 58, 82, 0.8) 0%, rgba(58, 74, 90, 0.5) 100%);
+}
+
+.pillar-icon {
+  font-size: 2.8rem;
+  margin-bottom: 15px;
+  display: block;
+}
+
+.pillar-name {
+  font-family: 'Cinzel', serif;
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+  color: var(--gold);
+}
+
+.pillar-desc {
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: var(--text-dim);
+}
+
+.connections-section {
+  padding: 100px 40px;
+  background: linear-gradient(180deg, rgba(217, 119, 6, 0.05) 0%, rgba(26, 58, 82, 0.1) 100%);
+  border-top: 2px solid var(--gold);
+}
+
+.connections-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.flow-diagram {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 60px 0;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.flow-node {
+  text-align: center;
+  flex: 1;
+  min-width: 100px;
+}
+
+.node-icon {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--gold) 0%, var(--copper) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  margin: 0 auto 15px;
+  box-shadow: 0 0 25px rgba(212, 175, 55, 0.4);
+  animation: pulse 3s ease-in-out infinite;
+}
+
+.flow-node:nth-child(2) .node-icon { animation-delay: 0.3s; }
+.flow-node:nth-child(3) .node-icon { animation-delay: 0.6s; }
+.flow-node:nth-child(4) .node-icon { animation-delay: 0.9s; }
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); box-shadow: 0 0 25px rgba(212, 175, 55, 0.4); }
+  50% { transform: scale(1.08); box-shadow: 0 0 40px rgba(212, 175, 55, 0.6); }
+}
+
+.node-label {
+  font-family: 'Cinzel', serif;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--gold);
+}
+
+.framework-section {
+  padding: 100px 40px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.agents-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  margin-top: 50px;
+}
+
+.agent-card {
+  background: rgba(26, 58, 82, 0.5);
+  border-left: 5px solid var(--gold);
+  border-top: 1px solid rgba(212, 175, 55, 0.2);
+  padding: 30px;
+  transition: all 0.3s;
+  backdrop-filter: blur(10px);
+}
+
+.agent-card:nth-child(2) { border-left-color: var(--copper); }
+.agent-card:nth-child(3) { border-left-color: var(--fire-orange); }
+.agent-card:nth-child(4) { border-left-color: var(--gold); }
+
+.agent-card:hover {
+  transform: translateX(8px);
+  box-shadow: 0 0 25px rgba(212, 175, 55, 0.3);
+  background: rgba(26, 58, 82, 0.7);
+}
+
+.agent-name {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+  color: var(--gold);
+}
+
+.agent-role {
+  font-size: 0.8rem;
+  color: var(--copper);
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 700;
+}
+
+.agent-desc {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--text-dim);
+}
+
+.join-section {
+  padding: 100px 40px;
+  background: linear-gradient(180deg, rgba(217, 119, 6, 0.08) 0%, rgba(212, 175, 55, 0.04) 100%);
+  text-align: center;
+  border-top: 2px solid var(--gold);
+}
+
+.join-content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.join-title {
+  font-family: 'Cinzel', serif;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 25px;
+  color: var(--fire-orange);
+  text-shadow: 0 0 20px rgba(217, 119, 6, 0.3);
+}
+
+.join-text {
+  font-size: 1rem;
+  line-height: 1.8;
+  margin-bottom: 25px;
+  color: var(--text-light);
+}
+
+footer {
+  padding: 40px;
+  text-align: center;
+  border-top: 2px solid var(--gold);
+  color: var(--text-dim);
+  font-size: 0.85rem;
+  background: rgba(15, 31, 46, 0.8);
+}
+
+footer p {
+  margin: 6px 0;
+}
+
+@media (max-width: 768px) {
+  header {
+    padding: 12px 20px;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  nav {
+    gap: 20px;
+  }
+
+  nav a {
+    font-size: 10px;
+  }
+
+  .hero {
+    padding: 50px 20px;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .ecosystem-section,
+  .connections-section,
+  .framework-section,
+  .join-section {
+    padding: 60px 20px;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+  }
+
+  .flow-diagram {
+    flex-direction: column;
+  }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <a href="#" class="brand">⧘ RAVEN'S NEST</a>
+  <nav>
+    <a href="#ecosystem">Ecosystem</a>
+    <a href="#framework">SetAI</a>
+    <a href="#join">Build With Us</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-rune">⧘</div>
+    <h1 class="hero-title">Raven's Nest</h1>
+    <p class="hero-subtitle">Sovereign Mutual Aid</p>
+    <p class="hero-pillars">WitchMart · Mad Goose · Ravens Roads · SetAI</p>
+    <p class="hero-text">
+      We are building the infrastructure for a future that governments cannot gatekeep.
+      Off-grid. Decentralized. Trauma-informed. Open to all who want to help.
+    </p>
+    <a href="#join" class="cta-button">Join the Building</a>
+  </div>
+</section>
+
+<section class="ecosystem-section" id="ecosystem">
+  <div class="section-header">
+    <h2 class="section-title">The Four Pillars</h2>
+    <p class="section-subtitle">An interconnected ecosystem for sovereignty</p>
+  </div>
+
+  <div class="pillar-grid">
+    <div class="pillar">
+      <span class="pillar-icon">⧘</span>
+      <h3 class="pillar-name">Raven's Nest</h3>
+      <p class="pillar-desc">The sanctuary. Physical off-grid infrastructure, solar systems, aquaponics, and a mesh network independent of corporate ISPs. Home base for the ecosystem.</p>
+    </div>
+
+    <div class="pillar">
+      <span class="pillar-icon">💱</span>
+      <h3 class="pillar-name">WitchMart</h3>
+      <p class="pillar-desc">The marketplace. Cost-plus-15% cooperative economy. Makers, traders, and skilled practitioners exchange goods and services without corporate extraction.</p>
+    </div>
+
+    <div class="pillar">
+      <span class="pillar-icon">📡</span>
+      <h3 class="pillar-name">Mad Goose Show</h3>
+      <p class="pillar-desc">The broadcast. Educational media for trade skills, self-reliance, and practical knowledge. Learning for a world that doesn't depend on corporate platforms.</p>
+    </div>
+
+    <div class="pillar">
+      <span class="pillar-icon">🛣️</span>
+      <h3 class="pillar-name">Ravens Roads</h3>
+      <p class="pillar-desc">The network. Secure mutual aid travel infrastructure. Safe nodes, mesh-networked routes, and a chain of sanctuaries across the country for the displaced and sovereign.</p>
+    </div>
+  </div>
+</section>
+
+<section class="connections-section" id="connections">
+  <div class="connections-content">
+    <div class="section-header">
+      <h2 class="section-title">How It Works</h2>
+      <p class="section-subtitle">Energy flows between all pillars</p>
+    </div>
+
+    <div class="flow-diagram">
+      <div class="flow-node">
+        <div class="node-icon">⧘</div>
+        <div class="node-label">Sanctuary</div>
+      </div>
+      <div class="flow-node">
+        <div class="node-icon">💱</div>
+        <div class="node-label">Economy</div>
+      </div>
+      <div class="flow-node">
+        <div class="node-icon">📡</div>
+        <div class="node-label">Education</div>
+      </div>
+      <div class="flow-node">
+        <div class="node-icon">🛣️</div>
+        <div class="node-label">Movement</div>
+      </div>
+    </div>
+
+    <p class="hero-text" style="margin-top: 60px; margin-bottom: 0;">
+      A displaced person arrives at a sanctuary node. They rest, eat, learn a skill at Mad Goose workshops. They craft goods sold in WitchMart. They move safely via Ravens Roads to the next sanctuary. They become the next teacher, the next maker, the next voice in the network.
+    </p>
+  </div>
+</section>
+
+<section class="framework-section" id="framework">
+  <div class="section-header">
+    <h2 class="section-title">SetAI: The Council Engine</h2>
+    <p class="section-subtitle">Governance as code. Law as Ma'at.</p>
+  </div>
+
+  <div class="agents-grid">
+    <div class="agent-card">
+      <h3 class="agent-name">Set the Sloth</h3>
+      <div class="agent-role">The Brakes</div>
+      <p class="agent-desc">Physical safety first. Requires 98% sandbox success before any code touches hardware. When systems fail, people don't starve.</p>
+    </div>
+
+    <div class="agent-card">
+      <h3 class="agent-name">Robin the Hooded</h3>
+      <div class="agent-role">Resource Defense</div>
+      <p class="agent-desc">Enforces cost-plus-15%. Audits the system to prevent corporate wealth extraction. The economy serves the people, not the algorithm.</p>
+    </div>
+
+    <div class="agent-card">
+      <h3 class="agent-name">MLK/Tubman</h3>
+      <div class="agent-role">Structural Equity</div>
+      <p class="agent-desc">Trauma-informed accessibility. Never delivers bureaucratic dead ends. Maps mutual aid fallbacks. Everyone gets a pathway forward.</p>
+    </div>
+
+    <div class="agent-card">
+      <h3 class="agent-name">Sherlock Holmes</h3>
+      <div class="agent-role">Forensic Auditor</div>
+      <p class="agent-desc">Internal affairs. Treats any undocumented code shift as a critical breach. The system's integrity is non-negotiable.</p>
+    </div>
+  </div>
+
+  <p class="hero-text" style="margin-top: 50px;">
+    Four agents. One council. They debate every high-stakes decision blindly, independently, then cross-examine before any output reaches you. This is governance without gatekeepers—just principles, code, and care.
+  </p>
+</section>
+
+<section class="join-section" id="join">
+  <div class="join-content">
+    <h2 class="join-title">Join the Building</h2>
+    <p class="join-text">
+      We are not waiting for permission. We are building the infrastructure for a future that governments cannot gatekeep, corporations cannot extract from, and algorithms cannot silence.
+    </p>
+    <p class="join-text">
+      If you have skills, a sanctuary, a vision, or just the will to help—this is your home.
+    </p>
+    <a href="join.html" class="cta-button">Build With Us</a>
+  </div>
+</section>
+
+<footer>
+  <p>Raven's Nest Temple, Inc. | Sovereign Mutual Aid Ecosystem | 2026</p>
+  <p>Off-grid. Decentralized. Trauma-informed. Open to all.</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Join | Raven's Nest Temple</title>
+<meta name="description" content="Join the Nest. Tell Raven's Nest Temple who you are and what you want to learn or teach.">
+<meta property="og:title" content="Join | Raven's Nest Temple">
+<meta property="og:description" content="Join the Nest. Tell Raven's Nest Temple who you are and what you want to learn or teach.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.ravensnesttemple.com/join.html">
+<meta name="theme-color" content="#070914">
+<link rel="canonical" href="https://www.ravensnesttemple.com/join.html">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Noto+Sans+Runic&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body class="inner">
+<header class="solid">
+  <a class="brand" href="index.html"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M6 36c10-2 16-8 22-18 4-6 12-8 20-4-6 0-9 3-10 7 8 2 14 8 16 16-6-4-12-5-18-3 2 6 0 12-6 16 0-6-2-10-6-12-6 4-12 4-18 1z"/></svg>Raven's Nest</a>
+  <nav><a href="about.html">About</a><a href="workshops.html">Workshops</a><a href="village.html">The Village</a><a href="join.html" class="on" aria-current="page">Join</a></nav>
+</header>
+
+<div class="pagehead">
+  <p class="eyebrow">Join</p>
+  <h1>Join the Nest.</h1>
+  <p class="lead">Tell us who you are and what you can teach or want to learn. We'll reach out when gatherings are announced.</p>
+</div>
+<div class="wrap">
+  <form class="joinform reveal" name="join" method="POST" action="thanks.html" data-netlify="true" netlify-honeypot="bot-field">
+    <input type="hidden" name="form-name" value="join">
+    <p class="hp"><label>Don't fill this out: <input name="bot-field"></label></p>
+    <label>Your name<input type="text" name="name" required autocomplete="name"></label>
+    <label>Email<input type="email" name="email" required autocomplete="email"></label>
+    <label>I'd like to
+      <select name="interest" required>
+        <option value="" disabled selected>Choose one</option>
+        <option>Learn a skill</option>
+        <option>Teach a skill</option>
+        <option>Visit or attend a gathering</option>
+        <option>Volunteer and help build</option>
+        <option>Just say hello</option>
+      </select>
+    </label>
+    <label>Tell us about yourself<textarea name="message" placeholder="Your path, your skills, what you hope to find here..."></textarea></label>
+    <label class="check"><input type="checkbox" name="consent" value="yes" required> I agree to be contacted by email about Raven's Nest Temple.</label>
+    <button class="btn" type="submit">Send to the Nest</button>
+  </form>
+</div>
+
+<footer>
+  <div class="links"><a href="about.html">About</a><a href="workshops.html">Workshops</a><a href="village.html">The Village</a><a href="join.html">Join</a></div>
+  &copy; Raven's Nest Temple, Inc.
+</footer>
+<script src="site.js"></script>
+</body>
+</html>

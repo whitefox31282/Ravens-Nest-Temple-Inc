@@ -365,15 +365,31 @@ nav a:hover {
 }
 
 .pathways-section {
-  padding: 100px 40px;
+  padding: 80px 40px;
   max-width: 1400px;
   margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pathways-visual {
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 20px 60px rgba(0, 0, 0, 0.7)) drop-shadow(0 0 40px rgba(217, 119, 6, 0.3));
+  transition: transform 0.3s ease, filter 0.3s ease;
+  border-radius: 8px;
+}
+
+.pathways-visual:hover {
+  transform: scale(1.02);
+  filter: drop-shadow(0 25px 75px rgba(0, 0, 0, 0.8)) drop-shadow(0 0 50px rgba(217, 119, 6, 0.5));
 }
 
 .pathway-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 25px;
+  display: none;
 }
 
 .pathway {
@@ -571,42 +587,7 @@ footer p {
 </section>
 
 <section class="pathways-section">
-  <div class="section-header">
-    <h2 class="section-title">FIND YOUR PATH</h2>
-    <p class="section-subtitle">How You Can Join Us</p>
-  </div>
-  <div class="pathway-grid">
-    <a href="get-help.html" class="pathway">
-      <span class="pathway-icon">🤝</span>
-      <h3 class="pathway-label">Join Us</h3>
-      <p class="pathway-desc">Are you ready to help build? We need hands, skills, and vision. Every person matters.</p>
-    </a>
-    <a href="about.html" class="pathway">
-      <span class="pathway-icon">📚</span>
-      <h3 class="pathway-label">Learn</h3>
-      <p class="pathway-desc">Understand our vision. Read the Ma'at principles. See what sovereignty really looks like.</p>
-    </a>
-    <a href="four-pillars.html" class="pathway">
-      <span class="pathway-icon">🛒</span>
-      <h3 class="pathway-label">Trade</h3>
-      <p class="pathway-desc">WitchMart: cost-plus-15% trade. Real economics. Real community. No exploitation.</p>
-    </a>
-    <a href="contact.html" class="pathway">
-      <span class="pathway-icon">🛣️</span>
-      <h3 class="pathway-label">Travel</h3>
-      <p class="pathway-desc">Ravens Roads: a mutual aid network connecting sanctuaries across the country.</p>
-    </a>
-    <a href="four-pillars.html" class="pathway">
-      <span class="pathway-icon">🎓</span>
-      <h3 class="pathway-label">Teach</h3>
-      <p class="pathway-desc">Mad Goose Show: education that empowers. Off-grid, decentralized, real-world skills.</p>
-    </a>
-    <a href="contact.html" class="pathway">
-      <span class="pathway-icon">💚</span>
-      <h3 class="pathway-label">Support</h3>
-      <p class="pathway-desc">Fund the work. Donate equipment. Contribute your expertise. Make it happen.</p>
-    </a>
-  </div>
+  <img src="pathways-grid.jpg" alt="Multiple Ways In - Find Your Path" class="pathways-visual">
 </section>
 
 <section class="declaration-section">

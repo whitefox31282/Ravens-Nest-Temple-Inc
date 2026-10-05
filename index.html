@@ -442,15 +442,32 @@ nav a:hover {
 }
 
 .declaration-section {
-  padding: 100px 40px;
+  padding: 80px 40px;
   background: linear-gradient(180deg, rgba(217, 119, 6, 0.08) 0%, rgba(212, 175, 55, 0.04) 100%);
   text-align: center;
   border-top: 2px solid var(--gold);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.declaration-visual {
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 20px 60px rgba(0, 0, 0, 0.7)) drop-shadow(0 0 40px rgba(217, 119, 6, 0.3));
+  transition: transform 0.3s ease, filter 0.3s ease;
+  border-radius: 8px;
+}
+
+.declaration-visual:hover {
+  transform: scale(1.02);
+  filter: drop-shadow(0 25px 75px rgba(0, 0, 0, 0.8)) drop-shadow(0 0 50px rgba(217, 119, 6, 0.5));
 }
 
 .declaration-content {
-  max-width: 900px;
-  margin: 0 auto;
+  display: none;
 }
 
 .declaration-title {
@@ -591,18 +608,7 @@ footer p {
 </section>
 
 <section class="declaration-section">
-  <div class="declaration-content">
-    <h2 class="declaration-title">WE ARE GOVERNED BY MA'AT</h2>
-    <p class="declaration-text">Truth. Justice. Harmony. Balance. These are not modern concepts—they are eternal. We operate transparently. Every transaction is logged. Every decision is human. No AI rules over real people. No opaque algorithms. No hidden hands.</p>
-    <p class="declaration-manifesto">
-      We believe in sovereignty.<br>
-      We believe in mutual aid.<br>
-      We believe in the power of decentralized infrastructure.<br>
-      We believe vulnerable people deserve protection, not exploitation.<br>
-      <br>
-      We Are Ravens Evermore.
-    </p>
-  </div>
+  <img src="ravens-evermore-declaration.jpg" alt="We Are Ravens Evermore - Declaration" class="declaration-visual">
 </section>
 </main>
 

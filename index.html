@@ -309,29 +309,37 @@ nav a:hover {
 }
 
 .infrastructure-section {
-  padding: 120px 60px;
+  padding: 80px 60px;
   max-width: 1200px;
   margin: 0 auto;
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .infrastructure-section::before {
   content: '';
-  position: absolute;
-  top: 0;
-  left: 5%;
-  right: 5%;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  display: none;
+}
+
+.work-plaque {
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 20px 60px rgba(0, 0, 0, 0.7)) drop-shadow(0 0 40px rgba(217, 119, 6, 0.3));
+  transition: transform 0.3s ease, filter 0.3s ease;
+  border-radius: 8px;
+}
+
+.work-plaque:hover {
+  transform: scale(1.02);
+  filter: drop-shadow(0 25px 75px rgba(0, 0, 0, 0.8)) drop-shadow(0 0 50px rgba(217, 119, 6, 0.5));
 }
 
 .infrastructure-vision {
-  background: linear-gradient(135deg, rgba(26, 58, 82, 0.4) 0%, rgba(58, 74, 90, 0.2) 100%);
-  border-left: 4px solid var(--gold);
-  border-right: 4px solid var(--copper);
-  padding: 50px 45px;
-  text-align: center;
-  position: relative;
+  display: none;
 }
 
 .infrastructure-title {
@@ -559,16 +567,7 @@ footer p {
 </section>
 
 <section class="infrastructure-section">
-  <div class="section-header">
-    <h2 class="section-title">The Work</h2>
-    <p class="section-subtitle">We Are Building Step By Step</p>
-  </div>
-  <div class="infrastructure-vision">
-    <h3 class="infrastructure-title">ESTABLISHING REAL INFRASTRUCTURE</h3>
-    <p class="infrastructure-text">
-      We are not waiting for permission. We are <strong>acquiring land</strong>. We are <strong>building solar arrays, water systems, biodigesters, and mesh networks</strong>. We are establishing the first Raven's Nest Sanctuary as a model—hobbit-style homes nestled around a thriving permaculture center where animals roam free, where food and energy are produced locally, and where no one is ever turned away.
-    </p>
-  </div>
+  <img src="the-work-plaque.jpg" alt="The Work - Our Infrastructure Vision" class="work-plaque">
 </section>
 
 <section class="pathways-section">

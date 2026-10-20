@@ -1,33 +1,516 @@
-Raven's Nest Temple Inc
-RAVEN'S NEST
-TEMPLE INC
-Home
-Services
-WitchMart
-Our Work
-Get Help
-Contact
-WitchMart Sanctuary & Cooperative
-Connecting community craft, off-grid self-reliance, and direct mutual aid without administrative overhead.
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Raven's Nest | We Are Ravens Evermore</title>
+<meta name="description" content="Off-grid. Hobbit houses. Animals roaming free. Sovereignty. Mutual aid. We are building the infrastructure for a future governments cannot gatekeep.">
+<meta name="theme-color" content="#0f1f2e">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --gold: #d4af37;
+  --copper: #b87333;
+  --blue-deep: #1a3a52;
+  --blue-dark: #0f1f2e;
+  --warm-white: #f5ede3;
+  --fire-orange: #d97706;
+  --text-light: #f5ede3;
+  --text-dim: #b8a895;
+}
 
-Community Marketplace & Sanctuary
-WitchMart is the community-driven arm of Raven's Nest Temple, dedicated to supporting independent practitioners, local artisans, and practical off-grid resiliency efforts. We believe true spiritual freedom is built on self-reliance, practical skills, and mutual support.
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
 
-Feed the Homeless & Supply Fund
-Direct action, on the ground. We gather and distribute emergency food, clean water, cold-weather clothing, and hygiene supplies directly to unhoused individuals in our community.
+body {
+  background: linear-gradient(135deg, var(--blue-dark) 0%, var(--blue-deep) 40%, #051015 100%);
+  color: var(--text-light);
+  font-family: 'Courier Prime', monospace;
+  font-size: 16px;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
 
-Food & Meal Supplies
-100% of non-perishable food and meal donations go straight to local food distribution runs.
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 950;
+  background: rgba(15, 31, 46, 0.97);
+  backdrop-filter: blur(12px);
+  border-bottom: 3px solid var(--gold);
+  padding: 18px 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 0 40px rgba(212, 175, 55, 0.2);
+}
 
-Survival Gear & Utilities
-Providing tents, blankets, solar chargers, and basic off-grid emergency gear during extreme weather.
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  transition: all 0.3s;
+}
 
-Support the Mutual Aid Fund
-To donate food, offer supplies, or contribute to direct relief efforts, contact us directly:
+.brand-logo {
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+}
 
-Corporate Phone: 405-987-3212 | Email: revmadgoose@proton.me
+.brand-text {
+  font-family: 'Cinzel', serif;
+  font-size: 14px;
+  font-weight: 900;
+  letter-spacing: 1px;
+  color: var(--gold);
+  text-transform: uppercase;
+  text-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+  line-height: 1.1;
+}
 
-Get Involved or Donate
-Raven's Nest Temple, Inc. | Arch Priest: Rt Rev Jon Bradley | 405-987-3212
+.brand:hover .brand-text {
+  text-shadow: 0 0 25px rgba(212, 175, 55, 0.6);
+}
 
-Email: revmadgoose@proton.me | Personal: 405-673-0209 | Hours: 7 days a week (excluding Sabbats and Esbats), 8:00 AM – 9:00 PM
+nav {
+  display: flex;
+  gap: 30px;
+}
+
+nav a {
+  color: var(--text-light);
+  text-decoration: none;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  position: relative;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+nav a:hover {
+  color: var(--gold);
+}
+
+#set-sloth {
+  position: fixed;
+  z-index: 999;
+  cursor: pointer;
+  transition: transform 0.1s ease-out;
+  pointer-events: auto;
+  width: 120px;
+  height: auto;
+  filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.3));
+}
+
+#set-sloth:hover {
+  filter: drop-shadow(0 0 25px rgba(212, 175, 55, 0.6));
+}
+
+#set-sloth img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.set-popup {
+  position: fixed;
+  z-index: 1000;
+  background: linear-gradient(135deg, rgba(26, 58, 82, 0.98) 0%, rgba(58, 74, 90, 0.95) 100%);
+  border: 2px solid var(--gold);
+  border-radius: 8px;
+  padding: 20px;
+  max-width: 320px;
+  display: none;
+  flex-direction: column;
+  gap: 12px;
+  box-shadow: 0 12px 48px rgba(212, 175, 55, 0.4);
+  backdrop-filter: blur(10px);
+}
+
+.set-popup.active {
+  display: flex;
+  animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.set-quote {
+  font-family: 'Cinzel', serif;
+  font-size: 12px;
+  color: var(--fire-orange);
+  font-style: italic;
+  text-shadow: 0 0 8px rgba(217, 119, 6, 0.3);
+  line-height: 1.4;
+}
+
+.set-options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.set-btn {
+  background: linear-gradient(90deg, var(--gold) 0%, var(--copper) 100%);
+  color: #000;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-family: 'Cinzel', serif;
+  font-size: 10px;
+  text-transform: uppercase;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-decoration: none;
+  text-align: center;
+}
+
+.set-btn:hover {
+  box-shadow: 0 4px 16px rgba(212, 175, 55, 0.4);
+  transform: translateY(-2px);
+}
+
+.hero {
+  min-height: 100vh;
+  margin-top: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6)), url('sanctuary-bg.webp');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  max-width: 1000px;
+  padding: 60px 40px;
+  animation: fadeInUp 1.2s ease-out;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(60px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.hero-badge {
+  display: inline-block;
+  max-width: 800px;
+  width: 95%;
+  margin-bottom: 40px;
+  filter: drop-shadow(0 20px 60px rgba(0, 0, 0, 0.7)) drop-shadow(0 0 40px rgba(212, 175, 55, 0.4));
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.hero-badge:hover {
+  transform: translateY(-8px);
+  filter: drop-shadow(0 25px 75px rgba(0, 0, 0, 0.8)) drop-shadow(0 0 50px rgba(212, 175, 55, 0.6));
+}
+
+.hero-title {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(2.5rem, 10vw, 5rem);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: var(--warm-white);
+  margin-bottom: 15px;
+  text-shadow: 0 8px 30px rgba(0, 0, 0, 0.7);
+}
+
+.hero-subtitle {
+  font-size: clamp(1rem, 2.5vw, 1.3rem);
+  color: var(--gold);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin: 20px 0;
+  font-family: 'Cinzel', serif;
+}
+
+.hero-description {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  max-width: 700px;
+  margin: 30px auto 40px;
+  color: var(--warm-white);
+}
+
+.cta-button {
+  display: inline-block;
+  max-width: 900px;
+  width: 100%;
+  text-decoration: none;
+  transition: all 0.4s ease;
+  cursor: pointer;
+  filter: drop-shadow(0 20px 60px rgba(0, 0, 0, 0.6)) drop-shadow(0 0 35px rgba(212, 175, 55, 0.3));
+  border: none;
+  background: none;
+  padding: 0;
+  margin-top: 30px;
+}
+
+.cta-button img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+}
+
+.cta-button:hover {
+  filter: drop-shadow(0 25px 75px rgba(0, 0, 0, 0.8)) drop-shadow(0 0 50px rgba(212, 175, 55, 0.6));
+  transform: scale(1.03);
+}
+
+.infrastructure-section {
+  padding: 80px 60px;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.work-plaque {
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 20px 60px rgba(0, 0, 0, 0.7)) drop-shadow(0 0 40px rgba(217, 119, 6, 0.3));
+  transition: transform 0.3s ease, filter 0.3s ease;
+  border-radius: 8px;
+}
+
+.work-plaque:hover {
+  transform: scale(1.02);
+  filter: drop-shadow(0 25px 75px rgba(0, 0, 0, 0.8)) drop-shadow(0 0 50px rgba(217, 119, 6, 0.5));
+}
+
+.pathways-section {
+  padding: 80px 40px;
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pathways-visual {
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 20px 60px rgba(0, 0, 0, 0.7)) drop-shadow(0 0 40px rgba(217, 119, 6, 0.3));
+  transition: transform 0.3s ease, filter 0.3s ease;
+  border-radius: 8px;
+}
+
+.pathways-visual:hover {
+  transform: scale(1.02);
+  filter: drop-shadow(0 25px 75px rgba(0, 0, 0, 0.8)) drop-shadow(0 0 50px rgba(217, 119, 6, 0.5));
+}
+
+.declaration-section {
+  padding: 80px 40px;
+  background: linear-gradient(180deg, rgba(217, 119, 6, 0.08) 0%, rgba(212, 175, 55, 0.04) 100%);
+  text-align: center;
+  border-top: 2px solid var(--gold);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.declaration-visual {
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 20px 60px rgba(0, 0, 0, 0.7)) drop-shadow(0 0 40px rgba(217, 119, 6, 0.3));
+  transition: transform 0.3s ease, filter 0.3s ease;
+  border-radius: 8px;
+}
+
+.declaration-visual:hover {
+  transform: scale(1.02);
+  filter: drop-shadow(0 25px 75px rgba(0, 0, 0, 0.8)) drop-shadow(0 0 50px rgba(217, 119, 6, 0.5));
+}
+
+footer {
+  padding: 40px;
+  text-align: center;
+  border-top: 2px solid var(--gold);
+  color: var(--text-dim);
+  font-size: 0.85rem;
+  background: rgba(15, 31, 46, 0.8);
+}
+
+footer p {
+  margin: 6px 0;
+}
+
+@media (max-width: 768px) {
+  header {
+    padding: 12px 20px;
+    flex-direction: column;
+    gap: 12px;
+  }
+  nav {
+    gap: 15px;
+  }
+  nav a {
+    font-size: 9px;
+  }
+  .hero {
+    margin-top: 120px;
+  }
+  .hero-title {
+    font-size: 2rem;
+  }
+  .hero-description {
+    font-size: 0.95rem;
+  }
+  .hero-badge {
+    max-width: 95%;
+    width: 95%;
+    margin-bottom: 30px;
+  }
+  .cta-button {
+    max-width: 95%;
+    width: 95%;
+    margin-top: 20px;
+  }
+  #set-sloth {
+    width: 80px;
+  }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <a href="index.html" class="brand">
+    <img src="raven-logo.jpg" alt="Raven's Nest Temple Inc" class="brand-logo">
+    <span class="brand-text">RAVEN'S NEST<br>TEMPLE INC</span>
+  </a>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="witchmart.html">WitchMart</a>
+    <a href="four-pillars.html">Our Work</a>
+    <a href="get-help.html">Get Help</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<div id="set-sloth">
+  <img src="set-sloth.png" alt="Set the Sloth">
+</div>
+
+<div class="set-popup" id="set-popup">
+  <div class="set-quote">Pardon me, friend, would you mind if an ol' stoner has a word? If you're overwhelmed or just looking for something specific, I can help point the way. No rush though, take your time looking around.</div>
+  <div class="set-options">
+    <a href="services.html" class="set-btn">Services</a>
+    <a href="get-help.html" class="set-btn">Get Help</a>
+    <a href="four-pillars.html" class="set-btn">Our Work</a>
+    <button class="set-btn" onclick="document.getElementById('set-popup').classList.remove('active')">Close</button>
+  </div>
+</div>
+
+<main>
+<section class="hero">
+  <div class="hero-content">
+    <img src="sanctuary-badge.jpg" alt="A Real Sanctuary" class="hero-badge">
+    <h1 class="hero-title">RAVEN'S NEST</h1>
+    <h2 class="hero-subtitle">OFF-GRID. HOBBIT HOUSES. ANIMALS ROAMING FREE.</h2>
+    <p class="hero-description">We are building the infrastructure for a future that governments cannot gatekeep. Off-grid energy. Decentralized food and water. Sanctuary. Mutual aid. A place where the vulnerable are protected, not exploited.</p>
+    <a href="four-pillars.html" class="cta-button"><img src="find-path-button.jpg" alt="Find Your Path"></a>
+  </div>
+</section>
+
+<section class="infrastructure-section">
+  <img src="the-work-plaque.jpg" alt="The Work - Our Infrastructure Vision" class="work-plaque">
+</section>
+
+<section class="pathways-section">
+  <img src="pathways-grid.jpg" alt="Multiple Ways In - Find Your Path" class="pathways-visual">
+</section>
+
+<section class="declaration-section">
+  <img src="ravens-evermore-declaration.jpg" alt="We Are Ravens Evermore - Declaration" class="declaration-visual">
+</section>
+</main>
+
+<footer>
+  <p><strong>Raven's Nest Temple, Inc.</strong> | Arch Priest: Rt Rev Jon Bradley | 405-987-3212</p>
+  <p>Email: <a href="mailto:revmadgoose@proton.me" style="color:#f5ede3;">revmadgoose@proton.me</a> | Personal: <a href="tel:4056730209" style="color:#f5ede3;">405-673-0209</a> | Hours: 7 days a week (excluding Sabbats and Esbats), 8:00 AM – 9:00 PM</p>
+</footer>
+
+<script>
+const setSloth = document.getElementById('set-sloth');
+const setPopup = document.getElementById('set-popup');
+
+let x = window.innerWidth - 150;
+let y = window.innerHeight - 200;
+let vx = (Math.random() - 0.5) * 3;
+let vy = (Math.random() - 0.5) * 3;
+
+function moveSet() {
+  x += vx;
+  y += vy;
+
+  if (x <= 0 || x >= window.innerWidth - 120) vx *= -1;
+  if (y <= 70 || y >= window.innerHeight - 120) vy *= -1;
+
+  x = Math.max(0, Math.min(window.innerWidth - 120, x));
+  y = Math.max(70, Math.min(window.innerHeight - 120, y));
+
+  setSloth.style.left = x + 'px';
+  setSloth.style.top = y + 'px';
+
+  requestAnimationFrame(moveSet);
+}
+
+moveSet();
+
+setSloth.addEventListener('click', (e) => {
+  e.stopPropagation();
+  setPopup.classList.add('active');
+  setPopup.style.left = (x + 130) + 'px';
+  setPopup.style.top = (y - 140) + 'px';
+});
+
+document.addEventListener('click', (e) => {
+  if (!e.target.closest('#set-popup') && e.target !== setSloth && !e.target.closest('#set-sloth')) {
+    setPopup.classList.remove('active');
+  }
+});
+
+window.addEventListener('resize', () => {
+  x = Math.min(x, window.innerWidth - 120);
+  y = Math.min(y, window.innerHeight - 120);
+});
+</script>
+</body>
+</html>

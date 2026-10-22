@@ -378,12 +378,14 @@ footer p {
   }
   nav {
     gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
   }
   nav a {
-    font-size: 9px;
+    font-size: 12px;
   }
   .hero {
-    margin-top: 120px;
+    margin-top: 140px;
   }
   .hero-title {
     font-size: 2rem;
@@ -403,6 +405,25 @@ footer p {
   }
   #set-sloth {
     width: 80px;
+  }
+}
+
+/* Small tablets: the nav fits on one line, so the header is shorter. */
+@media (min-width: 540px) and (max-width: 768px) {
+  .hero {
+    margin-top: 100px;
+  }
+}
+
+/* Phones and tablets: iPhones and iPads do not support a fixed background,
+   so the hero image would show zoomed in. Let it scroll with the page there.
+   The image has an old menu bar along its top edge (the fixed header hides it
+   on computers), so draw it a bit taller and pin it to the bottom to crop that strip. */
+@media (max-width: 768px), (hover: none) {
+  .hero {
+    background-attachment: scroll;
+    background-size: 100% 100%, auto 112%;
+    background-position: center, center bottom;
   }
 }
 </style>

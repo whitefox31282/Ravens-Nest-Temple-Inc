@@ -1,10 +1,238 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Services | Raven's Nest Temple</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Services | Raven's Nest Temple</title>
+<meta name="description" content="Services from Raven's Nest Temple: past life regressions, readings, handfasting and sacred union, and custom spell work and energy alignment.">
+<meta name="theme-color" content="#0f1f2e">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --gold: #d4af37;
+  --copper: #b87333;
+  --blue-deep: #1a3a52;
+  --blue-dark: #0f1f2e;
+  --warm-white: #f5ede3;
+  --fire-orange: #d97706;
+  --text-light: #f5ede3;
+  --text-dim: #b8a895;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  background: linear-gradient(135deg, var(--blue-dark) 0%, var(--blue-deep) 40%, #051015 100%);
+  background-attachment: fixed;
+  color: var(--text-light);
+  font-family: 'Courier Prime', monospace;
+  font-size: 16px;
+  line-height: 1.7;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 950;
+  background: rgba(15, 31, 46, 0.97);
+  backdrop-filter: blur(12px);
+  border-bottom: 3px solid var(--gold);
+  padding: 18px 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 0 40px rgba(212, 175, 55, 0.2);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+
+.brand-logo {
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+}
+
+.brand-text {
+  font-family: 'Cinzel', serif;
+  font-size: 14px;
+  font-weight: 900;
+  letter-spacing: 1px;
+  color: var(--gold);
+  text-transform: uppercase;
+  text-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+  line-height: 1.1;
+}
+
+nav {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+nav a {
+  color: var(--text-light);
+  text-decoration: none;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transition: all 0.3s;
+}
+
+nav a:hover, nav a.active {
+  color: var(--gold);
+}
+
+.container {
+  max-width: 1000px;
+  margin: 140px auto 80px;
+  padding: 0 30px;
+}
+
+.page-title {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(2rem, 5vw, 3rem);
+  color: var(--gold);
+  text-align: center;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+}
+
+.page-subtitle {
+  text-align: center;
+  color: var(--warm-white);
+  font-size: 1.05rem;
+  max-width: 700px;
+  margin: 0 auto 50px;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+  margin-bottom: 40px;
+}
+
+.card {
+  background: linear-gradient(135deg, rgba(26, 58, 82, 0.7) 0%, rgba(15, 31, 46, 0.9) 100%);
+  border: 2px solid rgba(212, 175, 55, 0.4);
+  border-radius: 8px;
+  padding: 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s;
+}
+
+.card:hover {
+  border-color: var(--gold);
+  box-shadow: 0 0 25px rgba(212, 175, 55, 0.3);
+  transform: translateY(-4px);
+}
+
+.card h2 {
+  font-family: 'Cinzel', serif;
+  color: var(--gold);
+  font-size: 1.3rem;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.card p {
+  color: var(--warm-white);
+}
+
+.cta-banner {
+  background: rgba(212, 175, 55, 0.1);
+  border: 2px solid var(--gold);
+  border-radius: 8px;
+  padding: 35px;
+  text-align: center;
+}
+
+.cta-banner h3 {
+  font-family: 'Cinzel', serif;
+  color: var(--fire-orange);
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+
+.cta-banner p {
+  margin-bottom: 12px;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 15px;
+  background: linear-gradient(90deg, var(--gold) 0%, var(--copper) 100%);
+  color: #000;
+  padding: 12px 24px;
+  border-radius: 4px;
+  font-family: 'Cinzel', serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 1px;
+  transition: all 0.2s;
+}
+
+.btn:hover {
+  box-shadow: 0 4px 16px rgba(212, 175, 55, 0.4);
+  transform: translateY(-2px);
+}
+
+footer {
+  padding: 40px;
+  text-align: center;
+  border-top: 2px solid var(--gold);
+  color: var(--text-dim);
+  font-size: 0.85rem;
+  background: rgba(15, 31, 46, 0.8);
+}
+
+footer p {
+  margin: 6px 0;
+}
+
+@media (max-width: 768px) {
+  header {
+    padding: 12px 20px;
+    flex-direction: column;
+    gap: 12px;
+  }
+  nav {
+    gap: 15px;
+    justify-content: center;
+  }
+  nav a {
+    font-size: 12px;
+  }
+  .container {
+    margin-top: 170px;
+    padding: 0 16px;
+  }
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+  .card, .cta-banner {
+    padding: 22px;
+  }
+}
+</style>
 </head>
 <body>
 
@@ -24,10 +252,8 @@
 </header>
 
 <main class="container">
-  <section class="hero-section">
-    <h1>Services Offered</h1>
-    <p>Spiritual guidance, energetic alignment, and sacred ceremonies tailored to support your personal journey and spiritual autonomy.</p>
-  </section>
+  <h1 class="page-title">Services Offered</h1>
+  <p class="page-subtitle">Spiritual guidance, energetic alignment, and sacred ceremonies tailored to support your personal journey and spiritual autonomy.</p>
 
   <section class="services-grid">
     <div class="card">
@@ -41,12 +267,12 @@
     </div>
 
     <div class="card">
-      <h2>Handfasting & Sacred Union</h2>
+      <h2>Handfasting &amp; Sacred Union</h2>
       <p>Customized handfasting and wedding ceremonies tailored to honor your personal bond, traditions, and sacred vows.</p>
     </div>
 
     <div class="card">
-      <h2>Custom Spell Work & Energy Alignment</h2>
+      <h2>Custom Spell Work &amp; Energy Alignment</h2>
       <p>Targeted energetic alignment and ritual work for protection, clearing, justice, manifestation, and personal empowerment.</p>
     </div>
   </section>

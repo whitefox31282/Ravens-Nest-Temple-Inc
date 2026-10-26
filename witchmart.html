@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>WitchMart | Raven's Nest Temple</title>
-<meta name="description" content="WitchMart: the community marketplace and mutual aid arm of Raven's Nest Temple, including our Feed the Homeless and Supply Fund.">
+<meta name="description" content="WitchMart: the official cooperative marketplace and mutual aid engine of Raven's Nest Temple Inc. Witches Co-op, vendors, Community Care, and the Feed the Homeless and Supply Fund.">
 <meta name="theme-color" content="#0f1f2e">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -257,6 +257,16 @@ footer p {
   margin-bottom: 10px;
   text-transform: uppercase;
 }
+
+/* WitchMart integration 2026-10-25: footer values + links; phones: header scrolls with the page. */
+footer a { color: var(--warm-white); }
+footer .values { max-width: 900px; margin: 0 auto 12px; font-size: 0.8rem; }
+footer .values strong { color: var(--gold); }
+@media (max-width: 768px) {
+  header { position: relative; }
+  .container { margin-top: 30px; }
+  .hero { margin-top: 0; }
+}
 </style>
 </head>
 <body>
@@ -270,6 +280,7 @@ footer p {
     <a href="index.html">Home</a>
     <a href="services.html">Services</a>
     <a href="witchmart.html" class="active">WitchMart</a>
+    <a href="community-care.html">Community Care</a>
     <a href="four-pillars.html">Our Work</a>
     <a href="get-help.html">Get Help</a>
     <a href="contact.html">Contact</a>
@@ -283,6 +294,33 @@ footer p {
   <section class="content-block">
     <h2 class="section-heading">Community Marketplace &amp; Sanctuary</h2>
     <p class="section-text">WitchMart is the community-driven arm of Raven's Nest Temple, dedicated to supporting independent practitioners, local artisans, and practical off-grid resiliency efforts. We believe true spiritual freedom is built on self-reliance, practical skills, and mutual support.</p>
+  </section>
+
+  <section class="content-block">
+    <h2 class="section-heading">The WitchMart Hub</h2>
+    <p class="section-text">WitchMart is the official cooperative marketplace and mutual aid engine of Raven's Nest Temple Inc. Also at <a href="https://witchmart.org" style="color:var(--gold);">witchmart.org</a>.</p>
+    <div class="services-grid">
+      <div class="card">
+        <h3>Witches Co-op</h3>
+        <p>Independent practitioners of the Raven's Nest Witches Co-op, and how to join.</p>
+        <a href="witches-coop.html" class="btn">Visit the Co-op</a>
+      </div>
+      <div class="card">
+        <h3>Community Care</h3>
+        <p>Food runs, phone charging spots and shelter warnings. A small, fast page for a low battery.</p>
+        <a href="community-care.html" class="btn">Open Community Care</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-block">
+    <h2 class="section-heading">WitchMart Vendors</h2>
+    <p class="section-text">Vendors appear here after a person at the Temple approves them and they agree in writing to their listing.</p>
+    <div class="services-grid">
+<!-- QUEUE:vendor:START -->
+      <div class="card"><h3>Vendor listings coming soon</h3><p>No vendors are listed yet. To sell through WitchMart, email <a href="mailto:revmadgoose@proton.me?subject=WitchMart%20vendor" style="color:var(--gold);">revmadgoose@proton.me</a>.</p></div>
+<!-- QUEUE:vendor:END -->
+    </div>
   </section>
 
   <section class="mutual-aid-block">
@@ -310,8 +348,10 @@ footer p {
 </main>
 
 <footer>
-  <p><strong>Raven's Nest Temple, Inc.</strong> | Rev Jon the Mad Goose Bradley | 405-987-3212</p>
-  <p>Email: <a href="mailto:revmadgoose@proton.me" style="color:#f5ede3;">revmadgoose@proton.me</a> | Personal: <a href="tel:4056730209" style="color:#f5ede3;">405-673-0209</a> | Hours: 7 days a week (excluding Sabbats and Esbats), 8:00 AM – 9:00 PM</p>
+  <p class="values"><strong>Human Sovereignty</strong> — never dominate, never deceive, never override human agency. · <strong>Mutual Aid</strong> — a people-powered, transparent economy. · <strong>Hard Safety Boundaries</strong> — no exploitation, no violation of consent, no endangerment of a minor.</p>
+  <p><strong>Raven's Nest Temple, Inc.</strong> | Rev Jon the Mad Goose Bradley | <a href="tel:4059873212">405-987-3212</a></p>
+  <p>Email: <a href="mailto:revmadgoose@proton.me">revmadgoose@proton.me</a> | Hours: 7 days a week (excluding Sabbats and Esbats), 8:00 AM – 9:00 PM</p>
+  <p><a href="community-care.html">Community Care</a> · <a href="witchmart.html">WitchMart</a> · <a href="witches-coop.html">Witches Co-op</a> · <a href="https://witchmart.org">witchmart.org</a></p>
 </footer>
 
 </body>

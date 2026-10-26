@@ -416,6 +416,16 @@ footer a {
   .feather { display: none; }
   .star, .zero, .set-sloth { animation: none; }
 }
+
+/* WitchMart integration 2026-10-25: footer values + links; phones: header scrolls with the page. */
+footer a { color: var(--warm-white); }
+footer .values { max-width: 900px; margin: 0 auto 12px; font-size: 0.8rem; }
+footer .values strong { color: var(--gold); }
+@media (max-width: 768px) {
+  header { position: relative; }
+  .container { margin-top: 30px; }
+  .hero { margin-top: 0; }
+}
 </style>
 </head>
 <body>
@@ -431,6 +441,7 @@ footer a {
     <a href="/index.html">Home</a>
     <a href="/services.html">Services</a>
     <a href="/witchmart.html">WitchMart</a>
+    <a href="/community-care.html">Community Care</a>
     <a href="/four-pillars.html">Our Work</a>
     <a href="/get-help.html">Get Help</a>
     <a href="/contact.html">Contact</a>
@@ -465,8 +476,10 @@ footer a {
 </main>
 
 <footer>
-  <p><strong>Raven's Nest Temple, Inc.</strong> | Rev Jon the Mad Goose Bradley | 405-987-3212</p>
-  <p>Email: <a href="mailto:revmadgoose@proton.me">revmadgoose@proton.me</a> | Personal: <a href="tel:4056730209">405-673-0209</a> | Hours: 7 days a week (excluding Sabbats and Esbats), 8:00 AM – 9:00 PM</p>
+  <p class="values"><strong>Human Sovereignty</strong> — never dominate, never deceive, never override human agency. · <strong>Mutual Aid</strong> — a people-powered, transparent economy. · <strong>Hard Safety Boundaries</strong> — no exploitation, no violation of consent, no endangerment of a minor.</p>
+  <p><strong>Raven's Nest Temple, Inc.</strong> | Rev Jon the Mad Goose Bradley | <a href="tel:4059873212">405-987-3212</a></p>
+  <p>Email: <a href="mailto:revmadgoose@proton.me">revmadgoose@proton.me</a> | Hours: 7 days a week (excluding Sabbats and Esbats), 8:00 AM – 9:00 PM</p>
+  <p><a href="/community-care.html">Community Care</a> · <a href="/witchmart.html">WitchMart</a> · <a href="/witches-coop.html">Witches Co-op</a> · <a href="https://witchmart.org">witchmart.org</a></p>
 </footer>
 
 <script>

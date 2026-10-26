@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://www.ravensnesttemple.com/sitemap.xml
+Sitemap: https://ravensnesttemple.com/sitemap.xml

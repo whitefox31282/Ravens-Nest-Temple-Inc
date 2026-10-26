@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Raven's Nest | We Are Ravens Evermore</title>
-<meta name="description" content="Off-grid. Hobbit houses. Animals roaming free. Sovereignty. Mutual aid. We are building the infrastructure for a future governments cannot gatekeep.">
+<title>Raven's Nest | Sanctuary, Mutual Aid & WitchMart</title>
+<meta name="description" content="Raven's Nest Temple is an off-grid sanctuary network, mutual aid hub, and cooperative marketplace. Explore WitchMart, the Witches Co-op, and the emergency Community Care network.">
 <meta name="theme-color" content="#0f1f2e">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,7 +24,6 @@
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
-
 body {
   background: linear-gradient(135deg, var(--blue-dark) 0%, var(--blue-deep) 40%, #051015 100%);
   color: var(--text-light);
@@ -253,34 +252,75 @@ nav a:hover {
   font-size: 1.05rem;
   line-height: 1.8;
   max-width: 700px;
-  margin: 30px auto 40px;
+  margin: 30px auto 24px;
   color: var(--warm-white);
 }
 
-.cta-button {
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.hero-button {
   display: inline-block;
-  max-width: 900px;
-  width: 100%;
   text-decoration: none;
-  transition: all 0.4s ease;
-  cursor: pointer;
-  filter: drop-shadow(0 20px 60px rgba(0, 0, 0, 0.6)) drop-shadow(0 0 35px rgba(212, 175, 55, 0.3));
-  border: none;
-  background: none;
-  padding: 0;
-  margin-top: 30px;
+  padding: 12px 20px;
+  border-radius: 6px;
+  font-family: 'Cinzel', serif;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-weight: 700;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.cta-button img {
-  width: 100%;
-  height: auto;
-  display: block;
+.hero-button.primary {
+  background: linear-gradient(90deg, var(--gold) 0%, var(--copper) 100%);
+  color: #111;
+  box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+}
+
+.hero-button.secondary {
+  background: rgba(17, 27, 39, 0.75);
+  border: 2px solid rgba(212, 175, 55, 0.6);
+  color: var(--warm-white);
+}
+
+.hero-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(212, 175, 55, 0.22);
+}
+
+.pillar-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px 10px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.pillar-card {
+  background: linear-gradient(135deg, rgba(26, 58, 82, 0.7) 0%, rgba(15, 31, 46, 0.9) 100%);
+  border: 2px solid rgba(212, 175, 55, 0.4);
   border-radius: 8px;
+  padding: 22px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.28);
 }
 
-.cta-button:hover {
-  filter: drop-shadow(0 25px 75px rgba(0, 0, 0, 0.8)) drop-shadow(0 0 50px rgba(212, 175, 55, 0.6));
-  transform: scale(1.03);
+.pillar-card h3 {
+  font-family: 'Cinzel', serif;
+  color: var(--gold);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+}
+
+.pillar-card p {
+  color: var(--warm-white);
+  font-size: 0.98rem;
 }
 
 .infrastructure-section {
@@ -357,18 +397,58 @@ nav a:hover {
   filter: drop-shadow(0 25px 75px rgba(0, 0, 0, 0.8)) drop-shadow(0 0 50px rgba(217, 119, 6, 0.5));
 }
 
+.temple-footer {
+  padding: 28px 24px 36px;
+  border-top: 2px solid var(--gold);
+  background: rgba(15, 31, 46, 0.9);
+  color: var(--text-light);
+}
+
+.temple-footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.temple-footer strong { color: var(--gold); }
+
+.temple-footer p {
+  margin: 8px 0;
+  line-height: 1.6;
+}
+
+.temple-footer .legal {
+  color: var(--warm-white);
+  font-size: 0.9rem;
+}
+
+.temple-footer .links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px 18px;
+  margin-top: 8px;
+  font-size: 0.9rem;
+}
+
+.temple-footer a {
+  color: var(--warm-white);
+  text-decoration: none;
+}
+
+.temple-footer a:hover {
+  color: var(--gold);
+}
+
 footer {
   padding: 40px;
   text-align: center;
-  border-top: 2px solid var(--gold);
   color: var(--text-dim);
   font-size: 0.85rem;
   background: rgba(15, 31, 46, 0.8);
 }
 
-footer p {
-  margin: 6px 0;
-}
+footer p { margin: 6px 0; }
 
 @media (max-width: 768px) {
   header {
@@ -398,27 +478,18 @@ footer p {
     width: 95%;
     margin-bottom: 30px;
   }
-  .cta-button {
-    max-width: 95%;
-    width: 95%;
-    margin-top: 20px;
+  .hero-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+  .hero-button {
+    width: min(90vw, 330px);
   }
   #set-sloth {
     width: 80px;
   }
 }
 
-/* Small tablets: the nav fits on one line, so the header is shorter. */
-@media (min-width: 540px) and (max-width: 768px) {
-  .hero {
-    margin-top: 100px;
-  }
-}
-
-/* Phones and tablets: iPhones and iPads do not support a fixed background,
-   so the hero image would show zoomed in. Let it scroll with the page there.
-   The image has an old menu bar along its top edge (the fixed header hides it
-   on computers), so draw it a bit taller and pin it to the bottom to crop that strip. */
 @media (max-width: 768px), (hover: none) {
   .hero {
     background-attachment: scroll;
@@ -427,7 +498,6 @@ footer p {
   }
 }
 
-/* WitchMart integration 2026-10-25: footer values + links; phones: header scrolls with the page. */
 footer a { color: var(--warm-white); }
 footer .values { max-width: 900px; margin: 0 auto 12px; font-size: 0.8rem; }
 footer .values strong { color: var(--gold); }
@@ -450,6 +520,7 @@ footer .values strong { color: var(--gold); }
     <a href="services.html">Services</a>
     <a href="witchmart.html">WitchMart</a>
     <a href="community-care.html">Community Care</a>
+    <a href="witches-coop.html">Witches Co-op</a>
     <a href="four-pillars.html">Our Work</a>
     <a href="get-help.html">Get Help</a>
     <a href="contact.html">Contact</a>
@@ -461,11 +532,11 @@ footer .values strong { color: var(--gold); }
 </div>
 
 <div class="set-popup" id="set-popup">
-  <div class="set-quote">Pardon me, friend, would you mind if an ol' stoner has a word? If you're overwhelmed or just looking for something specific, I can help point the way. No rush though, take your time looking around.</div>
+  <div class="set-quote">Pardon me, friend, would you mind if an ol' stoner has a word? If you're overwhelmed or just looking for something specific, I can help point the way.</div>
   <div class="set-options">
-    <a href="services.html" class="set-btn">Services</a>
-    <a href="get-help.html" class="set-btn">Get Help</a>
-    <a href="four-pillars.html" class="set-btn">Our Work</a>
+    <a href="community-care.html" class="set-btn">Care</a>
+    <a href="witchmart.html" class="set-btn">WitchMart</a>
+    <a href="witches-coop.html" class="set-btn">Co-op</a>
     <button class="set-btn" onclick="document.getElementById('set-popup').classList.remove('active')">Close</button>
   </div>
 </div>
@@ -475,12 +546,35 @@ footer .values strong { color: var(--gold); }
   <div class="hero-content">
     <img src="sanctuary-badge.jpg" alt="A Real Sanctuary" class="hero-badge">
     <h1 class="hero-title">RAVEN'S NEST</h1>
-    <h2 class="hero-subtitle">OFF-GRID. HOBBIT HOUSES. ANIMALS ROAMING FREE.</h2>
-    <p class="hero-description">We are building the infrastructure for a future that governments cannot gatekeep. Off-grid energy. Decentralized food and water. Sanctuary. Mutual aid. A place where the vulnerable are protected, not exploited.</p>
-    <p class="hero-description"><a href="community-care.html" style="color:var(--gold);">Need food, phone charging or shelter info? Open Community Care (a fast page).</a></p>
-    <a href="four-pillars.html" class="cta-button"><img src="find-path-button.jpg" alt="Find Your Path"></a>
+    <h2 class="hero-subtitle">Sanctuary • Mutual Aid • Off-Grid Infrastructure</h2>
+    <p class="hero-description">Raven's Nest Temple is a unified off-grid sanctuary network, educational ecosystem, and community care node. We build resilient infrastructure, mutual aid systems, and safe cooperative pathways for people seeking shelter, skill-sharing, practical survival support, and dignified connection.</p>
+    <p class="hero-description"><strong>Integrated pathways:</strong> <a href="community-care.html" style="color:var(--gold);">Community Care</a> for food, charging, and shelter advice · <a href="witchmart.html" style="color:var(--gold);">WitchMart</a> for the cooperative marketplace · <a href="witches-coop.html" style="color:var(--gold);">Witches Co-op</a> for allied traditions and vetted services.</p>
+    <div class="hero-actions">
+      <a href="community-care.html" class="hero-button primary">Community Care Hub</a>
+      <a href="witchmart.html" class="hero-button secondary">WitchMart</a>
+      <a href="witches-coop.html" class="hero-button secondary">Witches Co-op</a>
+    </div>
   </div>
 </section>
+
+<div class="pillar-grid">
+  <article class="pillar-card">
+    <h3>Sanctuary &amp; Off-Grid Infrastructure</h3>
+    <p>Raven's Nest Temple is built for resilient living: off-grid energy, practical mutual aid, and community infrastructure designed to stand without gatekeeping.</p>
+  </article>
+  <article class="pillar-card">
+    <h3>Mutual Aid &amp; Cooperative Marketplace</h3>
+    <p>WitchMart coordinates direct trade, skill exchange, and mutual aid through a transparent, people-powered marketplace aligned with Temple ethics.</p>
+  </article>
+  <article class="pillar-card">
+    <h3>Community Care Hub</h3>
+    <p>Food schedules, charging stations, shelter safety advisories, and emergency mutual aid support are centralized for quick access during crisis or low-power conditions.</p>
+  </article>
+  <article class="pillar-card">
+    <h3>Witches Co-op</h3>
+    <p>Allied traditions, classes, and vetted practitioner services are organized under the Raven's Nest Witches Co-op and linked to WitchMart.</p>
+  </article>
+</div>
 
 <section class="infrastructure-section">
   <img loading="lazy" decoding="async" src="the-work-plaque.jpg" alt="The Work - Our Infrastructure Vision" class="work-plaque">
@@ -495,11 +589,18 @@ footer .values strong { color: var(--gold); }
 </section>
 </main>
 
-<footer>
-  <p class="values"><strong>Human Sovereignty</strong> — never dominate, never deceive, never override human agency. · <strong>Mutual Aid</strong> — a people-powered, transparent economy. · <strong>Hard Safety Boundaries</strong> — no exploitation, no violation of consent, no endangerment of a minor.</p>
-  <p><strong>Raven's Nest Temple, Inc.</strong> | Rev Jon the Mad Goose Bradley | <a href="tel:4059873212">405-987-3212</a></p>
-  <p>Email: <a href="mailto:revmadgoose@proton.me">revmadgoose@proton.me</a> | Hours: 7 days a week (excluding Sabbats and Esbats), 8:00 AM – 9:00 PM</p>
-  <p><a href="community-care.html">Community Care</a> · <a href="witchmart.html">WitchMart</a> · <a href="witches-coop.html">Witches Co-op</a> · <a href="https://witchmart.org">witchmart.org</a></p>
+<footer class="temple-footer">
+  <div class="temple-footer-inner">
+    <p><strong>Raven's Nest Temple &amp; WitchMart</strong> — Built on Human Sovereignty, Mutual Aid, and Hard Safety Boundaries against exploitation.</p>
+    <p class="legal">Raven's Nest Temple Inc. is an Oklahoma non-profit sanctuary entity. Community care, trade, and public listings operate under Temple ethics and the shared <strong>admin_approval_queue</strong> safety framework.</p>
+    <div class="links">
+      <a href="community-care.html">Community Care Hub</a>
+      <a href="community-care.html#charging">Charging &amp; Food Maps</a>
+      <a href="community-care.html#shelter">Shelter Advisories</a>
+      <a href="witches-coop.html">Witches Co-op</a>
+      <a href="contact.html">Submission Forms</a>
+    </div>
+  </div>
 </footer>
 
 <script>

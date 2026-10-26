@@ -1,5 +1,5 @@
 # Ravens-Nest-Temple-Inc
-You shouldn't have to sell your soul to survive. At Raven’s Nest, we're building a real grassroots refuge from the dirt up. Learn trades, grow food, and find a community that actually has your back no corporate middlemen or catch. Just a safe place to build a secure future together. RAVENS EVERMORE.
+You shouldn't have to sell your soul to survive. At Raven’s Nest, we're building a real grassroots refuge from the dirt up. Learn trades, grow food, and find a community that actually has your back.
 
 
 
@@ -12,7 +12,7 @@ You shouldn't have to sell your soul to survive. At Raven’s Nest, we're buildi
 
 ## Overview
 
-Raven's Nest is a grassroots working refuge and mutual aid infrastructure project. We are building practical, open source alternatives to extractive corporate systems focusing on hands on trade education, sustainable food production, off grid resilience, and community self reliance.
+Raven's Nest is a grassroots working refuge and mutual aid infrastructure project. We are building practical, open source alternatives to extractive corporate systems focusing on hands on trade education, collective food production, and resilient community care.
 
 We are not a tech startup or a venture-backed corporation. We are building this from the dirt up, one step at a time, through sweat equity and open collaboration.
 
@@ -31,3 +31,7 @@ We are not a tech startup or a venture-backed corporation. We are building this 
 ├── assets/         # Logos, branding elements, and imagery
 ├── docs/           # Operational outlines, blueprints, and guides
 └── src/            # Website and digital interface source code
+```
+
+## Content approval rule
+Never name a person, group, or organization on the site, or state their role (board, partner, sponsor, ally), unless Jon gave that exact wording. If unsure, ask first.

@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Raven's Nest | Sanctuary, Mutual Aid & WitchMart</title>
-<meta name="description" content="Raven's Nest Temple is an off-grid sanctuary network, mutual aid hub, and cooperative marketplace. Explore WitchMart, the Witches Co-op, and the emergency community resource network.">
+<meta name="description" content="Raven's Nest Temple is an off-grid sanctuary network, mutual aid hub, and cooperative marketplace. Explore WitchMart, the Witches Co-op, and the emergency community networks for safe and practical support.">
 <meta name="theme-color" content="#070605">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <style>
@@ -20,16 +20,20 @@
 html { scroll-behavior: smooth; }
 body {
   background-color: #070605;
-  background-image: url("knot-bg.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
   color: var(--text-light);
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
   font-size: 16px;
   line-height: 1.7;
   overflow-x: hidden;
+}
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background: url("knot-bg.jpg") center/cover no-repeat;
+  filter: contrast(1.45) brightness(1.45) saturate(1.3);
+  pointer-events: none;
 }
 header {
   position: fixed;
@@ -59,13 +63,13 @@ main { overflow: hidden; }
 }
 #set-sloth img { width: 100%; height: auto; display: block; }
 #set-popup {
-  position: fixed; right: 20px; bottom: 20px; z-index: 1000; background: linear-gradient(#3a3835, #2c2b28) padding-box, url("fur.jpg") border-box; background-size: auto, 90px; border: 11px solid transparent; border-radius: 12px; padding: 18px; width: min(360px, calc(100vw - 24px)); box-shadow: 0 0 30px rgba(0,0,0,0.35); display: none; flex-direction: column; gap: 12px;
+  position: fixed; right: 20px; bottom: 20px; z-index: 1000; background: linear-gradient(#3a3835, #2c2b28) padding-box, url("fur.jpg") border-box; background-size: auto, 90px; border: 11px solid transparent; border-radius: 12px; padding: 18px 16px; display: none; flex-direction: column; gap: 12px; box-shadow: 0 0 22px rgba(192,132,252,0.45);
 }
 #set-popup.active { display: flex; }
 .set-quote { color: var(--warm-white); font-size: 14px; line-height: 1.5; }
 .set-options { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
 .set-btn {
-  background: var(--gold); color: #070605; border: none; border-radius: 6px; padding: 8px 10px; font-family: 'Georgia', serif; font-size: 10px; text-transform: uppercase; line-height: 1.2; font-weight: 700; cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; justify-content: center; text-align: center;
+  background: var(--gold); color: #070605; border: none; border-radius: 6px; padding: 8px 10px; font-family: 'Georgia', serif; font-size: 10px; text-transform: uppercase; line-height: 1.2; font-weight: 700; cursor: pointer; text-decoration: none; text-align: center;
 }
 .hero { min-height: 100vh; margin-top: 70px; display: flex; align-items: center; justify-content: center; }
 .hero-content { text-align:center; max-width:1200px; padding:60px 40px; }
@@ -92,7 +96,7 @@ main { overflow: hidden; }
   padding: 22px 18px;
   color: var(--warm-white);
   text-decoration: none;
-  box-shadow: none;
+  box-shadow: 0 0 22px rgba(192,132,252,0.45);
   transition: transform 0.2s ease, filter 0.2s ease;
 }
 .door-card:hover {
@@ -124,10 +128,10 @@ main { overflow: hidden; }
   background-size: auto, 90px;
   background-repeat: repeat, repeat;
   border: 11px solid transparent;
-  box-shadow: none;
+  box-shadow: 0 0 22px rgba(192,132,252,0.45);
 }
 .infrastructure-section { padding: 80px 60px; max-width: 1200px; margin: 0 auto; display: flex; justify-content: center; align-items: center; }
-.work-plaque { width: 100%; max-width: 100%; height: auto; display: block; border-radius: 12px; background: #3a3835; background-image: linear-gradient(#3a3835, #3a3835), url("fur.jpg"); background-origin: padding-box, border-box; background-clip: padding-box, border-box; background-size: auto, 90px; background-repeat: repeat, repeat; border: 11px solid transparent; }
+.work-plaque { width: 100%; max-width: 100%; height: auto; display: block; border-radius: 12px; background: #3a3835; background-image: linear-gradient(#3a3835, #3a3835), url("fur.jpg"); background-origin: padding-box, border-box; background-clip: padding-box, border-box; background-size: auto, 90px; background-repeat: repeat, repeat; border: 11px solid transparent; box-shadow: 0 0 22px rgba(192,132,252,0.45); }
 .temple-footer { padding: 28px 24px 36px; border-top: 2px solid var(--gold); background: #100e0c; color: var(--text-light); }
 .temple-footer-inner { max-width: 1200px; margin: 0 auto; text-align:center; }
 .temple-footer a { color: var(--gold); text-decoration: none; }
@@ -166,7 +170,7 @@ footer a { color: var(--gold); }
 <div class="set-popup" id="set-popup">
   <div class="set-quote">Hail. I am Set T. Sloth. Welcome, and thank you for being a part of Raven's Nest Temple. If you need help understanding something here, give me a shout.</div>
   <form id="set-ask" style="display:flex;gap:6px">
-    <input id="set-q" type="text" placeholder="Ask about this site" autocomplete="off" style="flex:1;min-width:0;background:#100e0c;color:#b7d0ee;border:1px solid #c084fc;border-radius:6px;padding:8px">
+    <input id="set-q" type="text" placeholder="Ask about this site" autocomplete="off" style="flex:1;min-width:0;background:#100e0c;color:#b7d0ee;border:1px solid #c084fc;border-radius:6px;padding:8px 10px;font:inherit;">
     <button class="set-btn" type="submit">Ask</button>
   </form>
   <p id="set-reply" class="set-quote"></p>

@@ -31,11 +31,10 @@ body {
   color: var(--text-light); font-family: 'Courier Prime', monospace; font-size: 16px; line-height: 1.7; overflow-x: hidden;
 }
 header {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 950; background: #100e0c; border-bottom: 3px solid var(--gold); padding: 18px 50px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 0 40px rgba(192,132,252,0.18);
-}
+  position: fixed; top: 0; left: 0; right: 0; z-index: 950; background: #100e0c; border-bottom: 3px solid var(--gold); padding: 18px 50px; display: flex; justify-content: space-between; align-items: center; }
 .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
 .brand-logo { width: 40px; height: 40px; }
-.brand-text { font-family:'Cinzel',serif; font-size:14px; font-weight:900; letter-spacing:1px; color: var(--gold); text-transform: uppercase; text-shadow: 0 0 15px rgba(192,132,252,0.25); line-height:1.1; }
+.brand-text { font-family:'Cinzel',serif; font-size:14px; font-weight:900; letter-spacing:1px; color: var(--gold); text-transform: uppercase; text-shadow: 0 0 15px rgba(192,132,252,0.25); line-height:1.2; }
 nav { display:flex; gap:30px; flex-wrap:wrap; }
 nav a { color: var(--text-light); text-decoration:none; font-size:11px; text-transform:uppercase; letter-spacing:2px; transition:all 0.3s; }
 nav a:hover, nav a.active { color: var(--gold); }
@@ -75,7 +74,7 @@ footer a { color: var(--gold); }
 footer p { margin:6px 0; }
 @media (max-width:768px) {
   body { background-attachment: scroll; }
-  header { padding:12px 20px; flex-direction:column; gap:12px; } nav { gap:15px; justify-content:center; } nav a { font-size:12px; } .container { margin-top:170px; padding:0 15px; } .help-card { padding:24px 18px; } 
+  header { padding:12px 20px; flex-direction:column; gap:12px; } nav { gap:15px; justify-content:center; } nav a { font-size:12px; } .container { margin-top:170px; padding:0 15px; } .help-card { padding:25px; }
 }
 </style>
 </head>
@@ -106,14 +105,24 @@ footer p { margin:6px 0; }
   </div>
   <div class="help-card">
     <h2>Mutual Aid & Resource Distribution</h2>
-    <p>Through our "Feed the Homeless" initiative and community cooperative networks, we will provide essential supplies, food distribution support, and survival gear. Contact us if you or someone you know needs direct support.</p>
+    <p>Through our "Feed the Homeless" initiative and community cooperative networks, we will provide essential supplies, food distribution support, and survival gear. Contact us if you or someone you know needs information, a handoff, or a practical next step.</p>
+  </div>
+  <div class="help-card">
+    <h2>Oklahoma desks</h2>
+    <p>These are state offices, not the Temple, and not to email ID numbers.</p>
+    <p><strong>SNAP:</strong> apply at <a href="https://okdhslive.org" target="_blank" rel="noopener noreferrer" style="color:var(--gold);">okdhslive.org</a>. Emergency food stamps are screened the day you apply. Help line 405-522-5050. SNAP line 1-866-411-1877. Lost EBT card 1-888-328-6551.</p>
+    <p><strong>Heat:</strong> if someone needs medical equipment to live, or the cold is dangerous, call 405-522-5050 now and ask for energy assistance. Regular winter heating opens December 15, 2026 at <a href="https://okdhslive.org" target="_blank" rel="noopener noreferrer" style="color:var(--gold);">okdhslive.org</a> until the money runs out.</p>
+    <p><strong>SoonerCare:</strong> 1-800-987-7767. Apply through <a href="https://oklahoma.gov" target="_blank" rel="noopener noreferrer" style="color:var(--gold);">MySoonerCare</a> on oklahoma.gov.</p>
+    <p><strong>Legal Aid Services of Oklahoma:</strong> civil cases only: 1-888-534-5243, Monday–Thursday 9am–4pm.</p>
+    <p><strong>Lost ID:</strong> replace a license or state ID at <a href="https://oklahoma.gov/service" target="_blank" rel="noopener noreferrer" style="color:var(--gold);">Service Oklahoma</a>, oklahoma.gov/service. A birth certificate comes from the Oklahoma State Department of Health.</p>
+    <p><strong>Child abuse or neglect:</strong> 1-800-522-3511.</p>
   </div>
 </main>
 <footer>
-  <p class="values"><strong>Human Sovereignty</strong> — never dominate, never deceive, never override human agency. · <strong>Mutual Aid</strong> — a people-powered, transparent economy. · <strong>Direct Action</strong> — practical, local, and accountable solidarity.</p>
+  <p class="values"><strong>Human Sovereignty</strong> — never dominate, never deceive, never override human agency. · <strong>Mutual Aid</strong> — a people-powered, transparent economy. · <strong>Hard Safety</strong> — verify, protect, and support without harm.</p>
   <p><strong>Raven's Nest Temple, Inc.</strong> | Rev Jon the Mad Goose Bradley | <a href="tel:4059873212">405-987-3212</a></p>
   <p>Email: <a href="mailto:revjonbradley@ravensnesttemple.com">revjonbradley@ravensnesttemple.com</a> | Hours: 7 days a week (excluding Sabbats and Esbats), 8:00 AM – 9:00 PM</p>
-  <p><a href="community-care.html">Community Care</a> · <a href="witchmart.html">WitchMart</a> · <a href="witches-coop.html">Witches Co-op</a> · <a href="services.html">Services</a> · <a href="contact.html">Contact</a></p>
+  <p><a href="community-care.html">Community Care</a> · <a href="witchmart.html">WitchMart</a> · <a href="witches-coop.html">Witches Co-op</a> · <a href="services.html">Services</a> · <a href="index.html">Home</a></p>
 </footer>
 </body>
 </html>

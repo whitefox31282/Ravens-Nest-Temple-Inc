@@ -115,6 +115,76 @@ main { overflow: hidden; }
   line-height: 1.55;
   font-size: 0.95rem;
 }
+.first-lot-section {
+  padding: 40px 20px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.first-lot-wrap {
+  text-align: center;
+}
+.first-lot-title {
+  font-family:'Georgia', serif;
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  color: var(--gold);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+}
+.lot-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+.lot-card {
+  background: #3a3835;
+  background-image: linear-gradient(#3a3835, #3a3835), url("fur.jpg");
+  background-origin: padding-box, border-box;
+  background-clip: padding-box, border-box;
+  background-size: auto, 90px;
+  background-repeat: repeat, repeat;
+  border: 11px solid transparent;
+  border-radius: 12px;
+  padding: 22px 18px;
+  color: var(--warm-white);
+  box-shadow: 0 0 22px rgba(192,132,252,0.45);
+  text-align: left;
+}
+.lot-card h4 {
+  color: var(--gold);
+  font-family:'Georgia', serif;
+  font-size: 1.1rem;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.lot-card p, .lot-card li {
+  color: var(--warm-white);
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+.lot-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.lot-card li + li {
+  margin-top: 8px;
+}
+.hero-badge {
+  display: block;
+  width: min(100%, 700px);
+  margin: 0 auto 26px;
+  border-radius: 12px;
+  background: #3a3835;
+  background-image: linear-gradient(#3a3835, #3a3835), url("fur.jpg");
+  background-origin: padding-box, border-box;
+  background-clip: padding-box, border-box;
+  background-size: auto, 90px;
+  background-repeat: repeat, repeat;
+  border: 11px solid transparent;
+  box-shadow: 0 0 22px rgba(192,132,252,0.45);
+}
 .infrastructure-section { padding: 80px 60px; max-width: 1200px; margin: 0 auto; display: flex; justify-content: center; align-items: center; }
 .work-plaque { width: 100%; max-width: 100%; height: auto; display: block; border-radius: 12px; background: #3a3835; background-image: linear-gradient(#3a3835, #3a3835), url("fur.jpg"); background-origin: padding-box, border-box; background-clip: padding-box, border-box; background-size: auto, 90px; background-repeat: repeat, repeat; border: 11px solid transparent; box-shadow: 0 0 22px rgba(192,132,252,0.45); }
 .temple-footer { padding: 28px 24px 36px; border-top: 2px solid var(--gold); background: #100e0c; color: var(--text-light); }
@@ -130,7 +200,7 @@ footer a { color: var(--gold); }
   nav { gap: 15px; justify-content: center; }
   .hero { margin-top: 140px; }
   .hero-title { font-size: 2rem; }
-  .door-grid { grid-template-columns: 1fr; }
+  .door-grid, .lot-grid { grid-template-columns: 1fr; }
   #set-sloth { width: 80px; right: 12px; bottom: 12px; }
 }
 </style>
@@ -186,6 +256,31 @@ footer a { color: var(--gold); }
           <h3>Trade and practice</h3>
           <p>WitchMart is the marketplace. The Witches Co-op is for teachers and allied traditions. If a listing makes a profit, a donation to the Temple is all we ask.</p>
         </a>
+      </div>
+    </div>
+  </section>
+  <section class="first-lot-section">
+    <div class="first-lot-wrap">
+      <h3 class="first-lot-title">The first lot</h3>
+      <div class="lot-grid">
+        <div class="lot-card">
+          <h4>The first lot</h4>
+          <p>We are looking at raw land around the San Bois Mountains. No lot is bought. A note here is not a claim that we own it.</p>
+        </div>
+        <div class="lot-card">
+          <h4>Lots we are looking at</h4>
+          <p>None posted yet. When a lot is being looked at, it will show the county, the acres, and the price asked.</p>
+        </div>
+        <div class="lot-card">
+          <h4>What the first lot needs</h4>
+          <ul>
+            <li>Water: a well or hauled water, and a way to store it.</li>
+            <li>Power: a small solar set, enough to start.</li>
+            <li>Shelter: a first roof before any bigger build.</li>
+            <li>Tools: saws, hand tools, and a dry place to keep them.</li>
+            <li>Food: a garden bed, seed, and a way to keep the harvest.</li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>

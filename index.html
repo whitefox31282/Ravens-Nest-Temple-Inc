@@ -70,7 +70,7 @@ main { overflow: hidden; }
 .set-btn {
   background: var(--gold); color: #070605; border: none; border-radius: 6px; padding: 8px 10px; font-family: 'Georgia', serif; font-size: 10px; text-transform: uppercase; line-height: 1.2; font-weight: 700; letter-spacing: 0.8px; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; text-decoration: none; text-align: center;
 }
-.hero { min-height: 100vh; margin-top: 70px; display: flex; align-items: center; justify-content: center; }
+.hero { min-height: 100vh; margin-top: 70px; display: flex; flex-direction: column; align-items: center; justify-content: center; }
 .hero-content { text-align:center; max-width:1200px; padding:60px 40px; }
 .hero-title { font-family:'Georgia', serif; font-size: clamp(2.5rem, 10vw, 5rem); font-weight:900; color: var(--gold); text-transform: uppercase; letter-spacing: 3px; margin-bottom: 15px; }
 .hero-subtitle { font-size: clamp(1rem, 2.5vw, 1.3rem); color: var(--gold); text-transform: uppercase; letter-spacing: 2px; margin: 20px 0; font-family:'Georgia', serif; }
@@ -118,7 +118,7 @@ main { overflow: hidden; }
 .hero-badge {
   display: block;
   width: min(100%, 700px);
-  margin: 26px auto 0;
+  margin: 0 auto 26px;
   border-radius: 12px;
   background: #3a3835;
   background-image: linear-gradient(#3a3835, #3a3835), url("fur.jpg");
@@ -184,8 +184,8 @@ footer a { color: var(--gold); }
 </div>
 <main>
   <section class="hero">
-    <img src="sanctuary-badge.jpg" alt="A Real Sanctuary" class="hero-badge">
     <div class="hero-content">
+      <img src="sanctuary-badge.jpg" alt="A Real Sanctuary" class="hero-badge">
       <h1 class="hero-title">Raven's Nest Temple</h1>
       <h2 class="hero-subtitle">A place for the weary and downtrodden.</h2>
       <div class="door-grid">

@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>WitchMart | Raven's Nest Temple</title>
-<meta name="description" content="WitchMart: the official cooperative marketplace and mutual aid engine of Raven's Nest Temple Inc. Witches Co-op, vendors, Community Care, and the Feed the Homeless and Supply Fund.">
+<meta name="description" content="WitchMart: the official cooperative marketplace and mutual aid engine of Raven's Nest Temple Inc. Witches Co-op, vendors, Community Care, and the Feed the Homeless & Supply Fund are all part of the same sanctuary economy.">
 <meta name="theme-color" content="#070605">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,9 +23,10 @@
 html { scroll-behavior: smooth; }
 body {
   background-color: #070605;
-  background-image: linear-gradient(rgba(0,0,0,0.28), rgba(0,0,0,0.42)), url("knot-bg.jpg");
+  background-image: url("knot-bg.jpg");
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
   background-attachment: fixed;
   color: var(--text-light); font-family: 'Courier Prime', monospace; font-size: 16px; line-height: 1.7; overflow-x: hidden; min-height: 100vh;
 }
@@ -41,9 +42,12 @@ nav a:hover, nav a.active { color: var(--gold); }
 .page-subtitle { text-align:center; color:var(--warm-white); font-size:1.05rem; max-width:700px; margin:0 auto 50px; }
 .services-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:25px; margin-bottom:40px; }
 .card, .content-block, .cta-banner, .help-card, .contact-card, .panel, .pillar-card, .set-popup, #set-popup {
-  background: linear-gradient(#3a3835, #2c2b28) padding-box, url("fur.jpg") border-box;
+  background: #3a3835;
+  background-image: linear-gradient(#3a3835, #3a3835), url("fur.jpg");
+  background-origin: padding-box, border-box;
+  background-clip: padding-box, border-box;
   background-size: auto, 90px;
-  background-repeat: repeat;
+  background-repeat: repeat, repeat;
   border: 11px solid transparent;
   border-radius: 12px;
   box-shadow: none;
@@ -61,7 +65,7 @@ footer { padding:40px; text-align:center; border-top:2px solid var(--gold); colo
 footer p { margin:6px 0; }
 footer a { color: var(--gold); }
 footer .values { max-width:900px; margin:0 auto 12px; font-size:0.8rem; }
-@media (max-width:768px) { body { background-attachment: scroll; } header { padding:12px 20px; flex-direction: column; gap:12px; } nav { gap:15px; justify-content:center; } nav a { font-size:12px; } .container { margin-top:170px; padding:0 16px; } .card, .cta-banner, .content-block { padding:22px; } }
+@media (max-width:768px) { body { background-attachment: scroll; } header { padding:12px 20px; flex-direction: column; gap:12px; } nav { gap:15px; justify-content:center; } nav a { font-size:12px; } .container { padding:0 18px; } }
 </style>
 </head>
 <body>
@@ -80,11 +84,11 @@ footer .values { max-width:900px; margin:0 auto 12px; font-size:0.8rem; }
   <p class="page-subtitle">Connecting community craft, off-grid self-reliance, and direct mutual aid without administrative overhead.</p>
   <section class="content-block">
     <h2 class="section-heading">Community Marketplace &amp; Sanctuary</h2>
-    <p class="section-text">WitchMart is the community-driven arm of Raven's Nest Temple, dedicated to supporting independent practitioners, local artisans, and practical off-grid resiliency efforts with dignity, transparency, and mutual aid.</p>
+    <p class="section-text">WitchMart is the community-driven arm of Raven's Nest Temple, dedicated to supporting independent practitioners, local artisans, and practical off-grid resiliency efforts.</p>
   </section>
   <section class="content-block">
     <h2 class="section-heading">The WitchMart Hub</h2>
-    <p class="section-text">WitchMart is the official cooperative marketplace and mutual aid engine of Raven's Nest Temple Inc. Also at <a href="https://witchmart.org" style="color:var(--gold);">witchmart.org</a>, it brings together community care, direct trade, and cooperative exchange.</p>
+    <p class="section-text">WitchMart is the official cooperative marketplace and mutual aid engine of Raven's Nest Temple Inc. Also at <a href="https://witchmart.org" style="color:var(--gold);">witchmart.org</a>, the site exists to help people exchange skills, resources, and support on a practical, human scale.</p>
     <div class="services-grid">
       <div class="card">
         <h3>Witches Co-op</h3>
@@ -102,7 +106,7 @@ footer .values { max-width:900px; margin:0 auto 12px; font-size:0.8rem; }
     <h2 class="section-heading">WitchMart Vendors</h2>
     <p class="section-text">Vendors appear here after a person at the Temple approves them and they agree in writing to their listing.</p>
     <div class="services-grid">
-      <div class="card"><h3>Vendor listings coming soon</h3><p>No vendors are listed yet. To sell through WitchMart, email <a href="mailto:revjonbradley@ravensnesttemple.com?subject=WitchMart%20vendor" style="color:var(--gold);">revjonbradley@ravensnesttemple.com</a>.</p></div>
+      <div class="card"><h3>Vendor listings coming soon</h3><p>No vendors are listed yet. To sell through WitchMart, email <a href="mailto:revjonbradley@ravensnesttemple.com?subject=WitchMart%20vendor%20inquiry" style="color:var(--gold);">revjonbradley@ravensnesttemple.com</a> with your details.</p></div>
     </div>
   </section>
   <section class="content-block">
@@ -111,11 +115,11 @@ footer .values { max-width:900px; margin:0 auto 12px; font-size:0.8rem; }
   </section>
   <section class="content-block">
     <h2 class="section-heading">If a listing makes a profit</h2>
-    <p class="section-text">Anyone who lists here and makes a profit from that listing is asked to donate to Raven's Nest Temple. The gift goes to the Temple’s work: care, food, and the sanctuary. There is no set amount. Listings that do not make money are not asked.</p>
+    <p class="section-text">Anyone who lists here and makes a profit from that listing is asked to donate to Raven's Nest Temple. The gift goes to the Temple’s work: care, food, and the sanctuary infrastructure.</p>
   </section>
   <section class="content-block">
     <h2 class="section-heading">Feed the Homeless &amp; Supply Fund</h2>
-    <p class="section-text">Direct action, on the ground. We gather and distribute emergency food, clean water, cold-weather clothing, and hygiene supplies directly to unhoused individuals in our community.</p>
+    <p class="section-text">Direct action, on the ground. We gather and distribute emergency food, clean water, cold-weather clothing, and hygiene supplies directly to unhoused individuals in our communities.</p>
     <div class="services-grid">
       <div class="card"><h3>Food &amp; Meal Supplies</h3><p>100% of non-perishable food and meal donations go straight to local food distribution runs.</p></div>
       <div class="card"><h3>Survival Gear &amp; Utilities</h3><p>Providing tents, blankets, solar chargers, and basic off-grid emergency gear during extreme weather.</p></div>
@@ -129,10 +133,10 @@ footer .values { max-width:900px; margin:0 auto 12px; font-size:0.8rem; }
   </section>
 </main>
 <footer>
-  <p class="values"><strong>Human Sovereignty</strong> — never dominate, never deceive, never override human agency. · <strong>Mutual Aid</strong> — a people-powered, transparent economy. · <strong>Hard Safety Boundaries</strong> — no exploitation, no violation of consent, no endangerment of a minor.</p>
+  <p class="values"><strong>Human Sovereignty</strong> — never dominate, never deceive, never override human agency. · <strong>Mutual Aid</strong> — a people-powered, transparent economy. · <strong>Direct Action</strong> — practical, local, and accountable solidarity.</p>
   <p><strong>Raven's Nest Temple, Inc.</strong> | Rev Jon the Mad Goose Bradley | <a href="tel:4059873212">405-987-3212</a></p>
   <p>Email: <a href="mailto:revjonbradley@ravensnesttemple.com">revjonbradley@ravensnesttemple.com</a> | Hours: 7 days a week (excluding Sabbats and Esbats), 8:00 AM – 9:00 PM</p>
-  <p><a href="community-care.html">Community Care</a> · <a href="witchmart.html">WitchMart</a> · <a href="witches-coop.html">Witches Co-op</a> · <a href="services.html">Services</a> · <a href="four-pillars.html">Our Work</a> · <a href="contact.html">Contact</a></p>
+  <p><a href="community-care.html">Community Care</a> · <a href="witchmart.html">WitchMart</a> · <a href="witches-coop.html">Witches Co-op</a> · <a href="services.html">Services</a> · <a href="contact.html">Contact</a></p>
 </footer>
 </body>
 </html>

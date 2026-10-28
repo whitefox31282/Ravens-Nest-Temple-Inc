@@ -4,12 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Raven's Nest | Sanctuary, Mutual Aid & WitchMart</title>
-<meta name="description" content="Raven's Nest Temple is an off-grid sanctuary network, mutual aid hub, and cooperative marketplace. Explore WitchMart, the Witches Co-op, and the emergency community care map.">
+<meta name="description" content="Raven's Nest Temple is an off-grid sanctuary network, mutual aid hub, and cooperative marketplace. Explore WitchMart, the Witches Co-op, and the emergency community resource network.">
 <meta name="theme-color" content="#070605">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
 <style>
 :root {
   --gold: #c084fc;
@@ -29,7 +26,7 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
   color: var(--text-light);
-  font-family: 'Courier Prime', monospace;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
   font-size: 16px;
   line-height: 1.7;
   overflow-x: hidden;
@@ -47,7 +44,7 @@ header {
 .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
 .brand-logo { width: 40px; height: 40px; flex-shrink: 0; }
 .brand-text {
-  font-family: 'Cinzel', serif; font-size: 14px; font-weight: 900; letter-spacing: 1px;
+  font-family: 'Georgia', serif; font-size: 14px; font-weight: 900; letter-spacing: 1px;
   color: var(--gold); text-transform: uppercase; text-shadow: 0 0 15px rgba(192,132,252,0.25); line-height: 1.1;
 }
 nav { display: flex; gap: 30px; flex-wrap: wrap; }
@@ -62,17 +59,18 @@ main { overflow: hidden; }
 }
 #set-sloth img { width: 100%; height: auto; display: block; }
 #set-popup {
-  position: fixed; right: 20px; bottom: 20px; z-index: 1000; background: linear-gradient(#3a3835, #2c2b28) padding-box, url("fur.jpg") border-box; background-size: auto, 90px; border: 11px solid transparent; border-radius: 12px; box-shadow: 0 18px 40px rgba(0,0,0,0.26); max-width: 280px; padding: 16px; display: none; flex-direction: column; gap: 12px; }
+  position: fixed; right: 20px; bottom: 20px; z-index: 1000; background: linear-gradient(#3a3835, #2c2b28) padding-box, url("fur.jpg") border-box; background-size: auto, 90px; border: 11px solid transparent; border-radius: 12px; padding: 18px; width: min(360px, calc(100vw - 24px)); box-shadow: 0 0 30px rgba(0,0,0,0.35); display: none; flex-direction: column; gap: 12px;
+}
 #set-popup.active { display: flex; }
 .set-quote { color: var(--warm-white); font-size: 14px; line-height: 1.5; }
 .set-options { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
 .set-btn {
-  background: var(--gold); color: #070605; border: none; border-radius: 6px; padding: 8px 10px; font-family: 'Cinzel', serif; font-size: 10px; text-transform: uppercase; line-height: 1.2; font-weight: 700; cursor: pointer; text-align: center; text-decoration: none;
+  background: var(--gold); color: #070605; border: none; border-radius: 6px; padding: 8px 10px; font-family: 'Georgia', serif; font-size: 10px; text-transform: uppercase; line-height: 1.2; font-weight: 700; cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; justify-content: center; text-align: center;
 }
 .hero { min-height: 100vh; margin-top: 70px; display: flex; align-items: center; justify-content: center; }
 .hero-content { text-align:center; max-width:1200px; padding:60px 40px; }
-.hero-title { font-family:'Cinzel', serif; font-size: clamp(2.5rem, 10vw, 5rem); font-weight:900; color: var(--gold); text-transform: uppercase; letter-spacing: 3px; margin-bottom: 15px; }
-.hero-subtitle { font-size: clamp(1rem, 2.5vw, 1.3rem); color: var(--gold); text-transform: uppercase; letter-spacing: 2px; margin: 20px 0; font-family:'Cinzel', serif; }
+.hero-title { font-family:'Georgia', serif; font-size: clamp(2.5rem, 10vw, 5rem); font-weight:900; color: var(--gold); text-transform: uppercase; letter-spacing: 3px; margin-bottom: 15px; }
+.hero-subtitle { font-size: clamp(1rem, 2.5vw, 1.3rem); color: var(--gold); text-transform: uppercase; letter-spacing: 2px; margin: 20px 0; font-family:'Georgia', serif; }
 .hero-description { font-size:1.05rem; line-height:1.8; max-width:700px; margin: 30px auto 24px; color: var(--warm-white); }
 .door-grid {
   display: grid;
@@ -102,7 +100,7 @@ main { overflow: hidden; }
   filter: brightness(1.05);
 }
 .door-card h3 {
-  font-family:'Cinzel', serif;
+  font-family:'Georgia', serif;
   font-size: 1.2rem;
   margin-bottom: 8px;
   color: var(--gold);
@@ -128,22 +126,6 @@ main { overflow: hidden; }
   border: 11px solid transparent;
   box-shadow: none;
 }
-.pillar-grid { max-width: 1200px; margin: 0 auto; padding: 40px 20px 10px; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
-.pillar-card {
-  background: #3a3835;
-  background-image: linear-gradient(#3a3835, #3a3835), url("fur.jpg");
-  background-origin: padding-box, border-box;
-  background-clip: padding-box, border-box;
-  background-size: auto, 90px;
-  background-repeat: repeat, repeat;
-  border: 11px solid transparent;
-  border-radius: 12px;
-  padding: 22px;
-  color: var(--warm-white);
-  box-shadow: none;
-}
-.pillar-card h3 { font-family:'Cinzel', serif; color: var(--gold); margin-bottom:8px; text-transform: uppercase; letter-spacing: 1px; }
-.pillar-card a { color: var(--gold); text-decoration: none; }
 .infrastructure-section { padding: 80px 60px; max-width: 1200px; margin: 0 auto; display: flex; justify-content: center; align-items: center; }
 .work-plaque { width: 100%; max-width: 100%; height: auto; display: block; border-radius: 12px; background: #3a3835; background-image: linear-gradient(#3a3835, #3a3835), url("fur.jpg"); background-origin: padding-box, border-box; background-clip: padding-box, border-box; background-size: auto, 90px; background-repeat: repeat, repeat; border: 11px solid transparent; }
 .temple-footer { padding: 28px 24px 36px; border-top: 2px solid var(--gold); background: #100e0c; color: var(--text-light); }
@@ -182,8 +164,10 @@ footer a { color: var(--gold); }
   <img src="set-sloth-clear.png" alt="Set the Sloth">
 </div>
 <div class="set-popup" id="set-popup">
-  <div class="set-quote">Pardon me, friend, would you mind if an ol' stoner has a word? If you're overwhelmed or just looking for something specific, I can help point the way.</div>
+  <div class="set-quote">Pardon me, friend. I only know what is on this site. Pick a door.</div>
   <div class="set-options">
+    <a href="get-help.html" class="set-btn">Get help</a>
+    <a href="heard.html" class="set-btn">Rumors</a>
     <a href="community-care.html" class="set-btn">Care</a>
     <a href="witchmart.html" class="set-btn">WitchMart</a>
     <a href="witches-coop.html" class="set-btn">Co-op</a>
@@ -201,49 +185,35 @@ footer a { color: var(--gold); }
           <p>Call the temple line for crisis support, spiritual counsel, or a safe place to start.</p>
         </a>
         <a href="community-care.html" class="door-card">
-          <h3>Food, charging, shelter</h3>
-          <p>Community Care lists food runs, phone charging, and shelter warnings. If a list is empty, call.</p>
+          <h3>Food, shelters, clinics, and a place to charge a phone.</h3>
+          <p>Call before you go. Unchecked notes are on the rumor page.</p>
         </a>
         <a href="witchmart.html" class="door-card">
           <h3>Trade and practice</h3>
-          <p>WitchMart is the marketplace. The Witches Co-op is for teachers and allied traditions.</p>
+          <p>WitchMart is the marketplace. The Witches Co-op is for teachers and allied traditions. If a listing makes a profit, a donation to the Temple is all we ask.</p>
         </a>
       </div>
       <img src="sanctuary-badge.jpg" alt="A Real Sanctuary" class="hero-badge">
     </div>
   </section>
-  <div class="pillar-grid">
-    <article class="pillar-card">
-      <a href="get-help.html"><h3>I need help</h3></a>
-      <p>Reach out for practical support, spiritual counsel, and a clear path through a hard moment.</p>
-    </article>
-    <article class="pillar-card">
-      <a href="community-care.html"><h3>Food, charging, shelter</h3></a>
-      <p>Fast community resources for food runs, charging, shelter warnings, and emergency aid.</p>
-    </article>
-    <article class="pillar-card">
-      <a href="witchmart.html"><h3>Trade and practice</h3></a>
-      <p>Find mutual aid, skill exchange, vendor listings, and practical ways to support each other.</p>
-    </article>
-  </div>
   <section class="infrastructure-section">
     <img loading="lazy" decoding="async" src="the-work-plaque.jpg" alt="The Work - Our Infrastructure Vision" class="work-plaque">
   </section>
 </main>
 <footer class="temple-footer">
   <div class="temple-footer-inner">
-    <p><strong>Raven's Nest Temple &amp; WitchMart</strong> — Built on Human Sovereignty, Mutual Aid, and Hard Safety Boundaries against exploitation.</p>
-    <p>Raven's Nest Temple Inc. is an Oklahoma non-profit sanctuary entity. Community care, trade, and public listings operate under Temple ethics and the shared administrative discipline of the community.</p>
+    <p>Raven's Nest Temple Inc. is an Oklahoma non-profit sanctuary. No one here overrides your choices. Help moves between people. We do not exploit anyone.</p>
     <div class="links">
-      <a href="community-care.html">Community Care Hub</a>
-      <a href="community-care.html#charging">Charging &amp; Food Maps</a>
-      <a href="community-care.html#shelter">Shelter Advisories</a>
+      <a href="get-help.html">Get help</a>
+      <a href="community-care.html">Community care</a>
+      <a href="heard.html">Heard</a>
       <a href="witchmart.html">WitchMart</a>
       <a href="witches-coop.html">Witches Co-op</a>
-      <a href="services.html">Services</a>
-      <a href="four-pillars.html">Our Work</a>
       <a href="contact.html">Contact</a>
     </div>
+    <p>405-987-3212</p>
+    <p>revjonbradley@ravensnesttemple.com</p>
+    <p>In danger now call 911. In a mental-health crisis call or text 988.</p>
   </div>
 </footer>
 <script>

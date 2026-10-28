@@ -3,169 +3,72 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Raven's Nest Witches Co-op</title>
-<meta name="description" content="Raven's Nest Witches Co-op — a cooperative network for practitioners, teachers, and allied traditions working in direct synergy with WitchMart and Raven's Nest Temple.">
+<title>Community Care | Raven's Nest Temple</title>
+<meta name="description" content="Food runs, phone charging spots and shelter warnings from Raven's Nest Temple and WitchMart. A small, fast page for a low battery and a weak signal.">
+<meta name="theme-color" content="#000000">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
 <style>
-:root {
-  --bg: #090d13;
-  --panel: #151d2a;
-  --panel-2: #1d2937;
-  --gold: #d4af37;
-  --amber: #f3ba63;
-  --purple: #caa8ff;
-  --text: #edf2f9;
-  --muted: #c0cbe0;
-  --danger: #ff8a7a;
-  --border: rgba(212,175,55,.4);
-}
-* { box-sizing: border-box; }
-body {
-  margin: 0;
-  background: linear-gradient(180deg, #090d13 0%, #101b2a 100%);
-  color: var(--text);
-  font-family: Arial, Helvetica, sans-serif;
-  line-height: 1.7;
-}
-a { color: var(--gold); text-decoration: none; }
-a:hover { text-decoration: underline; }
-main {
-  max-width: 980px;
-  margin: 0 auto;
-  padding: 56px 20px 40px;
-}
-header {
-  text-align: center;
-  margin-bottom: 26px;
-}
-header h1 {
-  margin: 0 0 8px;
-  font-size: clamp(2rem, 5vw, 3.4rem);
-  color: var(--gold);
-  letter-spacing: 0.04em;
-}
-header p {
-  margin: 0 auto;
-  max-width: 720px;
-  color: var(--muted);
-  font-size: 1.02rem;
-}
-.panel {
-  background: rgba(21,29,42,.94);
-  border: 1px solid var(--border);
-  border-radius: 14px;
-  padding: 22px 20px;
-  margin: 18px 0;
-}
-.panel h2 {
-  margin: 0 0 10px;
-  font-size: 1.2rem;
-  color: var(--gold);
-}
-.panel p, .panel li {
-  color: var(--muted);
-  font-size: 0.98rem;
-}
-.ethics {
-  border-color: rgba(255,138,122,.6);
-  background: rgba(44, 22, 22, 0.6);
-}
-.ethics h2 { color: var(--amber); }
-.ethics strong { color: var(--text); }
-ul {
-  margin: 10px 0 0;
-  padding-left: 20px;
-}
-.action {
-  margin-top: 26px;
-  text-align: center;
-}
-.action a {
-  display: inline-block;
-  background: linear-gradient(90deg, #8a6cff 0%, #b38aff 100%);
-  color: #fff;
-  border-radius: 10px;
-  padding: 14px 22px;
-  font-weight: 700;
-}
-.site-footer {
-  border-top: 1px solid var(--border);
-  background: rgba(15, 21, 28, 0.96);
-  padding: 26px 18px 36px;
-}
-.site-footer__inner {
-  max-width: 760px;
-  margin: 0 auto;
-  text-align: center;
-}
-.site-footer__inner p {
-  margin: 8px 0;
-  color: var(--muted);
-  font-size: 0.9rem;
-}
-.site-footer__links {
-  list-style: none;
-  margin: 14px 0 0;
-  padding: 0;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 12px 18px;
-}
-.site-footer__links a {
-  color: var(--text);
-  font-size: 0.9rem;
-}
-@media (max-width: 640px) {
-  main { padding-top: 44px; }
-  .panel { padding: 18px 16px; }
-  .site-footer__links { gap: 8px 12px; }
-}
+body{margin:0;background:#000;color:#fff;font:17px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
+a{color:#ffd75e}
+.top{border-bottom:2px solid #ffd75e;padding:10px 16px}
+.top a{font-weight:700;text-decoration:none;margin-right:12px}
+.wrap{max-width:680px;margin:0 auto;padding:8px 16px 32px}
+h1{font-size:1.6rem;margin:14px 0 6px}
+h2{font-size:1.25rem;margin:28px 0 8px;padding-bottom:4px;border-bottom:1px solid #666}
+.jump a{display:inline-block;margin:6px 8px 6px 0;padding:10px 14px;border:2px solid #ffd75e;border-radius:6px;text-decoration:none;font-weight:700}
+.urgent{border:2px solid #ff6b6b;border-radius:6px;padding:10px 12px;margin:14px 0}
+.item{border:1px solid #777;border-radius:6px;padding:10px 12px;margin:10px 0}
+.item b{color:#ffd75e}
+.warn{border:2px solid #ff9b45}
+.warn b{color:#ff9b45}
+.meta,.none{color:#ccc}
+.values{color:#ccc;font-size:.9rem}
+.foot{border-top:1px solid #666;margin-top:32px;padding-top:10px;font-size:.95rem}
 </style>
 </head>
 <body>
-  <main>
-    <header>
-      <h1>Raven's Nest Witches Co-op</h1>
-      <p>A cooperative network for traditional orders, independent practitioners, teachers, and mystics working in direct synergy with WitchMart and Raven's Nest Temple.</p>
-    </header>
+<div class="top">
+  <a href="index.html">Raven's Nest Temple</a>
+  <a href="get-help.html">Get help</a>
+  <a href="community-care.html">Community care</a>
+  <a href="witchmart.html">WitchMart</a>
+  <a href="witches-coop.html">Witches Co-op</a>
+</div>
+<main class="wrap">
+<h1>Community Care</h1>
+<p>Food, phone charging and shelter warnings. This page is small on purpose: no pictures, so it loads fast on a low battery and a weak signal.</p>
+<p class="urgent"><b>In danger right now? Call <a href="tel:911">911</a>.</b><br>Thinking about suicide or in a crisis? Call or text <a href="tel:988">988</a> (Suicide &amp; Crisis Lifeline).<br>Need a listening ear? Call or text <a href="tel:741741">741-741</a> (Text 4 Help).</p>
 
-    <section class="panel">
-      <h2>Founding Allies</h2>
-      <p>We proudly stand shoulder-to-shoulder with our founding allies, including the Temple of Hecate and the Altar of the Moon.</p>
-    </section>
+<p class="item"><b>Integrated Temple Path</b><br>This Community Care page is the official fast-response route for the WitchMart ecosystem: emergency food runs, charging stations, shelter warnings, and Feed the Homeless support are organized here under the Temple's single safety and ethics layer.</p>
+<p class="item"><b>Safety &amp; Ethics</b><br>The Temple's public and private resource listings are aligned with <strong>Human Sovereignty</strong>, <strong>Mutual Aid</strong>, and <strong>Hard Safety Boundaries</strong>. A person at the Temple reviews every listing before it goes public.</p>
 
-    <section class="panel ethics">
-      <h2>Standards of Alignment &amp; Code of Ethics</h2>
-      <p><strong>Mission:</strong> Betterment, protection, and upliftment of humanity.</p>
-      <ul>
-        <li><strong>Zero Tolerance:</strong> selfishness, exploitation, gatekeeping for profit, or spiritual coercion.</li>
-        <li><strong>Admin Veto Power:</strong> membership is a privilege, not a right. Raven's Nest Temple reserves the absolute right to review, deny, revoke, or ban any listing at any time.</li>
-        <li><strong>Shared Safety Layer:</strong> all applications and listings flow through the <code>admin_approval_queue</code> and require consent verification before public exposure when relevant.</li>
-      </ul>
-    </section>
+<p class="jump"><a href="#food">Food runs</a><a href="#charging">Charging</a><a href="#shelter">Shelter warnings</a></p>
 
-    <section class="panel">
-      <h2>Co-op Intake</h2>
-      <p>Practitioners, teachers, and allied traditions can submit their profile for Temple review through the shared approval queue. We prioritize dignity, safety, consent, and community service in all curation decisions.</p>
-    </section>
+<h2 id="food">Food runs</h2>
+<!-- QUEUE:food_run:START -->
+<p class="none">No food runs are posted right now. Call the temple line to ask about the next one.</p>
+<!-- QUEUE:food_run:END -->
 
-    <div class="action">
-      <a href="contact.html">Submit Practitioner / Class Application →</a>
-    </div>
-  </main>
+<h2 id="charging">Phone charging</h2>
+<!-- QUEUE:charging_station:START -->
+<p class="none">No charging spots are posted right now.</p>
+<!-- QUEUE:charging_station:END -->
 
-  <footer class="site-footer" aria-label="Temple footer">
-    <div class="site-footer__inner">
-      <p><strong>Raven's Nest Temple &amp; WitchMart</strong> — Built on Human Sovereignty, Mutual Aid, and Hard Safety Boundaries against exploitation.</p>
-      <p>Raven's Nest Temple Inc. • Oklahoma Non-Profit Sanctuary Entity</p>
-      <ul class="site-footer__links" aria-label="Quick links">
-        <li><a href="community-care.html">Community Care Hub</a></li>
-        <li><a href="community-care.html#charging">Charging &amp; Food</a></li>
-        <li><a href="community-care.html#shelter">Shelter Advisories</a></li>
-        <li><a href="witches-coop.html">Witches Co-op</a></li>
-        <li><a href="contact.html">Submit / Report</a></li>
-      </ul>
-    </div>
-  </footer>
+<h2 id="shelter">Shelter warnings</h2>
+<!-- QUEUE:shelter_advisory:START -->
+<p class="none">No shelter warnings are posted right now.</p>
+<!-- QUEUE:shelter_advisory:END -->
+<p class="meta">Every warning shows the date it ends. Old warnings come off this page.</p>
+
+<h2>Feed the Homeless &amp; Supply Fund</h2>
+<p>Direct action, on the ground. We gather and distribute emergency food, clean water, cold-weather clothing, and hygiene supplies directly to unhoused individuals in our community.</p>
+<p>To give food or supplies, or to post a food run, charging spot or shelter warning: call <a href="tel:4059873212">405-987-3212</a> or email <a href="mailto:revjonbradley@ravensnesttemple.com?subject=Community%20Care%20listing">revjonbradley@ravensnesttemple.com</a>. All submissions are reviewed through the Temple's shared approval queue.</p>
+
+<div class="foot">
+<p class="values"><b>Human Sovereignty</b> — never dominate, never deceive, never override human agency. · <b>Mutual Aid</b> — a people-powered, transparent economy. · <b>Hard Safety Boundaries</b> — no exploitation, coercion, or unsafe access.</p>
+<p>Raven's Nest Temple, Inc. · <a href="witchmart.html">WitchMart</a> (the Temple's cooperative marketplace and mutual aid engine) · <a href="witches-coop.html">Witches Co-op</a></p>
+<p class="meta"><!-- QUEUE:updated:START -->Page updated 2026-10-26<!-- QUEUE:updated:END --></p>
+</div>
+</main>
 </body>
 </html>

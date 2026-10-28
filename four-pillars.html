@@ -3,243 +3,170 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Our Work | Raven's Nest Temple</title>
-<meta name="description" content="The Four Pillars of Raven's Nest Temple: Sanctuary, Sovereignty, Mutual Aid, and Sustainable Infrastructure.">
-<meta name="theme-color" content="#0f1f2e">
-<link rel="icon" href="favicon.svg" type="image/svg+xml">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
+<title>Raven's Nest Witches Co-op</title>
+<meta name="description" content="Raven's Nest Witches Co-op — a cooperative network for practitioners, teachers, and allied traditions working in direct synergy with WitchMart and Raven's Nest Temple.">
 <style>
 :root {
+  --bg: #090d13;
+  --panel: #151d2a;
+  --panel-2: #1d2937;
   --gold: #d4af37;
-  --copper: #b87333;
-  --blue-deep: #1a3a52;
-  --blue-dark: #0f1f2e;
-  --warm-white: #f5ede3;
-  --fire-orange: #d97706;
-  --text-light: #f5ede3;
-  --text-dim: #b8a895;
+  --amber: #f3ba63;
+  --purple: #caa8ff;
+  --text: #edf2f9;
+  --muted: #c0cbe0;
+  --danger: #ff8a7a;
+  --border: rgba(212,175,55,.4);
 }
-
-* { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-
+* { box-sizing: border-box; }
 body {
-  background: linear-gradient(135deg, var(--blue-dark) 0%, var(--blue-deep) 40%, #051015 100%);
-  color: var(--text-light);
-  font-family: 'Courier Prime', monospace;
-  font-size: 16px;
+  margin: 0;
+  background: linear-gradient(180deg, #090d13 0%, #101b2a 100%);
+  color: var(--text);
+  font-family: Arial, Helvetica, sans-serif;
   line-height: 1.7;
-  overflow-x: hidden;
 }
-
+a { color: var(--gold); text-decoration: none; }
+a:hover { text-decoration: underline; }
+main {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 56px 20px 40px;
+}
 header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 950;
-  background: rgba(15, 31, 46, 0.97);
-  backdrop-filter: blur(12px);
-  border-bottom: 3px solid var(--gold);
-  padding: 18px 50px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  box-shadow: 0 0 40px rgba(212, 175, 55, 0.2);
-}
-
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  text-decoration: none;
-  transition: all 0.3s;
-}
-
-.brand-logo {
-  width: 40px;
-  height: 40px;
-  flex-shrink: 0;
-}
-
-.brand-text {
-  font-family: 'Cinzel', serif;
-  font-size: 14px;
-  font-weight: 900;
-  letter-spacing: 1px;
-  color: var(--gold);
-  text-transform: uppercase;
-  text-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
-  line-height: 1.1;
-}
-
-nav {
-  display: flex;
-  gap: 30px;
-}
-
-nav a {
-  color: var(--text-light);
-  text-decoration: none;
-  font-size: 11px;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  position: relative;
-  transition: all 0.3s;
-  cursor: pointer;
-}
-
-nav a:hover, nav a.active {
-  color: var(--gold);
-}
-
-.container {
-  max-width: 1000px;
-  margin: 140px auto 80px;
-  padding: 0 30px;
-}
-
-.page-title {
-  font-family: 'Cinzel', serif;
-  font-size: clamp(2rem, 5vw, 3rem);
-  color: var(--gold);
   text-align: center;
-  margin-bottom: 20px;
-  text-transform: uppercase;
-  letter-spacing: 2px;
+  margin-bottom: 26px;
 }
-
-.page-subtitle {
-  text-align: center;
-  color: var(--text-dim);
-  font-size: 1.1rem;
-  margin-bottom: 50px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-.pillar-card {
-  background: linear-gradient(135deg, rgba(26, 58, 82, 0.7) 0%, rgba(15, 31, 46, 0.9) 100%);
-  border: 2px solid rgba(212, 175, 55, 0.4);
-  border-radius: 8px;
-  padding: 40px;
-  margin-bottom: 30px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-}
-
-.pillar-card h2 {
-  font-family: 'Cinzel', serif;
+header h1 {
+  margin: 0 0 8px;
+  font-size: clamp(2rem, 5vw, 3.4rem);
   color: var(--gold);
-  font-size: 1.8rem;
-  margin-bottom: 15px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 0.04em;
 }
-
-.pillar-card p {
-  color: var(--warm-white);
-  line-height: 1.8;
-  margin-bottom: 15px;
+header p {
+  margin: 0 auto;
+  max-width: 720px;
+  color: var(--muted);
+  font-size: 1.02rem;
 }
-
-footer {
-  padding: 40px;
+.panel {
+  background: rgba(21,29,42,.94);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 22px 20px;
+  margin: 18px 0;
+}
+.panel h2 {
+  margin: 0 0 10px;
+  font-size: 1.2rem;
+  color: var(--gold);
+}
+.panel p, .panel li {
+  color: var(--muted);
+  font-size: 0.98rem;
+}
+.ethics {
+  border-color: rgba(255,138,122,.6);
+  background: rgba(44, 22, 22, 0.6);
+}
+.ethics h2 { color: var(--amber); }
+.ethics strong { color: var(--text); }
+ul {
+  margin: 10px 0 0;
+  padding-left: 20px;
+}
+.action {
+  margin-top: 26px;
   text-align: center;
-  border-top: 2px solid var(--gold);
-  color: var(--text-dim);
-  font-size: 0.85rem;
-  background: rgba(15, 31, 46, 0.8);
 }
-
-footer p {
-  margin: 6px 0;
+.action a {
+  display: inline-block;
+  background: linear-gradient(90deg, #8a6cff 0%, #b38aff 100%);
+  color: #fff;
+  border-radius: 10px;
+  padding: 14px 22px;
+  font-weight: 700;
 }
-
-@media (max-width: 768px) {
-  header {
-    padding: 12px 20px;
-    flex-direction: column;
-    gap: 12px;
-  }
-  nav {
-    gap: 15px;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  nav a {
-    font-size: 12px;
-  }
-  .container {
-    margin-top: 170px;
-    padding: 0 15px;
-  }
-  .pillar-card {
-    padding: 20px;
-  }
+.site-footer {
+  border-top: 1px solid var(--border);
+  background: rgba(15, 21, 28, 0.96);
+  padding: 26px 18px 36px;
 }
-
-/* WitchMart integration 2026-10-25: footer values + links; phones: header scrolls with the page. */
-footer a { color: var(--warm-white); }
-footer .values { max-width: 900px; margin: 0 auto 12px; font-size: 0.8rem; }
-footer .values strong { color: var(--gold); }
-@media (max-width: 768px) {
-  header { position: relative; }
-  .container { margin-top: 30px; }
-  .hero { margin-top: 0; }
+.site-footer__inner {
+  max-width: 760px;
+  margin: 0 auto;
+  text-align: center;
+}
+.site-footer__inner p {
+  margin: 8px 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+.site-footer__links {
+  list-style: none;
+  margin: 14px 0 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px 18px;
+}
+.site-footer__links a {
+  color: var(--text);
+  font-size: 0.9rem;
+}
+@media (max-width: 640px) {
+  main { padding-top: 44px; }
+  .panel { padding: 18px 16px; }
+  .site-footer__links { gap: 8px 12px; }
 }
 </style>
 </head>
 <body>
+  <main>
+    <header>
+      <h1>Raven's Nest Witches Co-op</h1>
+      <p>A cooperative network for traditional orders, independent practitioners, teachers, and mystics working in direct synergy with WitchMart and Raven's Nest Temple.</p>
+    </header>
 
-<header>
-  <a href="index.html" class="brand">
-    <img src="raven-logo.jpg" alt="Raven's Nest Temple Inc" class="brand-logo">
-    <span class="brand-text">RAVEN'S NEST<br>TEMPLE INC</span>
-  </a>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="services.html">Services</a>
-    <a href="witchmart.html">WitchMart</a>
-    <a href="community-care.html">Community Care</a>
-    <a href="four-pillars.html" class="active">Our Work</a>
-    <a href="get-help.html">Get Help</a>
-    <a href="contact.html">Contact</a>
-  </nav>
-</header>
+    <section class="panel">
+      <h2>Founding Allies</h2>
+      <p>We proudly stand shoulder-to-shoulder with our founding allies, including the Temple of Hecate and the Altar of the Moon.</p>
+    </section>
 
-<main class="container">
-  <h1 class="page-title">Our Work & Four Pillars</h1>
-  <p class="page-subtitle">The Foundation of Our Sovereignty and Community Action</p>
+    <section class="panel ethics">
+      <h2>Standards of Alignment &amp; Code of Ethics</h2>
+      <p><strong>Mission:</strong> Betterment, protection, and upliftment of humanity.</p>
+      <ul>
+        <li><strong>Zero Tolerance:</strong> selfishness, exploitation, gatekeeping for profit, or spiritual coercion.</li>
+        <li><strong>Admin Veto Power:</strong> membership is a privilege, not a right. Raven's Nest Temple reserves the absolute right to review, deny, revoke, or ban any listing at any time.</li>
+        <li><strong>Shared Safety Layer:</strong> A person at the Temple reviews every listing before it goes public.</li>
+        <li><strong>Profit Donation Ask:</strong> If a listing makes a profit, we ask for a donation to the Temple so the work can continue. No set amount. Listings that do not make money are not asked.</li>
+      </ul>
+    </section>
 
-  <div class="pillar-card">
-    <h2>1. Sanctuary & Safe Harbor</h2>
-    <p>Creating physical and spiritual refuge for those escaping oppressive systems, domestic disruption, or societal marginalization. Our sanctuary provides a safe space centered on mutual respect, personal autonomy, and spiritual freedom.</p>
-  </div>
+    <section class="panel">
+      <h2>Co-op Intake</h2>
+      <p>Practitioners, teachers, and allied traditions can submit their profile for Temple review through the shared approval queue. We prioritize dignity, safety, consent, and community service in every alignment.</p>
+    </section>
 
-  <div class="pillar-card">
-    <h2>2. Sovereign Infrastructure</h2>
-    <p>Building independent systems for survival and thriving. From off-grid power generation and clean water sourcing to sustainable food production and resilient dwelling spaces, we lay the groundwork for a future that governments cannot gatekeep.</p>
-  </div>
+    <div class="action">
+      <a href="contact.html">Submit Practitioner / Class Application →</a>
+    </div>
+  </main>
 
-  <div class="pillar-card">
-    <h2>3. Mutual Aid & Direct Action</h2>
-    <p>Taking care of our own through direct community support. Through initiatives like our WitchMart co-op and "Feed the Homeless" relief operations, we distribute food, gear, and resources directly where they are needed without administrative red tape.</p>
-  </div>
-
-  <div class="pillar-card">
-    <h2>4. Spiritual Autonomy & Community Craft</h2>
-    <p>Fostering traditional crafts, ritual arts, and independent spiritual study. We offer a community space for practitioners to connect, learn, and practice freely without dogma or hierarchical control.</p>
-  </div>
-</main>
-
-<footer>
-  <p class="values"><strong>Human Sovereignty</strong> — never dominate, never deceive, never override human agency. · <strong>Mutual Aid</strong> — a people-powered, transparent economy. · <strong>Hard Safety Boundaries</strong> — no exploitation, no violation of consent, no endangerment of a minor.</p>
-  <p><strong>Raven's Nest Temple, Inc.</strong> | Rev Jon the Mad Goose Bradley | <a href="tel:4059873212">405-987-3212</a></p>
-  <p>Email: <a href="mailto:revmadgoose@proton.me">revmadgoose@proton.me</a> | Hours: 7 days a week (excluding Sabbats and Esbats), 8:00 AM – 9:00 PM</p>
-  <p><a href="community-care.html">Community Care</a> · <a href="witchmart.html">WitchMart</a> · <a href="witches-coop.html">Witches Co-op</a> · <a href="https://witchmart.org">witchmart.org</a></p>
-</footer>
-
+  <footer class="site-footer" aria-label="Temple footer">
+    <div class="site-footer__inner">
+      <p><strong>Raven's Nest Temple &amp; WitchMart</strong> — Built on Human Sovereignty, Mutual Aid, and Hard Safety Boundaries against exploitation.</p>
+      <p>Raven's Nest Temple Inc. • Oklahoma Non-Profit Sanctuary Entity</p>
+      <ul class="site-footer__links" aria-label="Quick links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="get-help.html">Get help</a></li>
+        <li><a href="community-care.html">Community care</a></li>
+        <li><a href="witchmart.html">WitchMart</a></li>
+        <li><a href="witches-coop.html">Witches Co-op</a></li>
+      </ul>
+    </div>
+  </footer>
 </body>
 </html>

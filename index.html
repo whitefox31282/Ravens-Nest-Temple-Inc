@@ -94,7 +94,7 @@ nav a {
   cursor: pointer;
 }
 
-nav a:hover {
+nav a:hover, nav a.active {
   color: var(--gold);
 }
 
@@ -324,6 +324,15 @@ nav a:hover {
   font-size: 0.98rem;
 }
 
+.pillar-card a {
+  color: var(--gold);
+  text-decoration: none;
+}
+
+.pillar-card a:hover {
+  text-decoration: underline;
+}
+
 .infrastructure-section {
   padding: 80px 60px;
   max-width: 1200px;
@@ -345,55 +354,6 @@ nav a:hover {
 }
 
 .work-plaque:hover {
-  transform: scale(1.02);
-  filter: drop-shadow(0 25px 75px rgba(0, 0, 0, 0.8)) drop-shadow(0 0 50px rgba(217, 119, 6, 0.5));
-}
-
-.pathways-section {
-  padding: 80px 40px;
-  max-width: 1400px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.pathways-visual {
-  max-width: 100%;
-  width: 100%;
-  height: auto;
-  display: block;
-  filter: drop-shadow(0 20px 60px rgba(0, 0, 0, 0.7)) drop-shadow(0 0 40px rgba(217, 119, 6, 0.3));
-  transition: transform 0.3s ease, filter 0.3s ease;
-  border-radius: 8px;
-}
-
-.pathways-visual:hover {
-  transform: scale(1.02);
-  filter: drop-shadow(0 25px 75px rgba(0, 0, 0, 0.8)) drop-shadow(0 0 50px rgba(217, 119, 6, 0.5));
-}
-
-.declaration-section {
-  padding: 80px 40px;
-  background: linear-gradient(180deg, rgba(217, 119, 6, 0.08) 0%, rgba(212, 175, 55, 0.04) 100%);
-  text-align: center;
-  border-top: 2px solid var(--gold);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.declaration-visual {
-  max-width: 100%;
-  width: 100%;
-  height: auto;
-  display: block;
-  filter: drop-shadow(0 20px 60px rgba(0, 0, 0, 0.7)) drop-shadow(0 0 40px rgba(217, 119, 6, 0.3));
-  transition: transform 0.3s ease, filter 0.3s ease;
-  border-radius: 8px;
-}
-
-.declaration-visual:hover {
   transform: scale(1.02);
   filter: drop-shadow(0 25px 75px rgba(0, 0, 0, 0.8)) drop-shadow(0 0 50px rgba(217, 119, 6, 0.5));
 }
@@ -519,14 +479,11 @@ footer .values strong { color: var(--gold); }
     <span class="brand-text">RAVEN'S NEST<br>TEMPLE INC</span>
   </a>
   <nav>
-    <a href="index.html">Home</a>
-    <a href="services.html">Services</a>
+    <a href="index.html" class="active">Home</a>
+    <a href="get-help.html">Get help</a>
+    <a href="community-care.html">Community care</a>
     <a href="witchmart.html">WitchMart</a>
-    <a href="community-care.html">Community Care</a>
     <a href="witches-coop.html">Witches Co-op</a>
-    <a href="four-pillars.html">Our Work</a>
-    <a href="get-help.html">Get Help</a>
-    <a href="contact.html">Contact</a>
   </nav>
 </header>
 
@@ -550,45 +507,33 @@ footer .values strong { color: var(--gold); }
     <img src="sanctuary-badge.jpg" alt="A Real Sanctuary" class="hero-badge">
     <h1 class="hero-title">RAVEN'S NEST</h1>
     <h2 class="hero-subtitle">Sanctuary • Mutual Aid • Off-Grid Infrastructure</h2>
+    <p class="hero-description">A place to get practical help, share skills, and stand on your own.</p>
     <p class="hero-description">Raven's Nest Temple is a unified off-grid sanctuary network, educational ecosystem, and community care node. We build resilient infrastructure, mutual aid systems, and care pathways without gatekeeping.</p>
-    <p class="hero-description"><strong>Integrated pathways:</strong> <a href="community-care.html" style="color:var(--gold);">Community Care</a> for food, charging, and shelter advice · <a href="witchmart.html" style="color:var(--gold);">WitchMart</a> for trade and skill exchange · <a href="witches-coop.html" style="color:var(--gold);">Witches Co-op</a> for collective practice.</p>
     <div class="hero-actions">
-      <a href="community-care.html" class="hero-button primary">Community Care Hub</a>
-      <a href="witchmart.html" class="hero-button secondary">WitchMart</a>
-      <a href="witches-coop.html" class="hero-button secondary">Witches Co-op</a>
+      <a href="get-help.html" class="hero-button primary">I need help</a>
+      <a href="community-care.html" class="hero-button secondary">Food, charging, shelter</a>
+      <a href="witchmart.html" class="hero-button secondary">Trade and practice</a>
     </div>
   </div>
 </section>
 
 <div class="pillar-grid">
   <article class="pillar-card">
-    <h3>Sanctuary &amp; Off-Grid Infrastructure</h3>
-    <p>Raven's Nest Temple is built for resilient living: off-grid energy, practical mutual aid, and community infrastructure designed to stand without gatekeeping.</p>
+    <a href="get-help.html"><h3>I need help</h3></a>
+    <p>Reach out for practical support, spiritual counsel, and a clear path through a hard moment.</p>
   </article>
   <article class="pillar-card">
-    <h3>Mutual Aid &amp; Cooperative Marketplace</h3>
-    <p>WitchMart coordinates direct trade, skill exchange, and mutual aid through a transparent, people-powered marketplace aligned with Temple ethics.</p>
+    <a href="community-care.html"><h3>Food, charging, shelter</h3></a>
+    <p>Fast community resources for food runs, charging, shelter warnings, and emergency aid.</p>
   </article>
   <article class="pillar-card">
-    <h3>Community Care Hub</h3>
-    <p>Food schedules, charging stations, shelter safety advisories, and emergency mutual aid support are centralized for quick access during crisis or low-power conditions.</p>
-  </article>
-  <article class="pillar-card">
-    <h3>Witches Co-op</h3>
-    <p>Allied traditions, classes, and vetted practitioner services are organized under the Raven's Nest Witches Co-op and linked to WitchMart.</p>
+    <a href="witchmart.html"><h3>Trade and practice</h3></a>
+    <p>Find mutual aid, skill exchange, vendor listings, and practical ways to support each other.</p>
   </article>
 </div>
 
 <section class="infrastructure-section">
   <img loading="lazy" decoding="async" src="the-work-plaque.jpg" alt="The Work - Our Infrastructure Vision" class="work-plaque">
-</section>
-
-<section class="pathways-section">
-  <img loading="lazy" decoding="async" src="pathways-grid.jpg" alt="Multiple Ways In - Find Your Path" class="pathways-visual">
-</section>
-
-<section class="declaration-section">
-  <img loading="lazy" decoding="async" src="ravens-evermore-declaration.jpg" alt="We Are Ravens Evermore - Declaration" class="declaration-visual">
 </section>
 </main>
 
@@ -600,8 +545,11 @@ footer .values strong { color: var(--gold); }
       <a href="community-care.html">Community Care Hub</a>
       <a href="community-care.html#charging">Charging &amp; Food Maps</a>
       <a href="community-care.html#shelter">Shelter Advisories</a>
+      <a href="witchmart.html">WitchMart</a>
       <a href="witches-coop.html">Witches Co-op</a>
-      <a href="contact.html">Submission Forms</a>
+      <a href="services.html">Services</a>
+      <a href="four-pillars.html">Our Work</a>
+      <a href="contact.html">Contact</a>
     </div>
   </div>
 </footer>

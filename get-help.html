@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Get Help | Raven's Nest Temple</title>
-<meta name="description" content="Reach out to Raven's Nest Temple for emergency assistance, spiritual counsel, or mutual aid resources.">
+<title>Raven's Nest | Sanctuary, Mutual Aid & WitchMart</title>
+<meta name="description" content="Raven's Nest Temple is an off-grid sanctuary network, mutual aid hub, and cooperative marketplace. Explore WitchMart, the Witches Co-op, and the emergency community care pathways.">
 <meta name="theme-color" content="#0f1f2e">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,7 +24,6 @@
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
-
 body {
   background: linear-gradient(135deg, var(--blue-dark) 0%, var(--blue-deep) 40%, #051015 100%);
   color: var(--text-light);
@@ -75,6 +74,10 @@ header {
   line-height: 1.1;
 }
 
+.brand:hover .brand-text {
+  text-shadow: 0 0 25px rgba(212, 175, 55, 0.6);
+}
+
 nav {
   display: flex;
   gap: 30px;
@@ -95,80 +98,318 @@ nav a:hover, nav a.active {
   color: var(--gold);
 }
 
-.container {
-  max-width: 1000px;
-  margin: 140px auto 80px;
-  padding: 0 30px;
+#set-sloth {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 999;
+  cursor: pointer;
+  width: 120px;
+  height: auto;
+  filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.3));
+  transition: filter 0.2s ease;
 }
 
-.page-title {
+#set-sloth:hover {
+  filter: drop-shadow(0 0 25px rgba(212, 175, 55, 0.6));
+}
+
+#set-sloth img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.set-popup {
+  position: fixed;
+  z-index: 1000;
+  background: linear-gradient(135deg, rgba(26, 58, 82, 0.98) 0%, rgba(58, 74, 90, 0.95) 100%);
+  border: 2px solid var(--gold);
+  border-radius: 8px;
+  padding: 20px;
+  max-width: 320px;
+  display: none;
+  flex-direction: column;
+  gap: 12px;
+  box-shadow: 0 12px 48px rgba(212, 175, 55, 0.4);
+  backdrop-filter: blur(10px);
+}
+
+.set-popup.active {
+  display: flex;
+  animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.set-quote {
   font-family: 'Cinzel', serif;
-  font-size: clamp(2rem, 5vw, 3rem);
+  font-size: 12px;
+  color: var(--fire-orange);
+  font-style: italic;
+  text-shadow: 0 0 8px rgba(217, 119, 6, 0.3);
+  line-height: 1.4;
+}
+
+.set-options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.set-btn {
+  background: linear-gradient(90deg, var(--gold) 0%, var(--copper) 100%);
+  color: #000;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-family: 'Cinzel', serif;
+  font-size: 10px;
+  text-transform: uppercase;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-decoration: none;
+  text-align: center;
+}
+
+.set-btn:hover {
+  box-shadow: 0 4px 16px rgba(212, 175, 55, 0.4);
+  transform: translateY(-2px);
+}
+
+.hero {
+  min-height: 100vh;
+  margin-top: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6)), url('sanctuary-bg.webp');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  max-width: 1000px;
+  padding: 60px 40px;
+  animation: fadeInUp 1.2s ease-out;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(60px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.hero-badge {
+  display: inline-block;
+  max-width: 800px;
+  width: 95%;
+  margin-bottom: 40px;
+  filter: drop-shadow(0 20px 60px rgba(0, 0, 0, 0.7)) drop-shadow(0 0 40px rgba(212, 175, 55, 0.4));
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.hero-badge:hover {
+  transform: translateY(-8px);
+  filter: drop-shadow(0 25px 75px rgba(0, 0, 0, 0.8)) drop-shadow(0 0 50px rgba(212, 175, 55, 0.6));
+}
+
+.hero-title {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(2.5rem, 10vw, 5rem);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: var(--warm-white);
+  margin-bottom: 15px;
+  text-shadow: 0 8px 30px rgba(0, 0, 0, 0.7);
+}
+
+.hero-subtitle {
+  font-size: clamp(1rem, 2.5vw, 1.3rem);
   color: var(--gold);
-  text-align: center;
-  margin-bottom: 20px;
   text-transform: uppercase;
-  letter-spacing: 2px;
+  letter-spacing: 3px;
+  margin: 20px 0;
+  font-family: 'Cinzel', serif;
 }
 
-.page-subtitle {
-  text-align: center;
-  color: var(--text-dim);
-  font-size: 1.1rem;
-  margin-bottom: 50px;
-  text-transform: uppercase;
+.hero-description {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  max-width: 700px;
+  margin: 30px auto 24px;
+  color: var(--warm-white);
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.hero-button {
+  display: inline-block;
+  text-decoration: none;
+  padding: 12px 20px;
+  border-radius: 6px;
+  font-family: 'Cinzel', serif;
   letter-spacing: 1px;
+  text-transform: uppercase;
+  font-weight: 700;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.help-card {
+.hero-button.primary {
+  background: linear-gradient(90deg, var(--gold) 0%, var(--copper) 100%);
+  color: #111;
+  box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+}
+
+.hero-button.secondary {
+  background: rgba(17, 27, 39, 0.75);
+  border: 2px solid rgba(212, 175, 55, 0.6);
+  color: var(--warm-white);
+}
+
+.hero-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(212, 175, 55, 0.22);
+}
+
+.pillar-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px 10px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.pillar-card {
   background: linear-gradient(135deg, rgba(26, 58, 82, 0.7) 0%, rgba(15, 31, 46, 0.9) 100%);
   border: 2px solid rgba(212, 175, 55, 0.4);
   border-radius: 8px;
-  padding: 40px;
-  margin-bottom: 30px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  padding: 22px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.28);
 }
 
-.help-card h2 {
+.pillar-card h3 {
   font-family: 'Cinzel', serif;
   color: var(--gold);
-  font-size: 1.8rem;
-  margin-bottom: 15px;
   text-transform: uppercase;
   letter-spacing: 1px;
+  margin-bottom: 8px;
 }
 
-.help-card p {
+.pillar-card p {
   color: var(--warm-white);
-  line-height: 1.8;
-  margin-bottom: 15px;
+  font-size: 0.98rem;
 }
 
-.contact-highlight {
-  background: rgba(212, 175, 55, 0.1);
-  border-left: 4px solid var(--gold);
-  padding: 20px;
-  margin-top: 20px;
-  border-radius: 0 8px 8px 0;
+.pillar-card a {
+  color: var(--gold);
+  text-decoration: none;
 }
 
-.contact-highlight p {
-  margin: 5px 0;
-  font-weight: bold;
+.pillar-card a:hover {
+  text-decoration: underline;
+}
+
+.infrastructure-section {
+  padding: 80px 60px;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.work-plaque {
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 20px 60px rgba(0, 0, 0, 0.7)) drop-shadow(0 0 40px rgba(217, 119, 6, 0.3));
+  transition: transform 0.3s ease, filter 0.3s ease;
+  border-radius: 8px;
+}
+
+.work-plaque:hover {
+  transform: scale(1.02);
+  filter: drop-shadow(0 25px 75px rgba(0, 0, 0, 0.8)) drop-shadow(0 0 50px rgba(217, 119, 6, 0.5));
+}
+
+.temple-footer {
+  padding: 28px 24px 36px;
+  border-top: 2px solid var(--gold);
+  background: rgba(15, 31, 46, 0.9);
+  color: var(--text-light);
+}
+
+.temple-footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.temple-footer strong { color: var(--gold); }
+
+.temple-footer p {
+  margin: 8px 0;
+  line-height: 1.6;
+}
+
+.temple-footer .legal {
+  color: var(--warm-white);
+  font-size: 0.9rem;
+}
+
+.temple-footer .links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px 18px;
+  margin-top: 8px;
+  font-size: 0.9rem;
+}
+
+.temple-footer a {
+  color: var(--warm-white);
+  text-decoration: none;
+}
+
+.temple-footer a:hover {
+  color: var(--gold);
 }
 
 footer {
   padding: 40px;
   text-align: center;
-  border-top: 2px solid var(--gold);
   color: var(--text-dim);
   font-size: 0.85rem;
   background: rgba(15, 31, 46, 0.8);
 }
 
-footer p {
-  margin: 6px 0;
-}
+footer p { margin: 6px 0; }
 
 @media (max-width: 768px) {
   header {
@@ -184,16 +425,42 @@ footer p {
   nav a {
     font-size: 12px;
   }
-  .container {
-    margin-top: 170px;
-    padding: 0 15px;
+  .hero {
+    margin-top: 140px;
   }
-  .help-card {
-    padding: 20px;
+  .hero-title {
+    font-size: 2rem;
+  }
+  .hero-description {
+    font-size: 0.95rem;
+  }
+  .hero-badge {
+    max-width: 95%;
+    width: 95%;
+    margin-bottom: 30px;
+  }
+  .hero-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+  .hero-button {
+    width: min(90vw, 330px);
+  }
+  #set-sloth {
+    width: 80px;
+    right: 12px;
+    bottom: 12px;
   }
 }
 
-/* WitchMart integration 2026-10-25: footer values + links; phones: header scrolls with the page. */
+@media (max-width: 768px), (hover: none) {
+  .hero {
+    background-attachment: scroll;
+    background-size: 100% 100%, auto 112%;
+    background-position: center, center bottom;
+  }
+}
+
 footer a { color: var(--warm-white); }
 footer .values { max-width: 900px; margin: 0 auto 12px; font-size: 0.8rem; }
 footer .values strong { color: var(--gold); }
@@ -212,45 +479,99 @@ footer .values strong { color: var(--gold); }
     <span class="brand-text">RAVEN'S NEST<br>TEMPLE INC</span>
   </a>
   <nav>
-    <a href="index.html">Home</a>
-    <a href="services.html">Services</a>
+    <a href="index.html" class="active">Home</a>
+    <a href="get-help.html">Get help</a>
+    <a href="community-care.html">Community care</a>
     <a href="witchmart.html">WitchMart</a>
-    <a href="community-care.html">Community Care</a>
-    <a href="four-pillars.html">Our Work</a>
-    <a href="get-help.html" class="active">Get Help</a>
-    <a href="contact.html">Contact</a>
+    <a href="witches-coop.html">Witches Co-op</a>
   </nav>
 </header>
 
-<main class="container">
-  <h1 class="page-title">Get Help & Support</h1>
-  <p class="page-subtitle">We are here for our community in times of need</p>
+<div id="set-sloth">
+  <img src="set-sloth-clear.png" alt="Set the Sloth">
+</div>
 
-  <div class="help-card">
-    <h2>Emergency Assistance & Counsel</h2>
-    <p>If you are facing an immediate crisis, looking for spiritual guidance, or seeking safe harbor, please reach out to us directly once our services. We offer confidential counsel and emergency support whenever possible.</p>
-    
-    <div class="contact-highlight">
-      <p>Rev Jon the Mad Goose Bradley</p>
-      <p>Corporate Phone: <a href="tel:4059873212" style="color:var(--gold);">405-987-3212</a></p>
-      <p>Personal Line: <a href="tel:4056730209" style="color:var(--gold);">405-673-0209</a></p>
-      <p>Email: <a href="mailto:revmadgoose@proton.me" style="color:var(--gold);">revmadgoose@proton.me</a></p>
-      <p>Hours: 7 days a week (excluding Sabbats and Esbats), 8:00 AM – 9:00 PM</p>
+<div class="set-popup" id="set-popup">
+  <div class="set-quote">Pardon me, friend, would you mind if an ol' stoner has a word? If you're overwhelmed or just looking for something specific, I can help point the way.</div>
+  <div class="set-options">
+    <a href="community-care.html" class="set-btn">Care</a>
+    <a href="witchmart.html" class="set-btn">WitchMart</a>
+    <a href="witches-coop.html" class="set-btn">Co-op</a>
+    <button class="set-btn" onclick="document.getElementById('set-popup').classList.remove('active')">Close</button>
+  </div>
+</div>
+
+<main>
+<section class="hero">
+  <div class="hero-content">
+    <img src="sanctuary-badge.jpg" alt="A Real Sanctuary" class="hero-badge">
+    <h1 class="hero-title">RAVEN'S NEST</h1>
+    <h2 class="hero-subtitle">Sanctuary • Mutual Aid • Off-Grid Infrastructure</h2>
+    <p class="hero-description">A place to get practical help, share skills, and stand on your own.</p>
+    <p class="hero-description">Raven's Nest Temple is a unified off-grid sanctuary network, educational ecosystem, and community care node. We build resilient infrastructure, mutual aid systems, and care pathways without gatekeeping.</p>
+    <div class="hero-actions">
+      <a href="get-help.html" class="hero-button primary">I need help</a>
+      <a href="community-care.html" class="hero-button secondary">Food, charging, shelter</a>
+      <a href="witchmart.html" class="hero-button secondary">Trade and practice</a>
     </div>
   </div>
+</section>
 
-  <div class="help-card">
-    <h2>Mutual Aid & Resource Distribution</h2>
-    <p>Through our "Feed the Homeless" initiative and community cooperative networks, we will provide essential supplies, food distribution support, and survival gear. Contact us if you or someone you know is in urgent need of community aid.</p>
-  </div>
+<div class="pillar-grid">
+  <article class="pillar-card">
+    <a href="get-help.html"><h3>I need help</h3></a>
+    <p>Reach out for practical support, spiritual counsel, and a clear path through a hard moment.</p>
+  </article>
+  <article class="pillar-card">
+    <a href="community-care.html"><h3>Food, charging, shelter</h3></a>
+    <p>Fast community resources for food runs, charging, shelter warnings, and emergency aid.</p>
+  </article>
+  <article class="pillar-card">
+    <a href="witchmart.html"><h3>Trade and practice</h3></a>
+    <p>Find mutual aid, skill exchange, vendor listings, and practical ways to support each other.</p>
+  </article>
+</div>
+
+<section class="infrastructure-section">
+  <img loading="lazy" decoding="async" src="the-work-plaque.jpg" alt="The Work - Our Infrastructure Vision" class="work-plaque">
+</section>
 </main>
 
-<footer>
-  <p class="values"><strong>Human Sovereignty</strong> — never dominate, never deceive, never override human agency. · <strong>Mutual Aid</strong> — a people-powered, transparent economy. · <strong>Hard Safety Boundaries</strong> — no exploitation, no violation of consent, no endangerment of a minor.</p>
-  <p><strong>Raven's Nest Temple, Inc.</strong> | Rev Jon the Mad Goose Bradley | <a href="tel:4059873212">405-987-3212</a></p>
-  <p>Email: <a href="mailto:revmadgoose@proton.me">revmadgoose@proton.me</a> | Hours: 7 days a week (excluding Sabbats and Esbats), 8:00 AM – 9:00 PM</p>
-  <p><a href="community-care.html">Community Care</a> · <a href="witchmart.html">WitchMart</a> · <a href="witches-coop.html">Witches Co-op</a> · <a href="https://witchmart.org">witchmart.org</a></p>
+<footer class="temple-footer">
+  <div class="temple-footer-inner">
+    <p><strong>Raven's Nest Temple &amp; WitchMart</strong> — Built on Human Sovereignty, Mutual Aid, and Hard Safety Boundaries against exploitation.</p>
+    <p class="legal">Raven's Nest Temple Inc. is an Oklahoma non-profit sanctuary entity. Community care, trade, and public listings operate under Temple ethics and the shared administrative discipline of the wider sanctuary network.</p>
+    <div class="links">
+      <a href="community-care.html">Community Care Hub</a>
+      <a href="community-care.html#charging">Charging &amp; Food Maps</a>
+      <a href="community-care.html#shelter">Shelter Advisories</a>
+      <a href="witchmart.html">WitchMart</a>
+      <a href="witches-coop.html">Witches Co-op</a>
+      <a href="services.html">Services</a>
+      <a href="four-pillars.html">Our Work</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
 </footer>
 
+<script>
+const setSloth = document.getElementById('set-sloth');
+const setPopup = document.getElementById('set-popup');
+
+setSloth.addEventListener('click', (e) => {
+  e.stopPropagation();
+  setPopup.classList.add('active');
+  const rect = setSloth.getBoundingClientRect();
+  setPopup.style.right = '20px';
+  setPopup.style.bottom = (window.innerHeight - rect.top + 10) + 'px';
+  setPopup.style.left = 'auto';
+});
+
+document.addEventListener('click', (e) => {
+  if (!e.target.closest('#set-popup') && e.target !== setSloth && !e.target.closest('#set-sloth')) {
+    setPopup.classList.remove('active');
+  }
+});
+</script>
 </body>
 </html>

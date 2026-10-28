@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>WitchMart | Raven's Nest Temple</title>
-<meta name="description" content="WitchMart: the official cooperative marketplace and mutual aid engine of Raven's Nest Temple Inc. Witches Co-op, vendors, Community Care, and the Feed the Homeless and Supply Fund.">
+<title>Contact | Raven's Nest Temple</title>
+<meta name="description" content="Get in touch with Raven's Nest Temple, Inc. Reach Rev Jon the Mad Goose Bradley for corporate inquiries, spiritual services, and mutual aid.">
 <meta name="theme-color" content="#0f1f2e">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -27,13 +27,11 @@ html { scroll-behavior: smooth; }
 
 body {
   background: linear-gradient(135deg, var(--blue-dark) 0%, var(--blue-deep) 40%, #051015 100%);
-  background-attachment: fixed;
   color: var(--text-light);
   font-family: 'Courier Prime', monospace;
   font-size: 16px;
   line-height: 1.7;
   overflow-x: hidden;
-  min-height: 100vh;
 }
 
 header {
@@ -57,6 +55,7 @@ header {
   align-items: center;
   gap: 12px;
   text-decoration: none;
+  transition: all 0.3s;
 }
 
 .brand-logo {
@@ -79,7 +78,6 @@ header {
 nav {
   display: flex;
   gap: 30px;
-  flex-wrap: wrap;
 }
 
 nav a {
@@ -88,7 +86,9 @@ nav a {
   font-size: 11px;
   text-transform: uppercase;
   letter-spacing: 2px;
+  position: relative;
   transition: all 0.3s;
+  cursor: pointer;
 }
 
 nav a:hover, nav a.active {
@@ -109,90 +109,52 @@ nav a:hover, nav a.active {
   margin-bottom: 20px;
   text-transform: uppercase;
   letter-spacing: 2px;
-  text-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
 }
 
 .page-subtitle {
   text-align: center;
-  color: var(--warm-white);
-  font-size: 1.05rem;
-  max-width: 700px;
-  margin: 0 auto 50px;
+  color: var(--text-dim);
+  font-size: 1.1rem;
+  margin-bottom: 50px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 25px;
-  margin-bottom: 40px;
-}
-
-.card {
+.contact-card {
   background: linear-gradient(135deg, rgba(26, 58, 82, 0.7) 0%, rgba(15, 31, 46, 0.9) 100%);
   border: 2px solid rgba(212, 175, 55, 0.4);
   border-radius: 8px;
-  padding: 30px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-  transition: all 0.3s;
+  padding: 40px;
+  margin-bottom: 30px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
 }
 
-.card:hover {
-  border-color: var(--gold);
-  box-shadow: 0 0 25px rgba(212, 175, 55, 0.3);
-  transform: translateY(-4px);
-}
-
-.card h2 {
+.contact-card h2 {
   font-family: 'Cinzel', serif;
   color: var(--gold);
-  font-size: 1.3rem;
-  margin-bottom: 12px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-.card p {
-  color: var(--warm-white);
-}
-
-.cta-banner {
-  background: rgba(212, 175, 55, 0.1);
-  border: 2px solid var(--gold);
-  border-radius: 8px;
-  padding: 35px;
-  text-align: center;
-}
-
-.cta-banner h3 {
-  font-family: 'Cinzel', serif;
-  color: var(--fire-orange);
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   margin-bottom: 15px;
   text-transform: uppercase;
-}
-
-.cta-banner p {
-  margin-bottom: 12px;
-}
-
-.btn {
-  display: inline-block;
-  margin-top: 15px;
-  background: linear-gradient(90deg, var(--gold) 0%, var(--copper) 100%);
-  color: #000;
-  padding: 12px 24px;
-  border-radius: 4px;
-  font-family: 'Cinzel', serif;
-  font-weight: bold;
-  text-transform: uppercase;
-  text-decoration: none;
   letter-spacing: 1px;
-  transition: all 0.2s;
 }
 
-.btn:hover {
-  box-shadow: 0 4px 16px rgba(212, 175, 55, 0.4);
-  transform: translateY(-2px);
+.contact-card p {
+  color: var(--warm-white);
+  line-height: 1.8;
+  margin-bottom: 15px;
+}
+
+.contact-details {
+  background: rgba(212, 175, 55, 0.1);
+  border-left: 4px solid var(--gold);
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 0 8px 8px 0;
+}
+
+.contact-details p {
+  margin: 8px 0;
+  font-weight: bold;
 }
 
 footer {
@@ -204,9 +166,7 @@ footer {
   background: rgba(15, 31, 46, 0.8);
 }
 
-footer p {
-  margin: 6px 0;
-}
+footer p { margin: 6px 0; }
 
 @media (max-width: 768px) {
   header {
@@ -216,6 +176,7 @@ footer p {
   }
   nav {
     gap: 15px;
+    flex-wrap: wrap;
     justify-content: center;
   }
   nav a {
@@ -223,42 +184,13 @@ footer p {
   }
   .container {
     margin-top: 170px;
-    padding: 0 16px;
+    padding: 0 15px;
   }
-  .card, .cta-banner {
-    padding: 22px;
+  .contact-card {
+    padding: 20px;
   }
 }
-.content-block, .mutual-aid-block {
-  margin-bottom: 40px;
-}
 
-.section-heading {
-  font-family: 'Cinzel', serif;
-  color: var(--gold);
-  font-size: 1.8rem;
-  margin-bottom: 15px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  text-align: center;
-}
-
-.section-text {
-  max-width: 800px;
-  margin: 0 auto 30px;
-  text-align: center;
-  color: var(--warm-white);
-}
-
-.card h3 {
-  font-family: 'Cinzel', serif;
-  color: var(--gold);
-  font-size: 1.2rem;
-  margin-bottom: 10px;
-  text-transform: uppercase;
-}
-
-/* WitchMart integration 2026-10-25: footer values + links; phones: header scrolls with the page. */
 footer a { color: var(--warm-white); }
 footer .values { max-width: 900px; margin: 0 auto 12px; font-size: 0.8rem; }
 footer .values strong { color: var(--gold); }
@@ -278,80 +210,37 @@ footer .values strong { color: var(--gold); }
   </a>
   <nav>
     <a href="index.html">Home</a>
-    <a href="services.html">Services</a>
-    <a href="witchmart.html" class="active">WitchMart</a>
-    <a href="community-care.html">Community Care</a>
-    <a href="four-pillars.html">Our Work</a>
-    <a href="get-help.html">Get Help</a>
-    <a href="contact.html">Contact</a>
+    <a href="get-help.html">Get help</a>
+    <a href="community-care.html">Community care</a>
+    <a href="witchmart.html">WitchMart</a>
+    <a href="witches-coop.html">Witches Co-op</a>
   </nav>
 </header>
 
 <main class="container">
-  <h1 class="page-title">WitchMart Sanctuary &amp; Cooperative</h1>
-  <p class="page-subtitle">Connecting community craft, off-grid self-reliance, and direct mutual aid without administrative overhead.</p>
+  <h1 class="page-title">Contact Us</h1>
+  <p class="page-subtitle">Reach out to Raven's Nest Temple, Inc.</p>
 
-  <section class="content-block">
-    <h2 class="section-heading">Community Marketplace &amp; Sanctuary</h2>
-    <p class="section-text">WitchMart is the community-driven arm of Raven's Nest Temple, dedicated to supporting independent practitioners, local artisans, and practical off-grid resiliency efforts. We believe true spiritual freedom is built on self-reliance, practical skills, and mutual support.</p>
-  </section>
+  <div class="contact-card">
+    <h2>Direct Communication</h2>
+    <p>Whether you are inquiring about our spiritual services, looking to coordinate mutual aid efforts through WitchMart, or seeking direct counsel, we are available to connect.</p>
 
-  <section class="content-block">
-    <h2 class="section-heading">The WitchMart Hub</h2>
-    <p class="section-text">WitchMart is the official cooperative marketplace and mutual aid engine of Raven's Nest Temple Inc. Also at <a href="https://witchmart.org" style="color:var(--gold);">witchmart.org</a>.</p>
-    <div class="services-grid">
-      <div class="card">
-        <h3>Witches Co-op</h3>
-        <p>Independent practitioners of the Raven's Nest Witches Co-op, and how to join.</p>
-        <a href="witches-coop.html" class="btn">Visit the Co-op</a>
-      </div>
-      <div class="card">
-        <h3>Community Care</h3>
-        <p>Food runs, phone charging spots and shelter warnings. A small, fast page for a low battery.</p>
-        <a href="community-care.html" class="btn">Open Community Care</a>
-      </div>
+    <div class="contact-details">
+      <p>Organization: Raven's Nest Temple, Inc.</p>
+      <p>Leadership: Rev Jon the Mad Goose Bradley</p>
+      <p>Temple line: <a href="tel:4059873212" style="color:var(--gold);">405-987-3212</a></p>
+      <p>Personal Line: <a href="tel:4056730209" style="color:var(--gold);">405-673-0209</a></p>
+      <p>Email: <a href="mailto:revjonbradley@ravensnesttemple.com" style="color:var(--gold);">revjonbradley@ravensnesttemple.com</a></p>
+      <p>Hours: 7 days a week (excluding Sabbats and Esbats), 8:00 AM – 9:00 PM</p>
     </div>
-  </section>
-
-  <section class="content-block">
-    <h2 class="section-heading">WitchMart Vendors</h2>
-    <p class="section-text">Vendors appear here after a person at the Temple approves them and they agree in writing to their listing.</p>
-    <div class="services-grid">
-<!-- QUEUE:vendor:START -->
-      <div class="card"><h3>Vendor listings coming soon</h3><p>No vendors are listed yet. To sell through WitchMart, email <a href="mailto:revmadgoose@proton.me?subject=WitchMart%20vendor" style="color:var(--gold);">revmadgoose@proton.me</a>.</p></div>
-<!-- QUEUE:vendor:END -->
-    </div>
-  </section>
-
-  <section class="mutual-aid-block">
-    <h2 class="section-heading">Feed the Homeless &amp; Supply Fund</h2>
-    <p class="section-text">Direct action, on the ground. We gather and distribute emergency food, clean water, cold-weather clothing, and hygiene supplies directly to unhoused individuals in our community.</p>
-
-    <div class="services-grid">
-      <div class="card">
-        <h3>Food &amp; Meal Supplies</h3>
-        <p>100% of non-perishable food and meal donations go straight to local food distribution runs.</p>
-      </div>
-      <div class="card">
-        <h3>Survival Gear &amp; Utilities</h3>
-        <p>Providing tents, blankets, solar chargers, and basic off-grid emergency gear during extreme weather.</p>
-      </div>
-    </div>
-
-    <div class="cta-banner">
-      <h3>Support the Mutual Aid Fund</h3>
-      <p>To donate food, offer supplies, or contribute to direct relief efforts, contact us directly:</p>
-      <p><strong>Corporate Phone:</strong> <a href="tel:4059873212" style="color:var(--gold);">405-987-3212</a> | <strong>Email:</strong> <a href="mailto:revmadgoose@proton.me" style="color:var(--gold);">revmadgoose@proton.me</a></p>
-      <a href="contact.html" class="btn">Get Involved or Donate</a>
-    </div>
-  </section>
+  </div>
 </main>
 
 <footer>
   <p class="values"><strong>Human Sovereignty</strong> — never dominate, never deceive, never override human agency. · <strong>Mutual Aid</strong> — a people-powered, transparent economy. · <strong>Hard Safety Boundaries</strong> — no exploitation, no violation of consent, no endangerment of a minor.</p>
   <p><strong>Raven's Nest Temple, Inc.</strong> | Rev Jon the Mad Goose Bradley | <a href="tel:4059873212">405-987-3212</a></p>
-  <p>Email: <a href="mailto:revmadgoose@proton.me">revmadgoose@proton.me</a> | Hours: 7 days a week (excluding Sabbats and Esbats), 8:00 AM – 9:00 PM</p>
-  <p><a href="community-care.html">Community Care</a> · <a href="witchmart.html">WitchMart</a> · <a href="witches-coop.html">Witches Co-op</a> · <a href="https://witchmart.org">witchmart.org</a></p>
+  <p>Email: <a href="mailto:revjonbradley@ravensnesttemple.com">revjonbradley@ravensnesttemple.com</a> | Hours: 7 days a week (excluding Sabbats and Esbats), 8:00 AM – 9:00 PM</p>
+  <p><a href="community-care.html">Community Care</a> · <a href="witchmart.html">WitchMart</a> · <a href="witches-coop.html">Witches Co-op</a> · <a href="services.html">Services</a> · <a href="four-pillars.html">Our Work</a></p>
 </footer>
 
 </body>

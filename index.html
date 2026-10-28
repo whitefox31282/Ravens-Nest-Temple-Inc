@@ -165,6 +165,11 @@ footer a { color: var(--gold); }
 </div>
 <div class="set-popup" id="set-popup">
   <div class="set-quote">Pardon me, friend. I only know what is on this site. Pick a door.</div>
+  <form id="set-ask" style="display:flex;gap:6px">
+    <input id="set-q" type="text" placeholder="Ask about this site" autocomplete="off" style="flex:1;min-width:0;background:#100e0c;color:#b7d0ee;border:1px solid #c084fc;border-radius:6px;padding:8px">
+    <button class="set-btn" type="submit">Ask</button>
+  </form>
+  <p id="set-reply" class="set-quote"></p>
   <div class="set-options">
     <a href="get-help.html" class="set-btn">Get help</a>
     <a href="heard.html" class="set-btn">Rumors</a>
@@ -219,14 +224,57 @@ footer a { color: var(--gold); }
 <script>
 const setSloth = document.getElementById('set-sloth');
 const setPopup = document.getElementById('set-popup');
-setSloth.addEventListener('click', (e) => {
-  e.stopPropagation();
+const setAsk = document.getElementById('set-ask');
+const setQ = document.getElementById('set-q');
+const setReply = document.getElementById('set-reply');
+
+function openSetPopup() {
   setPopup.classList.add('active');
   const rect = setSloth.getBoundingClientRect();
   setPopup.style.right = '20px';
   setPopup.style.bottom = (window.innerHeight - rect.top + 10) + 'px';
   setPopup.style.left = 'auto';
+}
+
+setSloth.addEventListener('click', (e) => {
+  e.stopPropagation();
+  openSetPopup();
 });
+
+setAsk.addEventListener('submit', (event) => {
+  event.preventDefault();
+  const question = (setQ.value || '').toLowerCase();
+
+  if (question.includes('evoke')) {
+    openSetPopup();
+    setReply.textContent = 'I am here. I only know this website until the server is up.';
+    return;
+  }
+
+  let answer = 'I do not know that yet. I only know this website. I cannot look things up on the internet until the server is running.';
+
+  if (question.includes('hurt') || question.includes('suicide') || question.includes('911')) {
+    answer = 'If someone is in danger, call 911. If it is a mental-health crisis, call or text 988.';
+  } else if (question.includes('phone') || question.includes('email') || question.includes('hours')) {
+    answer = 'Temple line 405-987-3212. Email revjonbradley@ravensnesttemple.com. Hours are on the help page.';
+  } else if (question.includes('food') || question.includes('hungry') || question.includes('pantry') || question.includes('iron')) {
+    answer = 'Tulsa morning meal is Iron Gate, 501 W Archer, every day 8:30 to 10:30. More food is on Community Care. Call before you go.';
+  } else if (question.includes('shelter') || question.includes('bed') || question.includes('sleep')) {
+    answer = 'A listing is not a bed. Community Care has shelters by town. Call first. For domestic violence, call or text 1-800-522-7233. Do not give a street for that.';
+  } else if (question.includes('charge') || question.includes('plug')) {
+    answer = 'Tulsa Central Library, 400 Civic Center, has outlets while open. Bring your own cord.';
+  } else if (question.includes('clinic') || question.includes('doctor') || question.includes('shower')) {
+    answer = 'Day Center 918-583-5588. Morton 918-587-2171. Variety Care 405-632-6688. Ask the cost.';
+  } else if (question.includes('rumor') || question.includes('heard')) {
+    answer = 'Unchecked notes are on heard.html. Do not call a rumor true.';
+  } else if (question.includes('witch') || question.includes('donat') || question.includes('vendor') || question.includes('coop')) {
+    answer = 'WitchMart is the marketplace. If a listing makes a profit, a donation to the Temple is all we ask.';
+  }
+
+  setReply.textContent = answer;
+  setQ.value = '';
+});
+
 document.addEventListener('click', (e) => {
   if (!e.target.closest('#set-popup') && e.target !== setSloth && !e.target.closest('#set-sloth')) {
     setPopup.classList.remove('active');

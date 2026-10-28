@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Raven's Nest | Sanctuary, Mutual Aid & WitchMart</title>
-<meta name="description" content="Raven's Nest Temple is an off-grid sanctuary network, mutual aid hub, and cooperative marketplace. Explore WitchMart, the Witches Co-op, and the emergency Community Care network.">
+<meta name="description" content="Raven's Nest Temple is an off-grid sanctuary network, mutual aid hub, and cooperative marketplace. Explore WitchMart, the Witches Co-op, and the emergency community care pathways.">
 <meta name="theme-color" content="#0f1f2e">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -100,13 +100,14 @@ nav a:hover {
 
 #set-sloth {
   position: fixed;
+  right: 20px;
+  bottom: 20px;
   z-index: 999;
   cursor: pointer;
-  transition: transform 0.1s ease-out;
-  pointer-events: auto;
   width: 120px;
   height: auto;
   filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.3));
+  transition: filter 0.2s ease;
 }
 
 #set-sloth:hover {
@@ -487,6 +488,8 @@ footer p { margin: 6px 0; }
   }
   #set-sloth {
     width: 80px;
+    right: 12px;
+    bottom: 12px;
   }
 }
 
@@ -547,8 +550,8 @@ footer .values strong { color: var(--gold); }
     <img src="sanctuary-badge.jpg" alt="A Real Sanctuary" class="hero-badge">
     <h1 class="hero-title">RAVEN'S NEST</h1>
     <h2 class="hero-subtitle">Sanctuary • Mutual Aid • Off-Grid Infrastructure</h2>
-    <p class="hero-description">Raven's Nest Temple is a unified off-grid sanctuary network, educational ecosystem, and community care node. We build resilient infrastructure, mutual aid systems, and safe cooperative pathways for people seeking shelter, skill-sharing, practical survival support, and dignified connection.</p>
-    <p class="hero-description"><strong>Integrated pathways:</strong> <a href="community-care.html" style="color:var(--gold);">Community Care</a> for food, charging, and shelter advice · <a href="witchmart.html" style="color:var(--gold);">WitchMart</a> for the cooperative marketplace · <a href="witches-coop.html" style="color:var(--gold);">Witches Co-op</a> for allied traditions and vetted services.</p>
+    <p class="hero-description">Raven's Nest Temple is a unified off-grid sanctuary network, educational ecosystem, and community care node. We build resilient infrastructure, mutual aid systems, and care pathways without gatekeeping.</p>
+    <p class="hero-description"><strong>Integrated pathways:</strong> <a href="community-care.html" style="color:var(--gold);">Community Care</a> for food, charging, and shelter advice · <a href="witchmart.html" style="color:var(--gold);">WitchMart</a> for trade and skill exchange · <a href="witches-coop.html" style="color:var(--gold);">Witches Co-op</a> for collective practice.</p>
     <div class="hero-actions">
       <a href="community-care.html" class="hero-button primary">Community Care Hub</a>
       <a href="witchmart.html" class="hero-button secondary">WitchMart</a>
@@ -592,7 +595,7 @@ footer .values strong { color: var(--gold); }
 <footer class="temple-footer">
   <div class="temple-footer-inner">
     <p><strong>Raven's Nest Temple &amp; WitchMart</strong> — Built on Human Sovereignty, Mutual Aid, and Hard Safety Boundaries against exploitation.</p>
-    <p class="legal">Raven's Nest Temple Inc. is an Oklahoma non-profit sanctuary entity. Community care, trade, and public listings operate under Temple ethics and the shared <strong>admin_approval_queue</strong> safety framework.</p>
+    <p class="legal">Raven's Nest Temple Inc. is an Oklahoma non-profit sanctuary entity. Community care, trade, and public listings operate under Temple ethics and the shared administrative discipline of the wider sanctuary network.</p>
     <div class="links">
       <a href="community-care.html">Community Care Hub</a>
       <a href="community-care.html#charging">Charging &amp; Food Maps</a>
@@ -607,45 +610,19 @@ footer .values strong { color: var(--gold); }
 const setSloth = document.getElementById('set-sloth');
 const setPopup = document.getElementById('set-popup');
 
-let x = window.innerWidth - 150;
-let y = window.innerHeight - 200;
-let vx = (Math.random() - 0.5) * 3;
-let vy = (Math.random() - 0.5) * 3;
-
-function moveSet() {
-  x += vx;
-  y += vy;
-
-  if (x <= 0 || x >= window.innerWidth - 120) vx *= -1;
-  if (y <= 70 || y >= window.innerHeight - 120) vy *= -1;
-
-  x = Math.max(0, Math.min(window.innerWidth - 120, x));
-  y = Math.max(70, Math.min(window.innerHeight - 120, y));
-
-  setSloth.style.left = x + 'px';
-  setSloth.style.top = y + 'px';
-
-  requestAnimationFrame(moveSet);
-}
-
-moveSet();
-
 setSloth.addEventListener('click', (e) => {
   e.stopPropagation();
   setPopup.classList.add('active');
-  setPopup.style.left = (x + 130) + 'px';
-  setPopup.style.top = (y - 140) + 'px';
+  const rect = setSloth.getBoundingClientRect();
+  setPopup.style.right = '20px';
+  setPopup.style.bottom = (window.innerHeight - rect.top + 10) + 'px';
+  setPopup.style.left = 'auto';
 });
 
 document.addEventListener('click', (e) => {
   if (!e.target.closest('#set-popup') && e.target !== setSloth && !e.target.closest('#set-sloth')) {
     setPopup.classList.remove('active');
   }
-});
-
-window.addEventListener('resize', () => {
-  x = Math.min(x, window.innerWidth - 120);
-  y = Math.min(y, window.innerHeight - 120);
 });
 </script>
 </body>

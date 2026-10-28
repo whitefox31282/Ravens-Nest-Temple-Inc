@@ -14,7 +14,7 @@
 :root { --gold:#c084fc; --blue-dark:#070605; --blue-deep:#100e0c; --warm-white:#b7d0ee; --text-light:#b7d0ee; --text-dim:#7f9bb8; }
 * { margin:0; padding:0; box-sizing:border-box; }
 html { scroll-behavior:smooth; }
-body { background-color:#070605; background-image: linear-gradient(rgba(0,0,0,0.28), rgba(0,0,0,0.42)), url("knot-bg.jpg"); background-size: cover; background-position: center; background-attachment: fixed; color:var(--text-light); font-family:'Courier Prime', monospace; font-size:16px; line-height:1.7; overflow-x:hidden; }
+body { background-color:#070605; background-image: url("knot-bg.jpg"); background-size: cover; background-position: center; background-repeat: no-repeat; background-attachment: fixed; color:var(--text-light); font-family:'Courier Prime', monospace; font-size:16px; line-height:1.7; }
 header { position:fixed; top:0; left:0; right:0; z-index:950; background:#100e0c; border-bottom:3px solid var(--gold); padding:18px 50px; display:flex; justify-content:space-between; align-items:center; box-shadow:0 0 40px rgba(192,132,252,0.18); }
 .brand { display:flex; align-items:center; gap:12px; text-decoration:none; }
 .brand-logo { width:40px; height:40px; }
@@ -33,14 +33,14 @@ nav a:hover, nav a.active { color:var(--gold); }
 .contact-card,
 .panel,
 .set-popup,
-#set-popup { background: linear-gradient(#3a3835, #2c2b28) padding-box, url("fur.jpg") border-box; background-size: auto, 90px; background-repeat: repeat; border:11px solid transparent; box-shadow:none; border-radius:12px; }
+#set-popup { background: #3a3835; background-image: linear-gradient(#3a3835, #3a3835), url("fur.jpg"); background-origin: padding-box, border-box; background-clip: padding-box, border-box; background-size: auto, 90px; background-repeat: repeat, repeat; border:11px solid transparent; box-shadow:none; border-radius:12px; }
 .pillar-card { padding:40px; margin-bottom:30px; }
 .pillar-card h2 { font-family:'Cinzel',serif; color:var(--gold); font-size:1.8rem; margin-bottom:15px; text-transform:uppercase; }
 .pillar-card p { color:var(--warm-white); line-height:1.8; }
 footer { padding:40px; text-align:center; border-top:2px solid var(--gold); color:var(--text-dim); font-size:0.85rem; background:#100e0c; }
 footer p { margin:6px 0; }
 footer a { color:var(--gold); }
-@media (max-width:768px) { body { background-attachment: scroll; } header { padding:12px 20px; flex-direction:column; gap:12px; } nav { gap:15px; justify-content:center; } nav a { font-size:12px; } .container { margin-top:170px; padding:0 15px; } .pillar-card { padding:20px; } }
+@media (max-width:768px) { body { background-attachment: scroll; } header { padding:12px 20px; flex-direction:column; gap:12px; } nav { gap:15px; justify-content:center; } nav a { font-size:12px; } .container { margin-top:170px; padding:0 15px; } .pillar-card { padding:24px 18px; } }
 </style>
 </head>
 <body>
@@ -57,16 +57,16 @@ footer a { color:var(--gold); }
 <main class="container">
   <h1 class="page-title">Our Work &amp; Four Pillars</h1>
   <p class="page-subtitle">The Foundation of Our Sovereignty and Community Action</p>
-  <div class="pillar-card"><h2>1. Sanctuary &amp; Safe Harbor</h2><p>Creating physical and spiritual refuge for those escaping oppressive systems, domestic disruption, or societal marginalization. Our sanctuary provides a safe space centered on mutual respect, personal autonomy, and spiritual freedom.</p></div>
-  <div class="pillar-card"><h2>2. Sovereign Infrastructure</h2><p>Building independent systems for survival and thriving. From off-grid power generation and clean water sourcing to sustainable food production and resilient dwelling spaces, we lay the groundwork for a future that governments cannot gatekeep.</p></div>
-  <div class="pillar-card"><h2>3. Mutual Aid &amp; Direct Action</h2><p>Taking care of our own through direct community support. Through initiatives like our WitchMart co-op and "Feed the Homeless" relief operations, we distribute food, gear, and resources directly where they are needed without administrative red tape.</p></div>
-  <div class="pillar-card"><h2>4. Spiritual Autonomy &amp; Community Craft</h2><p>Fostering traditional crafts, ritual arts, and independent spiritual study. We offer a community space for practitioners to connect, learn, and practice freely without dogma or hierarchical control.</p></div>
+  <div class="pillar-card"><h2>1. Sanctuary &amp; Safe Harbor</h2><p>Creating physical and spiritual refuge for those escaping oppressive systems, domestic disruption, or societal marginalization.</p></div>
+  <div class="pillar-card"><h2>2. Sovereign Infrastructure</h2><p>Building independent systems for survival and thriving. From off-grid power generation and clean water sourcing to sustainable food access and practical skill exchange.</p></div>
+  <div class="pillar-card"><h2>3. Mutual Aid &amp; Direct Action</h2><p>Taking care of our own through direct community support. Through initiatives like our WitchMart co-op and "Feed the Homeless" fund, we meet urgent needs without gatekeeping.</p></div>
+  <div class="pillar-card"><h2>4. Spiritual Autonomy &amp; Community Craft</h2><p>Fostering traditional crafts, ritual arts, and independent spiritual study. We offer a community space for practitioners, teachers, and allies that values dignity, consent, and direct action.</p></div>
 </main>
 <footer>
-  <p class="values"><strong>Human Sovereignty</strong> — never dominate, never deceive, never override human agency. · <strong>Mutual Aid</strong> — a people-powered, transparent economy. · <strong>Hard Safety Boundaries</strong> — no exploitation, no violation of consent, no endangerment of a minor.</p>
+  <p class="values"><strong>Human Sovereignty</strong> — never dominate, never deceive, never override human agency. · <strong>Mutual Aid</strong> — a people-powered, transparent economy. · <strong>Direct Action</strong> — practical, local, and accountable solidarity.</p>
   <p><strong>Raven's Nest Temple, Inc.</strong> | Rev Jon the Mad Goose Bradley | <a href="tel:4059873212">405-987-3212</a></p>
   <p>Email: <a href="mailto:revjonbradley@ravensnesttemple.com">revjonbradley@ravensnesttemple.com</a> | Hours: 7 days a week (excluding Sabbats and Esbats), 8:00 AM – 9:00 PM</p>
-  <p><a href="community-care.html">Community Care</a> · <a href="witchmart.html">WitchMart</a> · <a href="witches-coop.html">Witches Co-op</a> · <a href="services.html">Services</a> · <a href="four-pillars.html">Our Work</a> · <a href="contact.html">Contact</a></p>
+  <p><a href="community-care.html">Community Care</a> · <a href="witchmart.html">WitchMart</a> · <a href="witches-coop.html">Witches Co-op</a> · <a href="services.html">Services</a> · <a href="contact.html">Contact</a></p>
 </footer>
 </body>
 </html>

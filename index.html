@@ -164,7 +164,7 @@ footer a { color: var(--gold); }
   <img src="set-sloth-clear.png" alt="Set the Sloth">
 </div>
 <div class="set-popup" id="set-popup">
-  <div class="set-quote">Pardon me, friend. I only know what is on this site. Pick a door.</div>
+  <div class="set-quote">Hail. I am Set T. Sloth. Welcome, and thank you for being a part of Raven's Nest Temple. If you need help understanding something here, give me a shout.</div>
   <form id="set-ask" style="display:flex;gap:6px">
     <input id="set-q" type="text" placeholder="Ask about this site" autocomplete="off" style="flex:1;min-width:0;background:#100e0c;color:#b7d0ee;border:1px solid #c084fc;border-radius:6px;padding:8px">
     <button class="set-btn" type="submit">Ask</button>
@@ -234,6 +234,11 @@ function openSetPopup() {
   setPopup.style.right = '20px';
   setPopup.style.bottom = (window.innerHeight - rect.top + 10) + 'px';
   setPopup.style.left = 'auto';
+}
+
+if (!sessionStorage.getItem('set-greeted')) {
+  setPopup.classList.add('active');
+  sessionStorage.setItem('set-greeted', 'true');
 }
 
 setSloth.addEventListener('click', (e) => {

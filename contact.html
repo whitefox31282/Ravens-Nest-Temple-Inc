@@ -14,7 +14,7 @@
 :root { --gold: #c084fc; --blue-dark:#070605; --blue-deep:#100e0c; --warm-white:#b7d0ee; --text-light:#b7d0ee; --text-dim:#7f9bb8; }
 * { margin:0; padding:0; box-sizing:border-box; }
 html { scroll-behavior:smooth; }
-body { background:#070605; color:var(--text-light); font-family:'Courier Prime',monospace; font-size:16px; line-height:1.7; overflow-x:hidden; }
+body { background-color:#070605; background-image: linear-gradient(rgba(0,0,0,0.28), rgba(0,0,0,0.42)), url("knot-bg.jpg"); background-size: cover; background-position: center; background-attachment: fixed; color:var(--text-light); font-family:'Courier Prime',monospace; font-size:16px; line-height:1.7; overflow-x:hidden; }
 header { position:fixed; top:0; left:0; right:0; z-index:950; background:#100e0c; border-bottom:3px solid var(--gold); padding:18px 50px; display:flex; justify-content:space-between; align-items:center; box-shadow:0 0 40px rgba(192,132,252,0.18);} 
 .brand { display:flex; align-items:center; gap:12px; text-decoration:none; }
 .brand-logo { width:40px; height:40px; }
@@ -25,7 +25,23 @@ nav a:hover, nav a.active { color:var(--gold); }
 .container { max-width:1000px; margin:140px auto 80px; padding:0 30px; }
 .page-title { font-family:'Cinzel',serif; font-size:clamp(2rem,5vw,3rem); color:var(--gold); text-align:center; margin-bottom:20px; text-transform:uppercase; }
 .page-subtitle { text-align:center; color:var(--text-dim); font-size:1.1rem; margin-bottom:50px; text-transform:uppercase; letter-spacing:1px; }
-.contact-card { background:#3a3835; border:11px solid #6a5344; box-shadow:0 0 0 3px #8a735f; border-radius: 12px; padding:40px; }
+.contact-card,
+.help-card,
+.card,
+.panel,
+.content-block,
+.cta-banner,
+.pillar-card,
+.set-popup,
+#set-popup {
+  background: linear-gradient(#3a3835, #2c2b28) padding-box, url("fur.jpg") border-box;
+  background-size: auto, 90px;
+  background-repeat: repeat;
+  border: 11px solid transparent;
+  box-shadow:none;
+  border-radius:12px;
+}
+.contact-card { padding:40px; }
 .contact-card h2 { font-family:'Cinzel',serif; color:var(--gold); font-size:1.8rem; margin-bottom:15px; text-transform:uppercase; }
 .contact-card p { color:var(--warm-white); line-height:1.8; margin-bottom:15px; }
 .contact-details { background: rgba(192,132,252,0.08); border-left:4px solid var(--gold); padding:20px; border-radius:0 8px 8px 0; }
@@ -33,7 +49,7 @@ nav a:hover, nav a.active { color:var(--gold); }
 footer { padding:40px; text-align:center; border-top:2px solid var(--gold); color:var(--text-dim); font-size:0.85rem; background:#100e0c; }
 footer a { color:var(--gold); }
 footer p { margin:6px 0; }
-@media (max-width:768px) { header { padding:12px 20px; flex-direction:column; gap:12px; } nav { gap:15px; justify-content:center; } nav a { font-size:12px; } .container { margin-top:170px; padding:0 15px; } .contact-card { padding:20px; } }
+@media (max-width:768px) { body { background-attachment: scroll; } header { padding:12px 20px; flex-direction:column; gap:12px; } nav { gap:15px; justify-content:center; } nav a { font-size:12px; } .container { margin-top:170px; padding:0 15px; } .contact-card { padding:20px; } }
 </style>
 </head>
 <body>

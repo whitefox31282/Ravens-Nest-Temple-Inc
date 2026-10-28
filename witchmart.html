@@ -22,7 +22,12 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body {
-  background: #070605; color: var(--text-light); font-family: 'Courier Prime', monospace; font-size: 16px; line-height: 1.7; overflow-x: hidden; min-height: 100vh;
+  background-color: #070605;
+  background-image: linear-gradient(rgba(0,0,0,0.28), rgba(0,0,0,0.42)), url("knot-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: var(--text-light); font-family: 'Courier Prime', monospace; font-size: 16px; line-height: 1.7; overflow-x: hidden; min-height: 100vh;
 }
 header { position: fixed; top: 0; left: 0; right: 0; z-index: 950; background: #100e0c; border-bottom: 3px solid var(--gold); padding: 18px 50px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 0 40px rgba(192,132,252,0.18); }
 .brand { display:flex; align-items:center; gap:12px; text-decoration:none; }
@@ -35,7 +40,15 @@ nav a:hover, nav a.active { color: var(--gold); }
 .page-title { font-family:'Cinzel',serif; color:var(--gold); font-size: clamp(2rem,5vw,3rem); text-align:center; margin-bottom:20px; text-transform:uppercase; letter-spacing:2px; }
 .page-subtitle { text-align:center; color:var(--warm-white); font-size:1.05rem; max-width:700px; margin:0 auto 50px; }
 .services-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:25px; margin-bottom:40px; }
-.card, .content-block, .cta-banner { background: #3a3835; border: 11px solid #6a5344; box-shadow: 0 0 0 3px #8a735f; border-radius: 12px; padding: 30px; }
+.card, .content-block, .cta-banner, .help-card, .contact-card, .panel, .pillar-card, .set-popup, #set-popup {
+  background: linear-gradient(#3a3835, #2c2b28) padding-box, url("fur.jpg") border-box;
+  background-size: auto, 90px;
+  background-repeat: repeat;
+  border: 11px solid transparent;
+  border-radius: 12px;
+  box-shadow: none;
+}
+.card, .content-block, .cta-banner { padding: 30px; }
 .card h2 { font-family:'Cinzel',serif; color: var(--gold); font-size:1.3rem; margin-bottom:12px; text-transform:uppercase; }
 .card p, .section-text, .section-heading { color: var(--warm-white); }
 .section-heading { font-family:'Cinzel',serif; color: var(--gold); font-size:1.8rem; margin-bottom:15px; text-transform:uppercase; letter-spacing:1px; text-align:center; }
@@ -48,7 +61,7 @@ footer { padding:40px; text-align:center; border-top:2px solid var(--gold); colo
 footer p { margin:6px 0; }
 footer a { color: var(--gold); }
 footer .values { max-width:900px; margin:0 auto 12px; font-size:0.8rem; }
-@media (max-width:768px) { header { padding:12px 20px; flex-direction: column; gap:12px; } nav { gap:15px; justify-content:center; } nav a { font-size:12px; } .container { margin-top:170px; padding:0 16px; } .card, .cta-banner { padding:22px; } }
+@media (max-width:768px) { body { background-attachment: scroll; } header { padding:12px 20px; flex-direction: column; gap:12px; } nav { gap:15px; justify-content:center; } nav a { font-size:12px; } .container { margin-top:170px; padding:0 16px; } .card, .cta-banner, .content-block { padding:22px; } }
 </style>
 </head>
 <body>

@@ -22,7 +22,11 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body {
-  background: #070605;
+  background-color: #070605;
+  background-image: linear-gradient(rgba(0,0,0,0.28), rgba(0,0,0,0.42)), url("knot-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
   color: var(--text-light);
   font-family: 'Courier Prime', monospace;
   font-size: 16px;
@@ -57,7 +61,7 @@ main { overflow: hidden; }
 }
 #set-sloth img { width: 100%; height: auto; display: block; }
 #set-popup {
-  position: fixed; right: 20px; bottom: 20px; z-index: 1000; background: #3a3835; border: 11px solid #6a5344; box-shadow: 0 0 0 3px #8a735f; border-radius: 12px; padding: 18px; max-width: 320px; display: none; flex-direction: column; gap: 12px;
+  position: fixed; right: 20px; bottom: 20px; z-index: 1000; background: linear-gradient(#3a3835, #2c2b28) padding-box, url("fur.jpg") border-box; background-size: auto, 90px; border: 11px solid transparent; border-radius: 12px; padding: 18px; max-width: 320px; display: none; flex-direction: column; gap: 12px; box-shadow: none;
 }
 #set-popup.active { display: flex; }
 .set-quote { color: var(--warm-white); font-size: 14px; line-height: 1.5; }
@@ -65,23 +69,73 @@ main { overflow: hidden; }
 .set-btn {
   background: var(--gold); color: #070605; border: none; border-radius: 6px; padding: 8px 10px; font-family: 'Cinzel', serif; font-size: 10px; text-transform: uppercase; line-height: 1.2; font-weight: 700; cursor: pointer; text-decoration: none; text-align: center;
 }
-.hero { min-height: 100vh; margin-top: 70px; display: flex; align-items: center; justify-content: center; background: #070605; }
-.hero-content { text-align:center; max-width:1000px; padding:60px 40px; }
+.hero { min-height: 100vh; margin-top: 70px; display: flex; align-items: center; justify-content: center; }
+.hero-content { text-align:center; max-width:1200px; padding:60px 40px; }
 .hero-title { font-family:'Cinzel', serif; font-size: clamp(2.5rem, 10vw, 5rem); font-weight:900; color: var(--gold); text-transform: uppercase; letter-spacing: 3px; margin-bottom: 15px; }
 .hero-subtitle { font-size: clamp(1rem, 2.5vw, 1.3rem); color: var(--gold); text-transform: uppercase; letter-spacing: 2px; margin: 20px 0; font-family:'Cinzel', serif; }
 .hero-description { font-size:1.05rem; line-height:1.8; max-width:700px; margin: 30px auto 24px; color: var(--warm-white); }
-.hero-actions { display:flex; flex-wrap:wrap; justify-content:center; gap:16px; margin-top:24px; }
-.hero-button {
-  display:inline-block; text-decoration:none; padding:12px 20px; border-radius:6px; font-family:'Cinzel', serif; letter-spacing:1px; text-transform: uppercase; font-weight:700; background: var(--gold); color:#070605; box-shadow: 0 0 0 3px rgba(192,132,252,0.35);
+.door-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  max-width: 1100px;
+  margin: 30px auto 0;
+}
+.door-card {
+  display: block;
+  background: linear-gradient(#3a3835, #2c2b28) padding-box, url("fur.jpg") border-box;
+  background-size: auto, 90px;
+  background-repeat: repeat;
+  border: 11px solid transparent;
+  border-radius: 12px;
+  padding: 22px 18px;
+  color: var(--warm-white);
+  text-decoration: none;
+  box-shadow: none;
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+.door-card:hover {
+  transform: translateY(-3px);
+  filter: brightness(1.05);
+}
+.door-card h3 {
+  font-family:'Cinzel', serif;
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+  color: var(--gold);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.door-card p {
+  color: var(--warm-white);
+  line-height: 1.55;
+  font-size: 0.95rem;
+}
+.hero-badge {
+  display: block;
+  width: min(100%, 700px);
+  margin: 26px auto 0;
+  border-radius: 12px;
+  background: linear-gradient(#3a3835, #2c2b28) padding-box, url("fur.jpg") border-box;
+  background-size: auto, 90px;
+  border: 11px solid transparent;
+  box-shadow: none;
 }
 .pillar-grid { max-width: 1200px; margin: 0 auto; padding: 40px 20px 10px; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
 .pillar-card {
-  background: #3a3835; border: 11px solid #6a5344; box-shadow: 0 0 0 3px #8a735f; border-radius: 12px; padding: 22px; color: var(--warm-white);
+  background: linear-gradient(#3a3835, #2c2b28) padding-box, url("fur.jpg") border-box;
+  background-size: auto, 90px;
+  background-repeat: repeat;
+  border: 11px solid transparent;
+  border-radius: 12px;
+  padding: 22px;
+  color: var(--warm-white);
+  box-shadow: none;
 }
 .pillar-card h3 { font-family:'Cinzel', serif; color: var(--gold); margin-bottom:8px; text-transform: uppercase; letter-spacing: 1px; }
 .pillar-card a { color: var(--gold); text-decoration: none; }
 .infrastructure-section { padding: 80px 60px; max-width: 1200px; margin: 0 auto; display: flex; justify-content: center; align-items: center; }
-.work-plaque { width: 100%; max-width: 100%; height: auto; display: block; border-radius: 12px; border: 11px solid #6a5344; box-shadow: 0 0 0 3px #8a735f; }
+.work-plaque { width: 100%; max-width: 100%; height: auto; display: block; border-radius: 12px; background: linear-gradient(#3a3835, #2c2b28) padding-box, url("fur.jpg") border-box; background-size: auto, 90px; border: 11px solid transparent; box-shadow: none; }
 .temple-footer { padding: 28px 24px 36px; border-top: 2px solid var(--gold); background: #100e0c; color: var(--text-light); }
 .temple-footer-inner { max-width: 1200px; margin: 0 auto; text-align:center; }
 .temple-footer a { color: var(--gold); text-decoration: none; }
@@ -90,11 +144,12 @@ footer { padding: 40px; text-align: center; color: var(--text-dim); font-size: 0
 footer p { margin: 6px 0; }
 footer a { color: var(--gold); }
 @media (max-width: 768px) {
+  body { background-attachment: scroll; }
   header { padding: 12px 20px; flex-direction: column; gap: 12px; }
   nav { gap: 15px; justify-content: center; }
   .hero { margin-top: 140px; }
   .hero-title { font-size: 2rem; }
-  .hero-button { width: min(90vw, 330px); }
+  .door-grid { grid-template-columns: 1fr; }
   #set-sloth { width: 80px; right: 12px; bottom: 12px; }
 }
 </style>
@@ -128,16 +183,23 @@ footer a { color: var(--gold); }
 <main>
   <section class="hero">
     <div class="hero-content">
-      <img src="sanctuary-badge.jpg" alt="A Real Sanctuary" class="hero-badge">
       <h1 class="hero-title">RAVEN'S NEST</h1>
-      <h2 class="hero-subtitle">Sanctuary • Mutual Aid • Off-Grid Infrastructure</h2>
-      <p class="hero-description">A place to get practical help, share skills, and stand on your own.</p>
-      <p class="hero-description">Raven's Nest Temple is a unified off-grid sanctuary network, educational ecosystem, and community care node. We build resilient infrastructure, mutual aid systems, and care pathways without gatekeeping.</p>
-      <div class="hero-actions">
-        <a href="get-help.html" class="hero-button">I need help</a>
-        <a href="community-care.html" class="hero-button">Food, charging, shelter</a>
-        <a href="witchmart.html" class="hero-button">Trade and practice</a>
+      <h2 class="hero-subtitle">A place to get practical help, share skills, and stand on your own.</h2>
+      <div class="door-grid">
+        <a href="get-help.html" class="door-card">
+          <h3>I need help</h3>
+          <p>Call the temple line for crisis support, spiritual counsel, or a safe place to start.</p>
+        </a>
+        <a href="community-care.html" class="door-card">
+          <h3>Food, charging, shelter</h3>
+          <p>Community Care lists food runs, phone charging, and shelter warnings. If a list is empty, call.</p>
+        </a>
+        <a href="witchmart.html" class="door-card">
+          <h3>Trade and practice</h3>
+          <p>WitchMart is the marketplace. The Witches Co-op is for teachers and allied traditions.</p>
+        </a>
       </div>
+      <img src="sanctuary-badge.jpg" alt="A Real Sanctuary" class="hero-badge">
     </div>
   </section>
   <div class="pillar-grid">

@@ -16,6 +16,14 @@ a{color:var(--gold)}
 h1,h2{color:var(--gold)}
 .item{margin:10px 0;padding:10px 12px;border:11px solid transparent;border-radius:12px;background:linear-gradient(#3a3835,#3a3835) padding-box,url("fur.jpg") border-box;background-size:auto,90px}
 .none{color:var(--text-dim)}
+label{display:block;margin-bottom:6px;font-weight:700}
+select,input,textarea,button{font:inherit}
+select,textarea{width:100%;box-sizing:border-box;background:#100e0c;color:var(--text-light);border:1px solid var(--gold);border-radius:6px;padding:10px}
+textarea{min-height:120px;resize:vertical}
+button{background:var(--gold);color:#070605;border:none;border-radius:6px;padding:10px 14px;font-weight:700;cursor:pointer}
+.city-group{margin:12px 0 12px}
+.note{margin:10px 0;padding:10px 12px;border:11px solid transparent;border-radius:12px;background:linear-gradient(#3a3835,#3a3835) padding-box,url("fur.jpg") border-box;background-size:auto,90px}
+.note strong{color:var(--gold)}
 </style>
 </head>
 <body>
@@ -28,18 +36,105 @@ h1,h2{color:var(--gold)}
 </div>
 <main class="wrap">
 <h1>Heard, not checked</h1>
-<p>People pass along what they heard, by city. We have not checked it. It may be wrong. It may still help. Call before you go.</p>
 <div class="item">
-  <b>Send one in.</b>
-  <p>Email <a href="mailto:revjonbradley@ravensnesttemple.com?subject=Heard%20in%20%5Bcity%5D">revjonbradley@ravensnesttemple.com</a> with the subject “Heard in [city].” Say the Oklahoma city, what you heard, and the date. You do not have to give your name.</p>
-  <p>Do not name a child. Do not give the street of a domestic violence shelter. Do not give a private person’s home. We post the city, the words, and the date, marked UNCHECKED. We only pull a note that does one of those three things. We do not call it true.</p>
+  <p>Add what you heard. Nobody checks it. Nobody has to email. It may be wrong. It may still help. Call before you go. Until the server is up, a note stays on this phone or computer. Other people cannot see it yet. Do not name a child, a domestic-violence shelter street, or a private home.</p>
+  <form id="heard-form">
+    <div class="city-group">
+      <label for="city">City</label>
+      <select id="city" name="city">
+        <option value="Tulsa">Tulsa</option>
+        <option value="Oklahoma City">Oklahoma City</option>
+        <option value="Norman">Norman</option>
+        <option value="Lawton">Lawton</option>
+        <option value="Muskogee">Muskogee</option>
+        <option value="Other Oklahoma towns">Other Oklahoma towns</option>
+      </select>
+    </div>
+    <div class="city-group">
+      <label for="note">What you heard</label>
+      <textarea id="note" name="note" placeholder="Add what you heard"></textarea>
+    </div>
+    <button type="submit">Post unchecked</button>
+  </form>
 </div>
-<h2>Tulsa</h2><p class="item none">Nothing sent in yet.</p>
-<h2>Oklahoma City</h2><p class="item none">Nothing sent in yet.</p>
-<h2>Norman</h2><p class="item none">Nothing sent in yet.</p>
-<h2>Lawton</h2><p class="item none">Nothing sent in yet.</p>
-<h2>Muskogee</h2><p class="item none">Nothing sent in yet.</p>
-<h2>Other Oklahoma towns</h2><p class="item none">Nothing sent in yet.</p>
+
+<h2>Tulsa</h2>
+<div id="Tulsa" class="item none">Nothing here yet.</div>
+<h2>Oklahoma City</h2>
+<div id="Oklahoma City" class="item none">Nothing here yet.</div>
+<h2>Norman</h2>
+<div id="Norman" class="item none">Nothing here yet.</div>
+<h2>Lawton</h2>
+<div id="Lawton" class="item none">Nothing here yet.</div>
+<h2>Muskogee</h2>
+<div id="Muskogee" class="item none">Nothing here yet.</div>
+<h2>Other Oklahoma towns</h2>
+<div id="Other Oklahoma towns" class="item none">Nothing here yet.</div>
 </main>
+<script>
+const STORAGE_KEY = 'rnt-heard';
+const form = document.getElementById('heard-form');
+const citySelect = document.getElementById('city');
+const noteInput = document.getElementById('note');
+
+function getToday() {
+  const now = new Date();
+  const month = String(now.getMonth() + 1).padStart(2, '0');
+  const day = String(now.getDate()).padStart(2, '0');
+  const year = now.getFullYear();
+  return `${month}/${day}/${year}`;
+}
+
+function loadNotes() {
+  const raw = localStorage.getItem(STORAGE_KEY);
+  const notes = raw ? JSON.parse(raw) : {};
+  const cities = [
+    'Tulsa',
+    'Oklahoma City',
+    'Norman',
+    'Lawton',
+    'Muskogee',
+    'Other Oklahoma towns'
+  ];
+
+  cities.forEach((city) => {
+    const container = document.getElementById(city);
+    const list = notes[city] || [];
+
+    container.innerHTML = '';
+    if (!list.length) {
+      container.textContent = 'Nothing here yet.';
+      container.classList.add('none');
+      return;
+    }
+
+    container.classList.remove('none');
+    list.forEach((entry) => {
+      const item = document.createElement('div');
+      item.className = 'note';
+      item.innerHTML = '<strong>UNCHECKED</strong> — ' + entry.date + '<br>' + entry.text;
+      container.appendChild(item);
+    });
+  });
+}
+
+form.addEventListener('submit', function (event) {
+  event.preventDefault();
+  const city = citySelect.value;
+  const text = noteInput.value.trim();
+  if (!text) return;
+
+  const raw = localStorage.getItem(STORAGE_KEY);
+  const notes = raw ? JSON.parse(raw) : {};
+  const list = notes[city] || [];
+  list.push({ text, date: getToday() });
+  notes[city] = list;
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(notes));
+  noteInput.value = '';
+  loadNotes();
+});
+
+loadNotes();
+</script>
 </body>
 </html>

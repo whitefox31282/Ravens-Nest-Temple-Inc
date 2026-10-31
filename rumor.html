@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Unverified Rumors — Ravens Nest Temple</title>
+</head>
+<body>
+<h1>Unverified Rumors</h1>
+<p>Post a city and a short unverified note. No email required. No approval. Every note is labeled unverified. Nothing here is checked.</p>
+<form onsubmit="addNote(event)">
+  <label>City <input id="city" required></label><br>
+  <label>Note <textarea id="note" required></textarea></label><br>
+  <button type="submit">Post</button>
+</form>
+<ul id="list"></ul>
+<script>
+function addNote(e){
+  e.preventDefault();
+  const city=document.getElementById('city').value.trim();
+  const note=document.getElementById('note').value.trim();
+  const li=document.createElement('li');
+  li.textContent=city+': '+note+' (unverified)';
+  document.getElementById('list').prepend(li);
+  document.getElementById('city').value='';
+  document.getElementById('note').value='';
+}
+</script>
+<footer style="text-align:center;padding:1rem;font-size:.85rem;">This site stores no accounts and does not track visitors.</footer>
+</body>
+</html>

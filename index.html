@@ -1,370 +1,100 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Raven's Nest | Sanctuary, Mutual Aid & WitchMart</title>
-<meta name="description" content="Raven's Nest Temple is an off-grid sanctuary network, mutual aid hub, and cooperative marketplace. Explore WitchMart, the Witches Co-op, and the emergency community resources.">
-<meta name="theme-color" content="#070605">
+<title>Raven's Nest Temple | Sanctuary in Progress</title>
+<meta name="description" content="Raven's Nest Temple Inc. Mutual aid and an off-grid sanctuary in planning. The lot is not open yet.">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <style>
-:root {
-  --gold: #c084fc;
-  --blue-dark: #070605;
-  --blue-deep: #100e0c;
-  --warm-white: #b7d0ee;
-  --text-light: #b7d0ee;
-  --text-dim: #7f9bb8;
-}
-* { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+:root { --purple:#c084fc; --blue:#b7d0ee; --card:#0a0a0f; }
+* { box-sizing:border-box; margin:0; padding:0; }
 body {
-  background-color: #070605;
-  color: var(--text-light);
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
-  font-size: 16px;
-  line-height: 1.7;
-  overflow-x: hidden;
-}
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  background: url("knot-bg.jpg") center/cover no-repeat;
-  filter: contrast(1.45) brightness(1.45) saturate(1.3);
-  pointer-events: none;
+  background:#000;
+  color:var(--blue);
+  font-family:system-ui,Arial,sans-serif;
+  line-height:1.65;
 }
 header {
-  position: fixed;
-  top: 0; left: 0; right: 0;
-  z-index: 950;
-  background: #100e0c;
-  border-bottom: 3px solid var(--gold);
-  padding: 18px 50px;
-  display: flex; justify-content: space-between; align-items: center;
-  box-shadow: 0 0 40px rgba(192,132,252,0.18);
+  background:#000;
+  border-bottom:3px solid var(--purple);
+  padding:12px 16px;
+  position:sticky;
+  top:0;
+  z-index:10;
 }
-.brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
-.brand-logo { width: 40px; height: 40px; flex-shrink: 0; }
-.brand-text {
-  font-family: 'Georgia', serif; font-size: 14px; font-weight: 900; letter-spacing: 1px;
-  color: var(--gold); text-transform: uppercase; text-shadow: 0 0 15px rgba(192,132,252,0.25); line-height: 1.1;
-}
-nav { display: flex; gap: 30px; flex-wrap: wrap; }
-nav a {
-  color: var(--text-light); text-decoration: none; font-size: 11px; text-transform: uppercase; letter-spacing: 2px; transition: all 0.3s;
-}
-nav a:hover, nav a.active { color: var(--gold); }
-main { overflow: hidden; }
-#set-sloth {
-  position: fixed; right: 20px; bottom: 20px; z-index: 999; cursor: pointer; width: 120px; height: auto;
-  filter: drop-shadow(0 0 15px rgba(192,132,252,0.3));
-}
-#set-sloth img { width: 100%; height: auto; display: block; }
-#set-popup {
-  position: fixed; right: 20px; bottom: 20px; z-index: 1000; background: linear-gradient(#3a3835, #2c2b28) padding-box, url("fur.jpg") border-box; background-size: auto, 90px; border: 11px solid transparent; border-radius: 16px; box-shadow: 0 0 28px rgba(192,132,252,0.4); padding: 16px; display: none; width: min(360px, calc(100vw - 30px)); gap: 12px; flex-direction: column; }
-#set-popup.active { display: flex; }
-.set-quote { color: var(--warm-white); font-size: 14px; line-height: 1.5; }
-.set-options { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
-.set-btn {
-  background: var(--gold); color: #070605; border: none; border-radius: 6px; padding: 8px 10px; font-family: 'Georgia', serif; font-size: 10px; text-transform: uppercase; line-height: 1.2; font-weight: 700; letter-spacing: 0.8px; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; text-decoration: none; text-align: center;
-}
-.hero { min-height: 100vh; margin-top: 70px; display: flex; flex-direction: column; align-items: center; justify-content: center; }
-.hero-content { text-align:center; max-width:1200px; padding:60px 40px; }
-.hero-title { font-family:'Georgia', serif; font-size: clamp(2.5rem, 10vw, 5rem); font-weight:900; color: var(--gold); text-transform: uppercase; letter-spacing: 3px; margin-bottom: 15px; }
-.hero-subtitle { font-size: clamp(1rem, 2.5vw, 1.3rem); color: var(--gold); text-transform: uppercase; letter-spacing: 2px; margin: 20px 0; font-family:'Georgia', serif; }
-.hero-description { font-size:1.05rem; line-height:1.8; max-width:700px; margin: 30px auto 24px; color: var(--warm-white); }
-.door-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 18px;
-  max-width: 1100px;
-  margin: 30px auto 0;
-}
-.door-card {
-  display: block;
-  background: #3a3835;
-  background-image: linear-gradient(#3a3835, #3a3835), url("fur.jpg");
-  background-origin: padding-box, border-box;
-  background-clip: padding-box, border-box;
-  background-size: auto, 90px;
-  background-repeat: repeat, repeat;
-  border: 11px solid transparent;
-  border-radius: 12px;
-  padding: 22px 18px;
-  color: var(--warm-white);
-  text-decoration: none;
-  box-shadow: 0 0 22px rgba(192,132,252,0.45);
-  transition: transform 0.2s ease, filter 0.2s ease;
-}
-.door-card:hover {
-  transform: translateY(-3px);
-  filter: brightness(1.05);
-}
-.door-card h3 {
-  font-family:'Georgia', serif;
-  font-size: 1.2rem;
-  margin-bottom: 8px;
-  color: var(--gold);
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-.door-card p {
-  color: var(--warm-white);
-  line-height: 1.55;
-  font-size: 0.95rem;
-}
-.first-lot-section {
-  padding: 40px 20px 20px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-.first-lot-wrap {
-  text-align: center;
-}
-.first-lot-title {
-  font-family:'Georgia', serif;
-  font-size: clamp(1.6rem, 3vw, 2.4rem);
-  color: var(--gold);
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  margin-bottom: 20px;
-}
-.lot-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 18px;
-}
-.lot-card {
-  background: #3a3835;
-  background-image: linear-gradient(#3a3835, #3a3835), url("fur.jpg");
-  background-origin: padding-box, border-box;
-  background-clip: padding-box, border-box;
-  background-size: auto, 90px;
-  background-repeat: repeat, repeat;
-  border: 11px solid transparent;
-  border-radius: 12px;
-  padding: 22px 18px;
-  color: var(--warm-white);
-  box-shadow: 0 0 22px rgba(192,132,252,0.45);
-  text-align: left;
-}
-.lot-card h4 {
-  color: var(--gold);
-  font-family:'Georgia', serif;
-  font-size: 1.1rem;
-  margin-bottom: 12px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-.lot-card p, .lot-card li {
-  color: var(--warm-white);
-  line-height: 1.6;
-  font-size: 0.95rem;
-}
-.lot-card ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-.lot-card li + li {
-  margin-top: 8px;
-}
-.hero-badge {
-  display: block;
-  width: min(100%, 700px);
-  margin: 0 auto 26px;
-  border-radius: 12px;
-  background: #3a3835;
-  background-image: linear-gradient(#3a3835, #3a3835), url("fur.jpg");
-  background-origin: padding-box, border-box;
-  background-clip: padding-box, border-box;
-  background-size: auto, 90px;
-  background-repeat: repeat, repeat;
-  border: 11px solid transparent;
-  box-shadow: 0 0 22px rgba(192,132,252,0.45);
-}
-.infrastructure-section { padding: 80px 60px; max-width: 1200px; margin: 0 auto; display: flex; justify-content: center; align-items: center; }
-.work-plaque { width: 100%; max-width: 100%; height: auto; display: block; border-radius: 12px; background: #3a3835; background-image: linear-gradient(#3a3835, #3a3835), url("fur.jpg"); background-origin: padding-box, border-box; background-clip: padding-box, border-box; background-size: auto, 90px; background-repeat: repeat, repeat; border: 11px solid transparent; box-shadow: 0 0 22px rgba(192,132,252,0.45); }
-.temple-footer { padding: 28px 24px 36px; border-top: 2px solid var(--gold); background: #100e0c; color: var(--text-light); }
-.temple-footer-inner { max-width: 1200px; margin: 0 auto; text-align:center; }
-.temple-footer a { color: var(--gold); text-decoration: none; }
-.temple-footer .links { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px 18px; margin-top: 10px; }
-footer { padding: 40px; text-align: center; color: var(--text-dim); font-size: 0.85rem; background: #100e0c; }
-footer p { margin: 6px 0; }
-footer a { color: var(--gold); }
-@media (max-width: 768px) {
-  body { background-attachment: scroll; }
-  header { padding: 12px 20px; flex-direction: column; gap: 12px; }
-  nav { gap: 15px; justify-content: center; }
-  .hero { margin-top: 140px; }
-  .hero-title { font-size: 2rem; }
-  .door-grid, .lot-grid { grid-template-columns: 1fr; }
-  #set-sloth { width: 80px; right: 12px; bottom: 12px; }
-}
+nav ul { display:flex; flex-wrap:wrap; gap:16px; list-style:none; justify-content:center; }
+nav a { color:var(--purple); text-decoration:none; font-weight:700; text-transform:uppercase; letter-spacing:1px; font-size:0.9rem; }
+nav a:hover, nav a:focus { text-decoration:underline; }
+main { max-width:980px; margin:0 auto; padding:0 16px 24px; }
+h1,h2,h3 { color:var(--purple); }
+.welcome { margin:20px 0; border:3px solid var(--purple); }
+.welcome img { display:block; width:100%; height:auto; }
+.caption { padding:10px 14px; background:#0a0a0f; font-size:0.95rem; }
+.card { background:#0a0a0f; border:3px solid var(--purple); padding:22px; margin:20px 0; }
+.hero { display:flex; gap:24px; align-items:flex-start; flex-wrap:wrap; }
+.hero img { width:min(280px,100%); height:auto; border:2px solid var(--purple); }
+.speech { flex:1; min-width:260px; font-style:italic; border-left:3px solid var(--purple); padding-left:16px; color:#d8b4fe; }
+.grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:14px; margin-top:16px; }
+.sys { background:#111; padding:16px; border:1px solid #333; }
+.sys h3 { margin-bottom:6px; font-size:1.05rem; }
+footer { text-align:center; padding:28px 16px 40px; border-top:1px solid #333; color:#88aacc; font-size:0.95rem; }
+footer a { color:var(--purple); }
+@media (max-width:700px) { .hero { flex-direction:column; } }
 </style>
 </head>
 <body>
 <header>
-  <a href="index.html" class="brand">
-    <img src="raven-logo.jpg" alt="Raven's Nest Temple Inc" class="brand-logo">
-    <span class="brand-text">RAVEN'S NEST<br>TEMPLE INC</span>
-  </a>
   <nav>
-    <a href="index.html" class="active">Home</a>
-    <a href="get-help.html">Get help</a>
-    <a href="community-care.html">Community care</a>
-    <a href="witchmart.html">WitchMart</a>
-    <a href="witches-coop.html">Witches Co-op</a>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="get-help.html">Get help</a></li>
+      <li><a href="community-care.html">Community care</a></li>
+      <li><a href="witchmart.html">WitchMart</a></li>
+      <li><a href="witches-coop.html">Witches Co-op</a></li>
+    </ul>
   </nav>
 </header>
-<div id="set-sloth">
-  <img src="set-sloth-clear.png" alt="Set the Sloth">
-</div>
-<div class="set-popup" id="set-popup">
-  <div class="set-quote">Hail. I am Set T. Sloth. Welcome, and thank you for being a part of Raven's Nest Temple. If you need help understanding something here, give me a shout.</div>
-  <form id="set-ask" style="display:flex;gap:6px">
-    <input id="set-q" type="text" placeholder="Ask about this site" autocomplete="off" style="flex:1;min-width:0;background:#100e0c;color:#b7d0ee;border:1px solid #c084fc;border-radius:6px;padding:8px 10px;font-size:14px;">
-    <button class="set-btn" type="submit">Ask</button>
-  </form>
-  <p id="set-reply" class="set-quote"></p>
-  <div class="set-options">
-    <a href="get-help.html" class="set-btn">Get help</a>
-    <a href="heard.html" class="set-btn">Rumors</a>
-    <a href="community-care.html" class="set-btn">Care</a>
-    <a href="witchmart.html" class="set-btn">WitchMart</a>
-    <a href="witches-coop.html" class="set-btn">Co-op</a>
-    <button class="set-btn" onclick="document.getElementById('set-popup').classList.remove('active')">Close</button>
-  </div>
-</div>
 <main>
-  <section class="hero">
-    <div class="hero-content">
-      <h1 class="hero-title">Raven's Nest Temple</h1>
-      <h2 class="hero-subtitle">A place for the weary and downtrodden.</h2>
-      <div class="door-grid">
-        <a href="get-help.html" class="door-card">
-          <h3>I need help</h3>
-          <p>Call the temple line for crisis support, spiritual counsel, or a safe place to start.</p>
-        </a>
-        <a href="community-care.html" class="door-card">
-          <h3>Food, shelters, clinics, and a place to charge a phone.</h3>
-          <p>Call before you go. Unchecked notes are on the rumor page.</p>
-        </a>
-        <a href="witchmart.html" class="door-card">
-          <h3>Trade and practice</h3>
-          <p>WitchMart is the marketplace. The Witches Co-op is for teachers and allied traditions. If a listing makes a profit, a donation to the Temple is all we ask.</p>
-        </a>
-      </div>
+  <figure class="welcome">
+    <img src="Homepage_Welcome.jpg" alt="A plan for the first lot: one gate, earth-sheltered homes in a ring, gardens, animals, a fire, and solar.">
+    <figcaption class="caption">The plan for the first lot. This picture is the aim. It is not a photo of land we own. Nothing here is built yet.</figcaption>
+  </figure>
+  <section class="card hero">
+    <img src="Set.jpg" alt="Set T. Sloth">
+    <div>
+      <h1>Raven's Nest Temple</h1>
+      <p class="speech">Whoa... hey there, traveler. Take a breath, man.<br><br>
+      Pull up a log, kick your boots off, and just... chill for a second, my dude. You've crossed the threshold into Raven's Nest.<br><br>
+      Out here? Nobody's bossin' you around, man. Nobody's sellin' your data, runnin' a ledger on your life, or leave-in' you out in the cold. What you're lookin' at isn't some corporate charity fluff or a government trick, dude. It's mutual aid we are building. <strong>The sanctuary is not open. Do not come here tonight for a bed, a meal, power, or water. Nothing on the lot is built yet.</strong><br><br>
+      Take your time lookin' around, man. There's no rush out here. And hey... if you get confused or need a hand figuren' somethin' out, just give me a holler. We're all in this together, my dude.</p>
     </div>
   </section>
-  <section class="first-lot-section">
-    <div class="first-lot-wrap">
-      <h3 class="first-lot-title">The first lot</h3>
-      <div class="lot-grid">
-        <div class="lot-card">
-          <h4>The first lot</h4>
-          <p>We are looking at raw land around the San Bois Mountains. No lot is bought. A note here is not a claim that we own it.</p>
-        </div>
-        <div class="lot-card">
-          <h4>Lots we are looking at</h4>
-          <p>None posted yet. When a lot is being looked at, it will show the county, the acres, and the price asked.</p>
-        </div>
-        <div class="lot-card">
-          <h4>What the first lot needs</h4>
-          <ul>
-            <li>Water: a well or hauled water, and a way to store it.</li>
-            <li>Power: a small solar set, enough to start.</li>
-            <li>Shelter: a first roof before any bigger build.</li>
-            <li>Tools: saws, hand tools, and a dry place to keep them.</li>
-            <li>Food: a garden bed, seed, and a way to keep the harvest.</li>
-          </ul>
-        </div>
-      </div>
+  <section class="card">
+    <h2>The first lot, not built yet.</h2>
+    <div class="grid">
+      <div class="sys"><h3>Off-grid energy</h3><p>Solar and batteries. Not built yet.</p></div>
+      <div class="sys"><h3>Living water</h3><p>Rainwater and a filter. Not built yet.</p></div>
+      <div class="sys"><h3>Food beds</h3><p>Gardens and aquaponics. Not built yet.</p></div>
+      <div class="sys"><h3>Timber shelter</h3><p>A longhouse. Not built yet.</p></div>
     </div>
   </section>
-  <section class="infrastructure-section">
-    <img loading="lazy" decoding="async" src="the-work-plaque.jpg" alt="The Work - Our Infrastructure Vision" class="work-plaque">
+  <section class="card">
+    <h2>We build sanctuary where system reliance ends.</h2>
+    <p>Raven's Nest Temple Inc. is an Oklahoma non-profit. The aim is mutual aid, personal sovereignty, and off-grid community infrastructure. Shelter, clean water, power, and food should be basic human realities, not commodities. The lot is not open yet. Help that exists today is on the community-care page, or by phone.</p>
+    <div class="grid">
+      <div class="sys"><h3>Sovereign infrastructure</h3></div>
+      <div class="sys"><h3>Unvarnished mutual aid</h3></div>
+      <div class="sys"><h3>Land and sanctuary protection</h3></div>
+      <div class="sys"><h3>Legal and rights defense</h3></div>
+    </div>
+    <p style="margin-top:16px;"><em>No one here overrides your choices. We do not exploit anyone. We stand together.</em></p>
   </section>
 </main>
-<footer class="temple-footer">
-  <div class="temple-footer-inner">
-    <p>Raven's Nest Temple Inc. is an Oklahoma non-profit sanctuary. No one here overrides your choices. Help moves between people. We do not exploit anyone.</p>
-    <div class="links">
-      <a href="get-help.html">Get help</a>
-      <a href="community-care.html">Community care</a>
-      <a href="heard.html">Heard</a>
-      <a href="witchmart.html">WitchMart</a>
-      <a href="witches-coop.html">Witches Co-op</a>
-      <a href="contact.html">Contact</a>
-    </div>
-    <p>405-987-3212</p>
-    <p>revjonbradley@ravensnesttemple.com</p>
-    <p>In danger now call 911. In a mental-health crisis call or text 988.</p>
-  </div>
+<footer>
+  <p><strong>Temple Line:</strong> 405-987-3212 &nbsp;|&nbsp; <strong>Email:</strong> <a href="mailto:revjonbradley@ravensnesttemple.com">revjonbradley@ravensnesttemple.com</a></p>
+  <p>In danger now call 911. In a mental-health crisis call or text 988.</p>
+  <p><em>This site stores no accounts and does not track visitors.</em></p>
 </footer>
-<script>
-const setSloth = document.getElementById('set-sloth');
-const setPopup = document.getElementById('set-popup');
-const setAsk = document.getElementById('set-ask');
-const setQ = document.getElementById('set-q');
-const setReply = document.getElementById('set-reply');
-
-function openSetPopup() {
-  setPopup.classList.add('active');
-  const rect = setSloth.getBoundingClientRect();
-  setPopup.style.right = '20px';
-  setPopup.style.bottom = (window.innerHeight - rect.top + 10) + 'px';
-  setPopup.style.left = 'auto';
-}
-
-setSloth.addEventListener('click', (e) => {
-  e.stopPropagation();
-  openSetPopup();
-});
-
-setAsk.addEventListener('submit', (event) => {
-  event.preventDefault();
-  const question = (setQ.value || '').toLowerCase();
-
-  if (question.includes('evoke')) {
-    openSetPopup();
-    setReply.textContent = 'I am here. I only know this website until the server is up.';
-    return;
-  }
-
-  let answer = 'I do not know that yet. I only know this website. I cannot look things up on the internet until the server is running.';
-
-  if (question.includes('hurt') || question.includes('suicide') || question.includes('911')) {
-    answer = 'If someone is in danger, call 911. If it is a mental-health crisis, call or text 988.';
-  } else if (question.includes('phone') || question.includes('email') || question.includes('hours')) {
-    answer = 'Temple line 405-987-3212. Email revjonbradley@ravensnesttemple.com. Hours are on the help page.';
-  } else if (question.includes('food') || question.includes('hungry') || question.includes('pantry') || question.includes('iron')) {
-    answer = 'Tulsa morning meal is Iron Gate, 501 W Archer, every day 8:30 to 10:30. More food is on Community Care. Call before you go.';
-  } else if (question.includes('shelter') || question.includes('bed') || question.includes('sleep')) {
-    answer = 'A listing is not a bed. Community Care has shelters by town. Call first. For domestic violence, call or text 1-800-522-7233. Do not give a street for that.';
-  } else if (question.includes('charge') || question.includes('plug')) {
-    answer = 'Tulsa Central Library, 400 Civic Center, has outlets while open. Bring your own cord.';
-  } else if (question.includes('clinic') || question.includes('doctor') || question.includes('shower')) {
-    answer = 'Day Center 918-583-5588. Morton 918-587-2171. Variety Care 405-632-6688. Ask the cost.';
-  } else if (question.includes('rumor') || question.includes('heard')) {
-    answer = 'Unchecked notes are on heard.html. Do not call a rumor true.';
-  } else if (question.includes('witch') || question.includes('donat') || question.includes('vendor') || question.includes('coop')) {
-    answer = 'WitchMart is the marketplace. If a listing makes a profit, a donation to the Temple is all we ask.';
-  }
-
-  setReply.textContent = answer;
-  setQ.value = '';
-});
-
-document.addEventListener('click', (e) => {
-  if (!e.target.closest('#set-popup') && e.target !== setSloth && !e.target.closest('#set-sloth')) {
-    setPopup.classList.remove('active');
-  }
-});
-</script>
-<footer style="text-align:center;padding:1rem;font-size:.85rem;">This site stores no accounts and does not track visitors.</footer>
-<p><a href="the-lot.html">The Lot</a></p>
 </body>
 </html>

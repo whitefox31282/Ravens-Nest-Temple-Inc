@@ -7,7 +7,7 @@
 <meta name="description" content="Raven's Nest Temple Inc. Mutual aid and an off-grid sanctuary in planning. The lot is not open yet.">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <style>
-:root { --purple:#c084fc; --blue:#b7d0ee; --card:#0a0a0f; }
+:root { --purple:#c084fc; --blue:#b7d0ee; }
 * { box-sizing:border-box; margin:0; padding:0; }
 body {
   background:#000 url('Homepage_Welcome.jpg') center/cover no-repeat fixed;
@@ -19,9 +19,7 @@ header {
   background:rgba(0,0,0,0.88);
   border-bottom:3px solid var(--purple);
   padding:12px 16px;
-  position:sticky;
-  top:0;
-  z-index:10;
+  position:sticky; top:0; z-index:10;
 }
 nav ul { display:flex; flex-wrap:wrap; gap:16px; list-style:none; justify-content:center; }
 nav a { color:var(--purple); text-decoration:none; font-weight:700; text-transform:uppercase; letter-spacing:1px; font-size:0.9rem; }
@@ -38,9 +36,33 @@ h1,h2,h3 { color:var(--purple); }
 .sys h3 { margin-bottom:6px; font-size:1.05rem; }
 footer { text-align:center; padding:28px 16px 40px; border-top:1px solid #333; color:#88aacc; font-size:0.95rem; background:rgba(0,0,0,0.88); }
 footer a { color:var(--purple); }
+#set-btn {
+  position:fixed; right:16px; bottom:16px; z-index:1000;
+  width:104px; padding:0; border:3px solid var(--purple); background:#000;
+  cursor:pointer; line-height:0;
+}
+#set-btn img { width:100%; height:auto; display:block; }
+#set-panel {
+  display:none; position:fixed; right:16px; bottom:132px; z-index:1000;
+  width:min(380px, calc(100vw - 24px)); height:min(70vh, 520px);
+  background:rgba(10,10,15,0.96); border:3px solid var(--purple);
+  flex-direction:column;
+}
+#set-panel.open { display:flex; }
+#set-head { display:flex; justify-content:space-between; align-items:center; gap:8px; padding:10px 12px; border-bottom:1px solid #333; color:var(--purple); font-weight:700; }
+#set-head button { background:transparent; color:var(--blue); border:1px solid var(--purple); padding:4px 8px; cursor:pointer; }
+#set-log { flex:1; overflow:auto; padding:12px; display:flex; flex-direction:column; gap:8px; }
+.set-msg { padding:8px 10px; max-width:95%; }
+.set-msg.bot { background:#16161f; border-left:3px solid var(--purple); }
+.set-msg.you { background:#111; align-self:flex-end; }
+#set-chips { display:flex; flex-wrap:wrap; gap:6px; padding:0 12px 8px; }
+#set-chips button, #set-form button { background:var(--purple); color:#070605; border:0; padding:6px 8px; font-weight:700; cursor:pointer; font-size:0.8rem; }
+#set-form { display:flex; gap:6px; padding:10px 12px 12px; border-top:1px solid #333; }
+#set-q { flex:1; min-width:0; background:#000; color:var(--blue); border:1px solid var(--purple); padding:8px; font-size:16px; }
 @media (max-width:700px) {
   body { background-attachment:scroll; }
   .hero { flex-direction:column; }
+  #set-panel { right:8px; left:8px; width:auto; bottom:124px; }
 }
 </style>
 </head>
@@ -62,10 +84,10 @@ footer a { color:var(--purple); }
     <img src="Set.jpg" alt="Set T. Sloth">
     <div>
       <h1>Raven's Nest Temple</h1>
-      <p class="speech">Whoa... hey there, traveler. Take a breath, man.<br><br>
-      Pull up a log, kick your boots off, and just... chill for a second, my dude. You've crossed the threshold into Raven's Nest.<br><br>
-      Out here? Nobody's bossin' you around, man. Nobody's sellin' your data, runnin' a ledger on your life, or leave-in' you out in the cold. What you're lookin' at isn't some corporate charity fluff or a government trick, dude. It's mutual aid we are building. <strong>The sanctuary is not open. Do not come here tonight for a bed, a meal, power, or water. Nothing on the lot is built yet.</strong><br><br>
-      Take your time lookin' around, man. There's no rush out here. And hey... if you get confused or need a hand figuren' somethin' out, just give me a holler. We're all in this together, my dude.</p>
+      <p class="speech">Get the joke, they will not, young Patty warmer.<br><br>
+      Would you like to learn about our Lord and Savior SetTheSloth?<br><br>
+      Whoa... hey there, traveler. Take a breath, man. Pull up a log. You've crossed the threshold into Raven's Nest. Nobody's bossin' you around. Nobody's sellin' your data. <strong>The sanctuary is not open. Do not come here tonight for a bed, a meal, power, or water. Nothing on the lot is built yet.</strong><br><br>
+      The same sloth sits in the bottom-right corner. Tap him. He answers what is on this website. He is not a live brain yet.</p>
     </div>
   </section>
   <section class="card">
@@ -94,5 +116,69 @@ footer a { color:var(--purple); }
   <p>In danger now call 911. In a mental-health crisis call or text 988.</p>
   <p><em>This site stores no accounts and does not track visitors.</em></p>
 </footer>
-</body>
-</html>
+<button id="set-btn" type="button" aria-label="Ask Set about this website">
+  <img src="Set.jpg" alt="Set T. Sloth">
+</button>
+<section id="set-panel" aria-label="Set">
+  <div id="set-head">Set <button type="button" id="set-close">Close</button></div>
+  <div id="set-log"></div>
+  <div id="set-chips">
+    <button type="button" data-q="I need help">Help</button>
+    <button type="button" data-q="What are the hours and phone?">Phone</button>
+    <button type="button" data-q="Is the lot open?">The lot</button>
+    <button type="button" data-q="Where is food?">Food</button>
+    <button type="button" data-q="What is WitchMart?">WitchMart</button>
+    <button type="button" data-q="What is the Witches Co-op?">Co-op</button>
+  </div>
+  <form id="set-form">
+    <input id="set-q" type="text" placeholder="Ask about this website" autocomplete="off">
+    <button type="submit">Ask</button>
+  </form>
+</section>
+<script>
+(function () {
+  var GREET = "Get the joke, they will not, young Patty warmer. Would you like to learn about our Lord and Savior SetTheSloth? Ask me about this website. The lot is not open.";
+  var panel = document.getElementById("set-panel");
+  var log = document.getElementById("set-log");
+  var input = document.getElementById("set-q");
+  function say(text, who) {
+    var p = document.createElement("p");
+    p.className = "set-msg " + who;
+    p.textContent = text;
+    log.appendChild(p);
+    log.scrollTop = log.scrollHeight;
+  }
+  function answer(raw) {
+    var q = (raw || "").toLowerCase();
+    if (/suicid|kill myself|self-harm|hurt myself|end my life/.test(q)) return "If you are in a mental-health crisis, call or text 988. If someone is in danger right now, call 911. I am not a crisis service.";
+    if (/\b911\b|in danger|emergency|overdose|assault/.test(q)) return "If someone is in danger right now, call 911. For a mental-health crisis, call or text 988. The temple line is 405-987-3212, and it is not a substitute for 911.";
+    if (/988|mental|crisis|anxious|panic/.test(q)) return "In a mental-health crisis, call or text 988. If someone is in immediate danger, call 911.";
+    if (/hour|open today|phone|call|email|contact|number/.test(q)) return "Temple line 405-987-3212. Personal line 405-673-0209. Email revjonbradley@ravensnesttemple.com. Hours posted on the help page: 7 days a week, except Sabbats and Esbats, 8:00 AM to 9:00 PM. The lot is not a walk-in.";
+    if (/food|hungry|pantry|meal|feed the homeless|supply/.test(q)) return "No food runs are posted right now. Call 405-987-3212 or email revjonbradley@ravensnesttemple.com to ask about the next one, or to give food. Community Care is the page for food, charging, and shelter warnings.";
+    if (/charg|plug|phone battery|outlet/.test(q)) return "No charging spots are posted right now. They go on the Community Care page when one is real. Call 405-987-3212 before you travel.";
+    if (/shelter|bed|sleep|unhoused|homeless/.test(q)) return "A listing is not a bed. No shelter warnings are posted right now. The sanctuary lot is not open. Do not come here tonight for a bed. Call 911 if someone is in danger. Call or text 988 in a mental-health crisis.";
+    if (/lot|land|solar|water|garden|longhouse|built|sanctuary|come over|visit|address|where are you/.test(q)) return "The lot is not open. Nothing is built yet. No bed, meal, power, or water is there tonight. The picture on this page is the aim, not a photo of land the Temple owns. Solar, water, food beds, and the longhouse are all not built yet.";
+    if (/witchmart|vendor|sell|marketplace|donat/.test(q)) return "WitchMart is the marketplace and mutual aid side. No vendors are listed yet. To sell through WitchMart, email revjonbradley@ravensnesttemple.com. A person at the Temple has to approve a listing. If a listing makes a profit, a donation to the Temple is asked. No set amount.";
+    if (/co-?op|hecate|altar of the moon|teacher|practitioner|ethics|join/.test(q)) return "The Witches Co-op is for practitioners, teachers, and allied traditions. The co-op page names the Temple of Hecate and the Altar of the Moon as founding allies. Membership can be refused or revoked. Every public listing is reviewed first.";
+    if (/who|jon|mad goose|priest|oklahoma|non-?profit|temple/.test(q)) return "Raven's Nest Temple Inc. is an Oklahoma non-profit. Rev Jon the Mad Goose Bradley is the public contact. Temple line 405-987-3212. Email revjonbradley@ravensnesttemple.com. The site stores no accounts and does not track visitors.";
+    if (/privacy|track|account|cookie|data/.test(q)) return "This site stores no accounts and does not track visitors. Set does not send your question anywhere. The answer is chosen on this page from facts already written on the site.";
+    if (/joke|patty|setthesloth|savior|what can you|who are you|^set$|greeting/.test(q)) return GREET;
+    return "I do not know that from this website. I only answer what the pages already say. I cannot look things up on the internet until a server is running. If you are in danger, call 911. In a mental-health crisis, call or text 988.";
+  }
+  function ask(text) {
+    var q = (text || "").trim();
+    if (!q) return;
+    say(q, "you");
+    say(answer(q), "bot");
+    input.value = "";
+  }
+  document.getElementById("set-btn").addEventListener("click", function () {
+    var open = panel.classList.toggle("open");
+    if (open && !log.childElementCount) {
+      say(GREET, "bot");
+      input.focus();
+    }
+  });
+  document.getElementById("set-close").addEventListener("click", function () { panel.classList.remove("open"); });
+  document.getElementById("set-form").addEventListener("submit", function (event) { event.preventDefault(); ask(input.value); });
+  document.getElementById("set-chips").addEventListener("click", function (event) {

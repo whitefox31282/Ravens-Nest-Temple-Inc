@@ -10,13 +10,13 @@
 :root { --purple:#c084fc; --blue:#b7d0ee; --card:#0a0a0f; }
 * { box-sizing:border-box; margin:0; padding:0; }
 body {
-  background:#000;
+  background:#000 url('Homepage_Welcome.jpg') center/cover no-repeat fixed;
   color:var(--blue);
   font-family:system-ui,Arial,sans-serif;
   line-height:1.65;
 }
 header {
-  background:#000;
+  background:rgba(0,0,0,0.88);
   border-bottom:3px solid var(--purple);
   padding:12px 16px;
   position:sticky;
@@ -28,19 +28,20 @@ nav a { color:var(--purple); text-decoration:none; font-weight:700; text-transfo
 nav a:hover, nav a:focus { text-decoration:underline; }
 main { max-width:980px; margin:0 auto; padding:0 16px 24px; }
 h1,h2,h3 { color:var(--purple); }
-.welcome { margin:20px 0; border:3px solid var(--purple); }
-.welcome img { display:block; width:100%; height:auto; }
-.caption { padding:10px 14px; background:#0a0a0f; font-size:0.95rem; }
-.card { background:#0a0a0f; border:3px solid var(--purple); padding:22px; margin:20px 0; }
+.truth { background:rgba(10,10,15,0.88); border:2px solid var(--purple); padding:10px 14px; margin:20px 0; }
+.card { background:rgba(10,10,15,0.92); border:3px solid var(--purple); padding:22px; margin:20px 0; }
 .hero { display:flex; gap:24px; align-items:flex-start; flex-wrap:wrap; }
 .hero img { width:min(280px,100%); height:auto; border:2px solid var(--purple); }
 .speech { flex:1; min-width:260px; font-style:italic; border-left:3px solid var(--purple); padding-left:16px; color:#d8b4fe; }
 .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:14px; margin-top:16px; }
 .sys { background:#111; padding:16px; border:1px solid #333; }
 .sys h3 { margin-bottom:6px; font-size:1.05rem; }
-footer { text-align:center; padding:28px 16px 40px; border-top:1px solid #333; color:#88aacc; font-size:0.95rem; }
+footer { text-align:center; padding:28px 16px 40px; border-top:1px solid #333; color:#88aacc; font-size:0.95rem; background:rgba(0,0,0,0.88); }
 footer a { color:var(--purple); }
-@media (max-width:700px) { .hero { flex-direction:column; } }
+@media (max-width:700px) {
+  body { background-attachment:scroll; }
+  .hero { flex-direction:column; }
+}
 </style>
 </head>
 <body>
@@ -56,10 +57,7 @@ footer a { color:var(--purple); }
   </nav>
 </header>
 <main>
-  <figure class="welcome">
-    <img src="Homepage_Welcome.jpg" alt="A plan for the first lot: one gate, earth-sheltered homes in a ring, gardens, animals, a fire, and solar.">
-    <figcaption class="caption">The plan for the first lot. This picture is the aim. It is not a photo of land we own. Nothing here is built yet.</figcaption>
-  </figure>
+  <p class="truth">The plan for the first lot. This picture is the aim. It is not a photo of land we own. Nothing here is built yet.</p>
   <section class="card hero">
     <img src="Set.jpg" alt="Set T. Sloth">
     <div>

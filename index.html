@@ -9,21 +9,23 @@
   <style>
     :root {
       color-scheme: dark;
+      --gold: #e6c15a;
+      --red: #c62828;
+      --ink: #f6ead0;
       --purple: #c084fc;
-      --blue: #b7d0ee;
-      --glass: rgba(10, 10, 15, 0.75);
+      --glass: rgba(0, 0, 0, 0.72);
     }
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
     body {
       margin: 0;
       min-height: 100vh;
-      background-color: #08070b;
-      background-image: url("knot-bg.jpg"), url("Homepage_Welcome.jpg");
-      background-position: center, center;
-      background-size: cover, cover;
-      background-attachment: fixed, fixed;
-      color: var(--blue);
+      background-color: #000;
+      background-image: url("Homepage_Welcome.jpg");
+      background-position: center;
+      background-size: cover;
+      background-attachment: fixed;
+      color: var(--ink);
       font-family: system-ui, Arial, sans-serif;
       line-height: 1.65;
     }
@@ -32,9 +34,9 @@
       top: 0;
       z-index: 10;
       padding: 12px 16px;
-      background: rgba(10, 10, 15, 0.75);
+      background: rgba(0, 0, 0, 0.78);
       backdrop-filter: blur(4px);
-      border-bottom: 3px solid var(--purple);
+      border-bottom: 3px solid var(--gold);
     }
     nav ul {
       display: flex;
@@ -46,7 +48,7 @@
       list-style: none;
     }
     nav a {
-      color: var(--purple);
+      color: var(--gold);
       font-size: 0.9rem;
       font-weight: 700;
       letter-spacing: 1px;
@@ -55,31 +57,17 @@
     }
     nav a:hover, nav a:focus-visible { text-decoration: underline; }
     main { width: min(980px, 100%); margin: 0 auto; padding: 20px 16px 32px; }
-    h1, h2, h3 { color: #c084fc; line-height: 1.25; }
+    h1, h2, h3 { color: var(--gold); line-height: 1.25; }
     h1 { margin-top: 0; font-size: clamp(2rem, 5vw, 3.2rem); }
     h2 { margin-top: 0; font-size: clamp(1.55rem, 4vw, 2.2rem); }
-    p, li { color: #b7d0ee; }
+    p, li { color: var(--ink); }
     .card, .truth, .sys {
-      background: rgba(10, 10, 15, 0.75);
+      background: rgba(0, 0, 0, 0.72);
       backdrop-filter: blur(4px);
-      border: 4px solid var(--purple);
-      border-image: url("fur.jpg") 4 round;
+      border: 2px solid var(--gold);
     }
     .card { margin: 22px 0; padding: clamp(18px, 4vw, 30px); }
-    .truth { margin: 0 0 20px; padding: 12px 16px; }
-    .hero { display: flex; align-items: center; gap: clamp(20px, 4vw, 36px); flex-wrap: wrap; }
-    .hero-portrait {
-      display: block;
-      width: min(250px, 100%);
-      aspect-ratio: 1;
-      flex: 0 0 auto;
-      object-fit: cover;
-      border-radius: 50%;
-      border: 4px solid var(--purple);
-      border-image: url("fur.jpg") 4 round;
-    }
-    .hero-copy { flex: 1 1 300px; }
-    .speech { margin: 0 0 14px; padding-left: 16px; border-left: 3px solid var(--purple); font-style: italic; }
+    .truth { margin: 0 0 20px; padding: 12px 16px; border-color: var(--red); }
     .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 14px; margin-top: 18px; }
     .sys { padding: 16px; }
     .sys h3 { margin: 0 0 7px; font-size: 1.05rem; }
@@ -87,13 +75,13 @@
     .closing { margin: 20px 0 0; font-size: 1.1rem; font-style: italic; }
     footer {
       padding: 26px 16px 40px;
-      background: rgba(10, 10, 15, 0.75);
+      background: rgba(0, 0, 0, 0.78);
       backdrop-filter: blur(4px);
-      border-top: 1px solid rgba(192, 132, 252, 0.65);
+      border-top: 1px solid var(--red);
       text-align: center;
     }
     footer p { margin: 8px auto; }
-    footer a { color: var(--purple); }
+    footer a { color: var(--gold); }
     #set-link {
       position: fixed;
       right: 18px;
@@ -103,8 +91,7 @@
       width: 82px;
       height: 82px;
       overflow: hidden;
-      border: 4px solid var(--purple);
-      border-image: url("fur.jpg") 4 round;
+      border: 3px solid var(--gold);
       border-radius: 50%;
       background: var(--glass);
       box-shadow: 0 3px 18px rgba(0, 0, 0, 0.7);
@@ -122,23 +109,20 @@
       height: min(68vh, 500px);
       background: rgba(10, 10, 15, 0.9);
       backdrop-filter: blur(4px);
-      border: 4px solid var(--purple);
-      border-image: url("fur.jpg") 4 round;
+      border: 3px solid var(--gold);
       box-shadow: 0 3px 20px rgba(0, 0, 0, 0.7);
     }
     #set-panel.open { display: flex; }
-    #set-head { display: flex; justify-content: space-between; align-items: center; gap: 8px; padding: 10px 12px; border-bottom: 1px solid #51405f; color: var(--purple); font-weight: 700; }
-    #set-head button, #set-form button { padding: 7px 10px; border: 1px solid var(--purple); background: var(--purple); color: #100d14; font-weight: 700; cursor: pointer; }
+    #set-head { display: flex; justify-content: space-between; align-items: center; gap: 8px; padding: 10px 12px; border-bottom: 1px solid var(--red); color: var(--gold); font-weight: 700; }
+    #set-head button, #set-form button { padding: 7px 10px; border: 1px solid var(--gold); background: var(--red); color: var(--gold); font-weight: 700; cursor: pointer; }
     #set-log { display: flex; flex: 1; flex-direction: column; gap: 8px; overflow: auto; padding: 12px; }
-    .set-msg { max-width: 95%; margin: 0; padding: 8px 10px; color: var(--blue); }
-    .set-msg.bot { border-left: 3px solid var(--purple); background: rgba(22, 22, 31, 0.9); }
-    .set-msg.you { align-self: flex-end; background: rgba(30, 25, 38, 0.9); }
-    #set-form { display: flex; gap: 6px; padding: 10px 12px 12px; border-top: 1px solid #51405f; }
-    #set-q { min-width: 0; flex: 1; padding: 8px; border: 1px solid var(--purple); background: #08070b; color: var(--blue); font-size: 16px; }
+    .set-msg { max-width: 95%; margin: 0; padding: 8px 10px; color: var(--ink); }
+    .set-msg.bot { border-left: 3px solid var(--gold); background: rgba(0, 0, 0, 0.72); }
+    .set-msg.you { align-self: flex-end; background: rgba(198, 40, 40, 0.35); }
+    #set-form { display: flex; gap: 6px; padding: 10px 12px 12px; border-top: 1px solid var(--red); }
+    #set-q { min-width: 0; flex: 1; padding: 8px; border: 1px solid var(--gold); background: #000; color: var(--ink); font-size: 16px; }
     @media (max-width: 700px) {
-      body { background-attachment: scroll, scroll; }
-      .hero { flex-direction: column; align-items: stretch; }
-      .hero-portrait { align-self: center; width: min(220px, 75vw); }
+      body { background-attachment: scroll; }
       #set-panel { right: 8px; left: 8px; bottom: 110px; width: auto; }
     }
     @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
@@ -158,16 +142,6 @@
   </header>
   <main>
     <p class="truth">The first lot is not open, and nothing described here is built yet. This is a vision for the sanctuary, not a claim that these facilities already exist.</p>
-
-    <section class="card hero" aria-labelledby="welcome-title">
-      <img class="hero-portrait" src="Set1.jpg" alt="Set, offering a welcome" onerror="this.onerror=null;this.src='Set.jpg';">
-      <div class="hero-copy">
-        <h1 id="welcome-title">Raven's Nest Temple</h1>
-        <p class="speech">“Whoa... hey there, traveler. Take a breath, man...” Welcome to Raven's Nest. Nobody is here to override your choices, and this sanctuary is still in the planning stage.</p>
-        <p>We're building a grassroots refuge from the dirt up: a place to learn trades, grow food, and find a community that has your back—without corporate middlemen or a catch.</p>
-      </div>
-    </section>
-
     <section class="card" aria-labelledby="mission-title">
       <h2 id="mission-title">We build sanctuary where system reliance ends.</h2>
       <p>Raven’s Nest Temple Inc. is an Oklahoma non-profit sanctuary dedicated to true mutual aid, personal sovereignty, and off-grid community infrastructure. Shelter, clean water, power, and food should be basic human realities, not commodities.</p>
@@ -179,7 +153,6 @@
       </div>
       <p class="closing">“No one here overrides your choices. We do not exploit anyone. We stand together.”</p>
     </section>
-
     <section class="card" aria-labelledby="land-title">
       <h2 id="land-title">The first lot, not built yet.</h2>
       <p>These are plans, not completed facilities. The land is not open to visitors, and no shelter, water, power, or food service is available at the site.</p>
@@ -191,15 +164,13 @@
       </div>
     </section>
   </main>
-
   <footer>
     <p><strong>Temple Line:</strong> <a href="tel:4059873212">405-987-3212</a> &nbsp;|&nbsp; <strong>Email:</strong> <a href="mailto:revjonbradley@ravensnesttemple.com">revjonbradley@ravensnesttemple.com</a></p>
     <p>In immediate danger, call 911. For a mental-health crisis, call or text 988.</p>
     <p><em>Privacy: This site stores no accounts and does not track visitors. Set's on-page help does not send questions to a server.</em></p>
   </footer>
-
   <a id="set-link" href="index.html#help" aria-label="Open SetAI interactive help">
-    <img src="Set1.jpg" alt="SetAI — interactive help" onerror="this.onerror=null;this.src='Set.jpg';">
+    <img src="Set.jpg" alt="SetAI — interactive help">
   </a>
   <section id="set-panel" aria-label="SetAI interactive help" aria-live="polite">
     <div id="set-head">SetAI <button type="button" id="set-close">Close</button></div>
@@ -209,10 +180,13 @@
       <button type="submit">Ask</button>
     </form>
   </section>
-
   <script>
     (function () {
-      var greeting = "Whoa... hey there, traveler. Take a breath, man. Raven's Nest is still being planned, and the first lot is not open.";
+      var welcome = [
+        "Get the joke, they will not, young Patty warmer.",
+        "Would you like to learn about our Lord and Savior SetTheSloth?",
+        "Whoa... hey there, traveler. Take a breath, man. Welcome to Raven's Nest. Nobody here overrides your choices. The sanctuary is not open. Do not come here tonight for a bed, a meal, power, or water. Nothing on the lot is built yet."
+      ];
       var panel = document.getElementById("set-panel");
       var log = document.getElementById("set-log");
       var input = document.getElementById("set-q");
@@ -226,21 +200,28 @@
       function answer(question) {
         var q = question.toLowerCase();
         if (/suicid|self-harm|hurt myself|end my life/.test(q)) return "If you are in a mental-health crisis, call or text 988. If someone is in immediate danger, call 911. I am not a crisis service.";
-        if (/911|emergency|in danger|overdose/.test(q)) return "If someone is in immediate danger, call 911. For a mental-health crisis, call or text 988.";
-        if (/988|mental|crisis|panic/.test(q)) return "For a mental-health crisis in the U.S., call or text 988. If someone is in immediate danger, call 911.";
-        if (/phone|call|email|contact/.test(q)) return "Temple line: 405-987-3212. Email: revjonbradley@ravensnesttemple.com.";
-        if (/lot|land|solar|water|garden|longhouse|built|shelter|visit|address/.test(q)) return "The first lot is not open. The planned energy, water, food beds, and timber shelter are not built yet.";
-        if (/privacy|track|account|data/.test(q)) return "This site stores no accounts and does not track visitors. This on-page helper does not send your question to a server.";
-        if (/help|food|shelter|support/.test(q)) return "The sanctuary is not open and no services are available at the lot yet. For immediate danger call 911; for a mental-health crisis call or text 988.";
-        return "I can answer basic questions about the plans and contact details on this page. The lot is not open and nothing there is built yet.";
+        if (/\b911\b|emergency|in danger|overdose|assault/.test(q)) return "If someone is in immediate danger, call 911. For a mental-health crisis, call or text 988. The temple line is 405-987-3212. It is not a substitute for 911.";
+        if (/988|mental|crisis|panic/.test(q)) return "For a mental-health crisis, call or text 988. If someone is in immediate danger, call 911.";
+        if (/hour|phone|call|email|contact|number/.test(q)) return "Temple line 405-987-3212. Personal line 405-673-0209. Email revjonbradley@ravensnesttemple.com. Hours on the help page: 7 days a week, except Sabbats and Esbats, 8:00 AM to 9:00 PM. The lot is not a walk-in.";
+        if (/food|hungry|pantry|meal|feed the homeless|supply/.test(q)) return "No food runs are posted right now. Call 405-987-3212 or email revjonbradley@ravensnesttemple.com. Community Care is the page for food, charging, and shelter warnings.";
+        if (/charg|plug|battery|outlet/.test(q)) return "No charging spots are posted right now. Call 405-987-3212 before you travel.";
+        if (/shelter|bed|sleep|unhoused|homeless/.test(q)) return "No shelter warnings are posted. The lot is not open. Do not come here for a bed. Call 911 if someone is in danger. Call or text 988 in a mental-health crisis.";
+        if (/lot|land|solar|water|garden|longhouse|built|sanctuary|visit|address|where are you/.test(q)) return "The first lot is not open. Nothing is built yet. No bed, meal, power, or water is there. Solar, water, food beds, and the longhouse are plans, not finished facilities.";
+        if (/witchmart|vendor|sell|marketplace|donat/.test(q)) return "WitchMart is the marketplace and mutual aid side. No vendors are listed yet. To sell, email revjonbradley@ravensnesttemple.com. A person at the Temple approves a listing first.";
+        if (/co-?op|hecate|altar of the moon|teacher|practitioner|join/.test(q)) return "The Witches Co-op is for practitioners, teachers, and allied traditions. The co-op page names the Temple of Hecate and the Altar of the Moon as founding allies. Membership can be refused or revoked.";
+        if (/who|jon|mad goose|priest|oklahoma|non-?profit|temple|pillar|mission/.test(q)) return "Raven's Nest Temple Inc. is an Oklahoma non-profit. The aim is mutual aid, personal sovereignty, and off-grid community infrastructure. The four pillars are sovereign infrastructure, unvarnished mutual aid, land and sanctuary protection, and legal and rights defense. Contact: Rev Jon the Mad Goose Bradley, 405-987-3212, revjonbradley@ravensnesttemple.com.";
+        if (/privacy|track|account|cookie|data/.test(q)) return "This site stores no accounts and does not track visitors. Set does not send your question to a server. The answer comes from what is already written on the site.";
+        if (/joke|patty|setthesloth|savior|welcome|who are you|what can you/.test(q)) return welcome.join(" ");
+        return "I only know this website. I cannot look things up on the internet. Ask about help, the lot, food, WitchMart, or the co-op. If you are in danger, call 911. In a mental-health crisis, call or text 988.";
+      }
+      function openSet() {
+        panel.classList.add("open");
+        if (!log.childElementCount) welcome.forEach(function (line) { say(line, "bot"); });
       }
       document.getElementById("set-link").addEventListener("click", function (event) {
         event.preventDefault();
-        panel.classList.toggle("open");
-        if (panel.classList.contains("open")) {
-          if (!log.childElementCount) say(greeting, "bot");
-          input.focus();
-        }
+        if (panel.classList.contains("open")) panel.classList.remove("open");
+        else openSet();
       });
       document.getElementById("set-close").addEventListener("click", function () { panel.classList.remove("open"); });
       document.getElementById("set-form").addEventListener("submit", function (event) {
@@ -250,8 +231,8 @@
         say(question, "you");
         say(answer(question), "bot");
         input.value = "";
-        input.focus();
       });
+      openSet();
     }());
   </script>
 </body>

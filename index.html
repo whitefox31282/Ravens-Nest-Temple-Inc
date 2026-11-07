@@ -54,7 +54,7 @@
     <section class="card" aria-labelledby="mission-title">
       <h1 id="mission-title">We are the Ravens Evermore.</h1>
       <p class="closing">You belong. You are accepted. Pull up a chair.</p>
-      <p>Raven's Nest Temple is not a corporation, and it is not the government. It is a place being built so a person can wake up, walk outside, and learn a real trade with their hands. An electronics shop. Water and septic. A forge. Animals are sacred, the same as we are. We honor them from birth, through their life, and through their death. On the day their life is given, they have a party, the best day of their lives. They go to sleep in peace, and their energy passes on to the person who receives them. Gardens thick enough that a family picks the tomatoes instead of paying a store for a bag. A pond you can fish. People from town can pay a fee, and that fee buys more help.</p>
+      <p>Raven's Nest Temple Inc. is an Oklahoma non-profit corporation. If anything, we are the anti-government. It is a place being built so a person can wake up, walk outside, and learn a real trade with their hands. An electronics shop. Water and septic. A forge. Animals are sacred, the same as we are. We honor them from birth, through their life, and through their death. On the day their life is given, they have a party, the best day of their lives. They go to sleep in peace, and their energy passes on to the person who receives them. Gardens thick enough that a family picks the tomatoes instead of paying a store for a bag. A pond you can fish. People from town can pay a fee, and that fee buys more help.</p>
       <p>Food and parts at cost plus fifteen percent. Not the price a company charges because it can. A part we can print, the kind a store sells for a hundred and twenty dollars, should cost what it costs to make, plus fifteen percent. If that part breaks inside a year, we replace it.</p>
       <p>Someone who wants off the street will have a place to be warm, to work, and to be wanted. Hang with the animals. Learn the plants. Play a game. Take a class. Our elders deserve respect, not abuse, and not a system that has refused to fix itself. Here is the Raven's Nest answer. A five-acre lot, a mortgage of five hundred dollars a month, split among the people who live there. Food and animals raised on that land, so food is not a second bill. Tech students learn in real life by building what that elder asks for, a way to the pond, a chair, a cart, a tool fitted to their body, and the elder uses it to fish, to sit with the animals, and to spend the day as they choose. Nobody signs over their savings or their land to stay. Meth and fentanyl have no place here. A gift is not a debt. You owe nothing for kindness. No one here overrides your choices.</p>
       <p class="closing">We are the Ravens Evermore, and we are here for you.</p>
@@ -80,7 +80,10 @@
   <script>
     (function () {
       var welcome = [
-        "Hail and welcome there, traveler. Take a breath, man. Welcome to Raven's Nest. You belong. The sanctuary is not open. Nothing on the lot is built yet."
+        "Get the joke, they will not, young Patty warmer.",
+        "Would you like to learn about our Lord and Savior SetTheSloth?",
+        "Whoa... hey there, traveler. Take a breath, man. Welcome to Raven's Nest. You belong.",
+        "Everything is not built yet, but good things come to those who wait, my dude. People are coming together. Things are happening. It takes time, young one."
       ];
       var panel = document.getElementById("set-panel");
       var log = document.getElementById("set-log");
@@ -93,13 +96,15 @@
         log.appendChild(message);
         log.scrollTop = log.scrollHeight;
       }
-      function speakWelcome() {
-        if (spoken || !window.speechSynthesis) return;
+      function speakWelcome(force) {
+        if (!window.speechSynthesis) return;
+        if (spoken && !force) return;
         spoken = true;
+        window.speechSynthesis.cancel();
         var voice = new SpeechSynthesisUtterance(welcome.join(" "));
         voice.lang = "en-US";
-        voice.rate = 0.95;
-        window.speechSynthesis.cancel();
+        voice.rate = 0.92;
+        voice.onerror = function () { spoken = false; };
         window.speechSynthesis.speak(voice);
       }
       function answer(question) {
@@ -121,6 +126,7 @@
         event.preventDefault();
         if (panel.classList.contains("open")) panel.classList.remove("open");
         else openSet();
+        speakWelcome(true);
       });
       document.getElementById("set-close").addEventListener("click", function () { panel.classList.remove("open"); });
       document.getElementById("set-form").addEventListener("submit", function (event) {
@@ -132,11 +138,7 @@
         input.value = "";
       });
       openSet();
-      window.setTimeout(function () {
-        if (!window.speechSynthesis) return;
-        if (!window.speechSynthesis.speaking && !window.speechSynthesis.pending) spoken = false;
-      }, 500);
-      document.addEventListener("pointerdown", function () { speakWelcome(); }, { once: true });
+      document.addEventListener("pointerdown", function () { speakWelcome(true); }, { once: true });
     }());
   </script>
 </body>

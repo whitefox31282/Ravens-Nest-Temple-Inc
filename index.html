@@ -2,22 +2,25 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Almendra:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Raven's Nest Temple | Sanctuary in Progress</title>
   <meta name="description" content="We are the Ravens Evermore. A place being built for belonging, hands-on trades, and food and parts at cost plus fifteen percent. The first lot is not open.">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <style>
-    :root { color-scheme: dark; --gold: #e6c15a; --red: #c62828; --ink: #e8a0c8; --glass: rgba(0, 0, 0, 0.72); }
+    :root { color-scheme: dark; --gold: #e6c15a; --red: #c62828; --ink: #ff4d4d; --glass: rgba(0, 0, 0, 0.72); }
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
-    body { margin: 0; min-height: 100vh; background: #000 url("Homepage_Welcome.jpg") center/cover fixed; color: var(--ink); font-family: system-ui, Arial, sans-serif; line-height: 1.65; }
+    body { margin: 0; min-height: 100vh; background: #000 url("Homepage_Welcome.jpg") center/cover fixed; color: var(--ink); font-family: Almendra, Georgia, serif; line-height: 1.65; }
     header { position: sticky; top: 0; z-index: 10; padding: 12px 16px; background: rgba(0, 0, 0, 0.78); border-bottom: 3px solid var(--gold); }
     nav ul { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px 24px; margin: 0; padding: 0; list-style: none; }
-    nav a { color: var(--gold); font-size: 0.9rem; font-weight: 700; letter-spacing: 1px; text-decoration: none; text-transform: uppercase; }
+    nav a { color: var(--gold); font-family: Cinzel, Georgia, serif; font-size: 0.85rem; font-weight: 700; letter-spacing: 0.12em; text-decoration: none; text-transform: uppercase; }
     nav a:hover, nav a:focus-visible { text-decoration: underline; }
     main { width: min(820px, 100%); margin: 0 auto; padding: 28px 16px 40px; }
-    h1 { color: var(--gold); line-height: 1.2; margin: 0 0 8px; font-size: clamp(2rem, 5vw, 3.2rem); text-shadow: 0 2px 4px #000, 0 0 10px #000; }
-    p { color: var(--ink); text-shadow: 0 2px 4px #000, 0 0 8px #000; }
+    h1 { color: var(--gold); font-family: Cinzel, Georgia, serif; letter-spacing: 0.04em; line-height: 1.2; margin: 0 0 8px; font-size: clamp(2rem, 5vw, 3.2rem); text-shadow: 0 2px 4px #000, 0 0 10px #000; }
+    p { color: var(--ink); font-size: 1.12rem; text-shadow: 0 1px 2px #000, 0 0 6px #000, 0 0 1px #000; }
     .card, .truth { background: none; border: none; box-shadow: none; }
     .closing { font-size: 1.15rem; font-style: italic; }
     footer { padding: 26px 16px 40px; background: rgba(0, 0, 0, 0.35); text-align: center; }
@@ -55,4 +58,91 @@
       <h1 id="mission-title">We are the Ravens Evermore.</h1>
       <p class="closing">You belong. You are accepted. Pull up a chair.</p>
       <p>Raven's Nest Temple Inc. is an Oklahoma non-profit corporation. If anything, we are the anti-government. It is a place being built so a person can wake up, walk outside, and learn a real trade with their hands. An electronics shop. Water and septic. A forge. Animals are sacred, the same as we are. We honor them from birth, through their life, and through their death. On the day their life is given, they have a party, the best day of their lives. They go to sleep in peace, and their energy passes on to the person who receives them. Gardens thick enough that a family picks the tomatoes instead of paying a store for a bag. A pond you can fish. People from town can pay a fee, and that fee buys more help.</p>
-      <p>Food and parts at cost plus fifteen percent. Not the price a company charges because it can. A part we can print, the kind a store sells for a hundred
+      <p>Food and parts at cost plus fifteen percent. Not the price a company charges because it can. A part we can print, the kind a store sells for a hundred and twenty dollars, should cost what it costs to make, plus fifteen percent. If that part breaks inside a year, we replace it.</p>
+      <p>Someone who wants off the street will have a place to be warm, to work, and to be wanted. Hang with the animals. Learn the plants. Play a game. Take a class. Our elders deserve respect, not abuse, and not a system that has refused to fix itself. Here is the Raven's Nest answer. A five-acre lot, a mortgage of five hundred dollars a month, split among the people who live there. Food and animals raised on that land, so food is not a second bill. Tech students learn in real life by building what that elder asks for, a way to the pond, a chair, a cart, a tool fitted to their body, and the elder uses it to fish, to sit with the animals, and to spend the day as they choose. Nobody signs over their savings or their land to stay. Meth and fentanyl have no place here. A gift is not a debt. You owe nothing for kindness. No one here overrides your choices.</p>
+      <p class="closing">We are the Ravens Evermore, and we are here for you.</p>
+      <p class="truth">The first lot is not open. The pond, the shops, the animals, and the longhouse are not built yet. Do not come here tonight for a bed, a meal, or a part. This is the mission. The work is still ahead. Help that exists today is on the Get Help page, or by phone.</p>
+    </section>
+  </main>
+  <footer>
+    <p><strong>Temple Line:</strong> <a href="tel:5724726762">572-472-6762</a> &nbsp;|&nbsp; <strong>Email:</strong> <a href="mailto:revjonbradley@ravensnesttemple.com">revjonbradley@ravensnesttemple.com</a></p>
+    <p>In immediate danger, call 911. For a mental-health crisis, call or text 988.</p>
+    <p><em>This site stores no accounts and does not track visitors.</em></p>
+  </footer>
+  <a id="set-link" href="index.html#help" aria-label="Open Set">
+    <img src="Set.jpg" alt="Set">
+  </a>
+  <section id="set-panel" aria-label="Set" aria-live="polite">
+    <div id="set-head">Set <button type="button" id="set-close">Close</button></div>
+    <div id="set-log"></div>
+    <form id="set-form">
+      <input id="set-q" type="text" placeholder="Ask about this website" autocomplete="off" aria-label="Ask Set">
+      <button type="submit">Ask</button>
+    </form>
+  </section>
+  <script>
+    (function () {
+      var welcome = [
+        "Get the joke, they will not, young Patty warmer.",
+        "Would you like to learn about our Lord and Savior SetTheSloth?",
+        "Whoa... hey there, traveler. Take a breath, man. Welcome to Raven's Nest. You belong.",
+        "Everything is not built yet, but good things come to those who wait, my dude. People are coming together. Things are happening. It takes time, young one."
+      ];
+      var panel = document.getElementById("set-panel");
+      var log = document.getElementById("set-log");
+      var input = document.getElementById("set-q");
+      var spoken = false;
+      function say(text, who) {
+        var message = document.createElement("p");
+        message.className = "set-msg " + who;
+        message.textContent = text;
+        log.appendChild(message);
+        log.scrollTop = log.scrollHeight;
+      }
+      function speakWelcome(force) {
+        if (!window.speechSynthesis) return;
+        if (spoken && !force) return;
+        spoken = true;
+        window.speechSynthesis.cancel();
+        var voice = new SpeechSynthesisUtterance(welcome.join(" "));
+        voice.lang = "en-US";
+        voice.rate = 0.92;
+        voice.onerror = function () { spoken = false; };
+        window.speechSynthesis.speak(voice);
+      }
+      function answer(question) {
+        var q = question.toLowerCase();
+        if (/suicid|self-harm|hurt myself|end my life/.test(q)) return "If you are in a mental-health crisis, call or text 988. If someone is in immediate danger, call 911. I am not a crisis service.";
+        if (/\b911\b|emergency|in danger|overdose|assault/.test(q)) return "If someone is in immediate danger, call 911. For a mental-health crisis, call or text 988. The temple line is 572-472-6762. It is not a substitute for 911.";
+        if (/988|mental|crisis|panic/.test(q)) return "For a mental-health crisis, call or text 988. If someone is in immediate danger, call 911.";
+        if (/hour|phone|call|email|contact|number/.test(q)) return "Temple line 572-472-6762. Email revjonbradley@ravensnesttemple.com. Hours: 7 days a week, except Sabbats and Esbats, 8:00 AM to 9:00 PM. The lot is not a walk-in.";
+        if (/who|mission|raven|belong|pond|cost|percent|forge|shop|elder|animal/.test(q)) return "We are the Ravens Evermore. You belong. This is a place being built, not a finished sanctuary. The lot is not open. Animals are sacred. Food and parts at cost plus fifteen percent. Elders get respect, not a warehouse. Meth and fentanyl are not welcome. A gift is not a debt. Call 572-472-6762 or email revjonbradley@ravensnesttemple.com.";
+        if (/lot|land|built|visit|open|shelter|bed|food/.test(q)) return "The first lot is not open. Nothing is built yet. Do not come here tonight for a bed, a meal, or a part. Help that exists today is on the Get Help page, or call 572-472-6762.";
+        return "I only know this website. Ask about the mission, the lot, or how to get help. If you are in danger, call 911. In a mental-health crisis, call or text 988.";
+      }
+      function openSet() {
+        panel.classList.add("open");
+        if (!log.childElementCount) welcome.forEach(function (line) { say(line, "bot"); });
+        speakWelcome();
+      }
+      document.getElementById("set-link").addEventListener("click", function (event) {
+        event.preventDefault();
+        if (panel.classList.contains("open")) panel.classList.remove("open");
+        else openSet();
+        speakWelcome(true);
+      });
+      document.getElementById("set-close").addEventListener("click", function () { panel.classList.remove("open"); });
+      document.getElementById("set-form").addEventListener("submit", function (event) {
+        event.preventDefault();
+        var question = input.value.trim();
+        if (!question) return;
+        say(question, "you");
+        say(answer(question), "bot");
+        input.value = "";
+      });
+      openSet();
+      document.addEventListener("pointerdown", function () { speakWelcome(true); }, { once: true });
+    }());
+  </script>
+</body>
+</html>

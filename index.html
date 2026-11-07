@@ -132,6 +132,7 @@
         <li><a href="community-care.html">Community care</a></li>
         <li><a href="witchmart.html">WitchMart</a></li>
         <li><a href="witches-coop.html">Witches Co-op</a></li>
+        <li><a href="hecates-highways.html">Hecate's Highways</a></li>
       </ul>
     </nav>
   </header>
@@ -205,46 +206,4 @@
       function answer(question) {
         var q = question.toLowerCase();
         if (/suicid|self-harm|hurt myself|end my life/.test(q)) return "If you are in a mental-health crisis, call or text 988. If someone is in immediate danger, call 911. I am not a crisis service.";
-        if (/\b911\b|emergency|in danger|overdose|assault/.test(q)) return "If someone is in immediate danger, call 911. For a mental-health crisis, call or text 988. The temple line is 405-987-3212. It is not a substitute for 911.";
-        if (/988|mental|crisis|panic/.test(q)) return "For a mental-health crisis, call or text 988. If someone is in immediate danger, call 911.";
-        if (/hour|phone|call|email|contact|number/.test(q)) return "Temple line 405-987-3212. Personal line 405-673-0209. Email revjonbradley@ravensnesttemple.com. Hours on the help page: 7 days a week, except Sabbats and Esbats, 8:00 AM to 9:00 PM. The lot is not a walk-in.";
-        if (/food|hungry|pantry|meal|feed the homeless|supply/.test(q)) return "No food runs are posted right now. Call 405-987-3212 or email revjonbradley@ravensnesttemple.com. Community Care is the page for food, charging, and shelter warnings.";
-        if (/charg|plug|battery|outlet/.test(q)) return "No charging spots are posted right now. Call 405-987-3212 before you travel.";
-        if (/shelter|bed|sleep|unhoused|homeless/.test(q)) return "No shelter warnings are posted. The lot is not open. Do not come here for a bed. Call 911 if someone is in danger. Call or text 988 in a mental-health crisis.";
-        if (/lot|land|solar|water|garden|longhouse|built|sanctuary|visit|address|where are you/.test(q)) return "The first lot is not open. Nothing is built yet. No bed, meal, power, or water is there. Solar, water, food beds, and the longhouse are plans, not finished facilities.";
-        if (/witchmart|vendor|sell|marketplace|donat/.test(q)) return "WitchMart is the marketplace and mutual aid side. No vendors are listed yet. To sell, email revjonbradley@ravensnesttemple.com. A person at the Temple approves a listing first.";
-        if (/co-?op|hecate|altar of the moon|teacher|practitioner|join/.test(q)) return "The Witches Co-op is for practitioners, teachers, and allied traditions. The co-op page names the Temple of Hecate and the Altar of the Moon as founding allies. Membership can be refused or revoked.";
-        if (/who|jon|mad goose|priest|oklahoma|non-?profit|temple|pillar|mission/.test(q)) return "Raven's Nest Temple Inc. is an Oklahoma non-profit. The aim is mutual aid, personal sovereignty, and off-grid community infrastructure. The four pillars are sovereign infrastructure, unvarnished mutual aid, land and sanctuary protection, and legal and rights defense. Contact: Rev Jon the Mad Goose Bradley, 405-987-3212, revjonbradley@ravensnesttemple.com.";
-        if (/privacy|track|account|cookie|data/.test(q)) return "This site stores no accounts and does not track visitors. Set does not send your question to a server. The answer comes from what is already written on the site.";
-        if (/joke|patty|setthesloth|savior|welcome|who are you|what can you/.test(q)) return welcome.join(" ");
-        return "I only know this website. I cannot look things up on the internet. Ask about help, the lot, food, WitchMart, or the co-op. If you are in danger, call 911. In a mental-health crisis, call or text 988.";
-      }
-      function openSet() {
-        panel.classList.add("open");
-        if (!log.childElementCount) welcome.forEach(function (line) { say(line, "bot"); });
-        speakWelcome();
-      }
-      document.getElementById("set-link").addEventListener("click", function (event) {
-        event.preventDefault();
-        if (panel.classList.contains("open")) panel.classList.remove("open");
-        else openSet();
-      });
-      document.getElementById("set-close").addEventListener("click", function () { panel.classList.remove("open"); });
-      document.getElementById("set-form").addEventListener("submit", function (event) {
-        event.preventDefault();
-        var question = input.value.trim();
-        if (!question) return;
-        say(question, "you");
-        say(answer(question), "bot");
-        input.value = "";
-      });
-      openSet();
-      window.setTimeout(function () {
-        if (!window.speechSynthesis) return;
-        if (!window.speechSynthesis.speaking && !window.speechSynthesis.pending) spoken = false;
-      }, 500);
-      document.addEventListener("pointerdown", function () { speakWelcome(); }, { once: true });
-    }());
-  </script>
-</body>
-</html>
+        if (/\b911\b|emergency|

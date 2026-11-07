@@ -1,1 +1,163 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Hecate's Highways | Raven's Nest Temple</title>
+<meta name="description" content="Hecate's Highways. A hall of paths for people who came to heal or to help. The Elders' Road is the first mile marker. Nothing on it is built yet.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root { color-scheme: dark; --gold:#e6c15a; --red:#c62828; --ink:#f6ead0; --dim:#cbbba6; --line:rgba(230,193,90,.45); }
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; color: var(--ink); font-family: "Source Sans 3", system-ui, sans-serif; line-height: 1.6; background: #000 url("Homepage_Welcome.jpg") center/cover fixed; }
+body::before { content: ""; position: fixed; inset: 0; pointer-events: none; background: radial-gradient(ellipse at 50% 0%, rgba(80,40,10,.28), transparent 42%), linear-gradient(180deg, rgba(0,0,0,.55), rgba(0,0,0,.78)); }
+header, main, footer, section, #set-link, #set-panel, .hall { position: relative; z-index: 1; }
+header { position: sticky; top: 0; z-index: 20; padding: 12px 16px; background: rgba(0,0,0,.8); border-bottom: 3px solid var(--gold); }
+nav ul { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px 20px; margin: 0; padding: 0; list-style: none; }
+nav a { color: var(--gold); font-size: .78rem; font-weight: 700; letter-spacing: .12em; text-decoration: none; text-transform: uppercase; }
+nav a:hover, nav a:focus-visible { text-decoration: underline; }
+.threshold { width: min(920px, 100%); margin: 0 auto; padding: 48px 20px 20px; }
+.kicker { margin: 0; letter-spacing: .22em; text-transform: uppercase; font-size: .78rem; color: var(--gold); }
+h1, h2, h3 { font-family: Cinzel, Georgia, serif; color: var(--gold); text-shadow: 0 2px 8px #000; font-weight: 500; }
+h1 { font-size: clamp(2.4rem, 7vw, 4.6rem); line-height: 1.05; margin: 8px 0 0; }
+.greeting { max-width: 40rem; margin: 22px 0 0; font-size: clamp(1.2rem, 2.4vw, 1.55rem); font-style: italic; text-shadow: 0 2px 6px #000; }
+.enter { display: inline-block; margin-top: 22px; padding: 10px 16px; border: 1px solid var(--gold); color: var(--gold); text-decoration: none; letter-spacing: .14em; text-transform: uppercase; font-size: .78rem; }
+.hall { width: min(1040px, 100%); margin: 10px auto 40px; padding: 10px 16px 30px; display: grid; grid-template-columns: 250px 1fr; gap: 28px; }
+.paths { position: sticky; top: 78px; align-self: start; border-left: 2px solid var(--gold); padding-left: 14px; }
+.paths h2 { font-size: 1rem; margin: 0 0 10px; }
+.paths ol { list-style: none; margin: 0; padding: 0; }
+.paths li { margin: 0 0 14px; }
+.paths a { color: var(--ink); text-decoration: none; }
+.mile { display: block; color: var(--gold); font-size: .72rem; letter-spacing: .14em; text-transform: uppercase; }
+.tag { color: var(--red); font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; }
+article { scroll-margin-top: 84px; }
+.guide-no { letter-spacing: .16em; text-transform: uppercase; font-size: .75rem; color: var(--gold); }
+.meta { color: var(--dim); font-size: .92rem; }
+.reply { margin-top: 8px; padding-top: 8px; border-top: 1px solid var(--line); }
+footer { padding: 22px 16px 90px; text-align: center; background: rgba(0,0,0,.45); }
+footer a { color: var(--gold); }
+#set-link { position: fixed; z-index: 30; right: 16px; bottom: 16px; width: 78px; height: 78px; border: 3px solid var(--gold); border-radius: 50%; overflow: hidden; }
+#set-link img { width: 100%; height: 100%; object-fit: cover; display: block; }
+#set-panel { position: fixed; z-index: 30; right: 16px; bottom: 108px; display: none; flex-direction: column; width: min(360px, calc(100vw - 24px)); height: min(60vh, 440px); background: rgba(0,0,0,.92); border: 2px solid var(--gold); }
+#set-panel.open { display: flex; }
+#set-head, #set-form { display: flex; gap: 8px; align-items: center; padding: 8px; }
+#set-head { justify-content: space-between; border-bottom: 1px solid var(--red); color: var(--gold); font-family: Cinzel, serif; }
+#set-log { flex: 1; overflow: auto; padding: 10px; }
+.set-msg { margin: 0 0 8px; padding: 8px; }
+.set-msg.bot { border-left: 3px solid var(--gold); }
+#set-q { flex: 1; min-width: 0; padding: 8px; background: #000; color: var(--ink); border: 1px solid var(--gold); font-size: 16px; }
+button { background: var(--red); color: var(--gold); border: 1px solid var(--gold); padding: 7px 10px; font-weight: 700; cursor: pointer; }
+@media (max-width: 800px) { body { background-attachment: scroll; } .hall { grid-template-columns: 1fr; } .paths { position: static; } }
+</style>
+</head>
+<body>
+<header>
+  <nav aria-label="Main navigation">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="get-help.html">Get help</a></li>
+      <li><a href="community-care.html">Community care</a></li>
+      <li><a href="witchmart.html">WitchMart</a></li>
+      <li><a href="witches-coop.html">Witches Co-op</a></li>
+      <li><a href="hecates-highways.html">Hecate's Highways</a></li>
+    </ul>
+  </nav>
+</header>
+<section class="threshold">
+  <p class="kicker">The crossroads · Raven's Nest Temple</p>
+  <h1>Hecate's Highways</h1>
+  <p class="greeting">Welcome, weary traveler of the earth realm. On my highways are many paths. Whether you are here to heal or to help, Set is in the bottom right corner to guide you. May your path be blessed. Ravens Evermore.</p>
+  <a class="enter" href="#roads">Enter the highways</a>
+</section>
+<div class="hall" id="roads">
+  <aside class="paths" aria-label="Paths">
+    <h2>Paths</h2>
+    <ol>
+      <li><a href="#threshold-mile"><span class="mile">Mile 0</span>The threshold<span class="tag"> You are here</span></a></li>
+      <li><a href="#elders-road"><span class="mile">Mile 1 · Proposal</span>The Elders' Road<span class="tag"> Not built</span></a></li>
+    </ol>
+    <p class="meta">A path is a topic. A mile marker is the post that opens it.</p>
+  </aside>
+  <div>
+    <article id="threshold-mile">
+      <p class="guide-no">Field guide · Mile 0</p>
+      <h2>The threshold</h2>
+      <p>Hecate stands where the roads meet. She is the crossroads, the threshold, the torch, and the key. This hall is kept in respect for her, and for every person a path is meant to help.</p>
+      <p>You are not lost. Pick a mile marker. Read the path. If you have something true to add, send it.</p>
+      <p class="meta">Proposal means we are still talking. Building means hands are on the work. Done means a person can use it. Nothing on this page is Done.</p>
+    </article>
+    <article id="elders-road">
+      <p class="guide-no">Field guide · Mile 1</p>
+      <h2>The Elders' Road</h2>
+      <p class="meta">Proposal · not built · opened by Rev Jon the Mad Goose Bradley · November 7, 2026 · no replies</p>
+      <p>Our elders deserve respect, not abuse, and not a system that has refused to fix itself. Raven's Nest does not lack compassion, and it does not lack honor.</p>
+      <p>The path, as opened: a five-acre lot. A mortgage of five hundred dollars a month, split among the people who live there. Food and animals raised on that land, so food is not a second bill. Tech students learn there by building what the elder asks for. A way to the pond. A chair. A cart. A tool fitted to their body. The elder uses it to fish, to sit with the animals, and to spend the day as they choose.</p>
+      <p>The animals are sacred, the same as the elders. They are honored from birth, through life, and through death. On the day a life is given, that animal has a party, the best day of its life, goes to sleep in peace, and passes its energy on.</p>
+      <p>Nobody signs over their savings or their land to stay. A gift is not a debt. No one here overrides a choice.</p>
+      <p><strong>Traveler's warning.</strong> This lot is not open. Do not travel for a room. The five acres are the shape of the path, not a door.</p>
+      <h3>Replies</h3>
+      <p class="reply">No replies yet. The road is open. Write to <a href="mailto:revjonbradley@ravensnesttemple.com?subject=Mile%201%20The%20Elders%27%20Road">revjonbradley@ravensnesttemple.com</a> with the subject “Mile 1, The Elders' Road,” or call <a href="tel:5724726762">572-472-6762</a>. Say what you would change, what you would build, and what you refuse.</p>
+    </article>
+  </div>
+</div>
+<footer>
+  <p><a href="index.html">Home</a> · Hecate's Highways is a hall of paths, not a finished place.</p>
+  <p>In danger now call 911. In a mental-health crisis, call or text 988.</p>
+</footer>
+<a id="set-link" href="#set-panel" aria-label="Open Set, guide of the highways">
+  <img src="Set.jpg" alt="Set, guide of the highways">
+</a>
+<section id="set-panel" aria-label="Set" aria-live="polite">
+  <div id="set-head">Set <button type="button" id="set-close">Close</button></div>
+  <div id="set-log"></div>
+  <form id="set-form">
+    <input id="set-q" type="text" placeholder="Ask Set about the paths" autocomplete="off" aria-label="Ask Set">
+    <button type="submit">Ask</button>
+  </form>
+</section>
+<script>
+(function () {
+  var welcome = "Welcome, weary traveler. I am Set. Hecate keeps the highways. I keep the corner. The only open path is Mile 1, the Elders' Road, and it is not built. Do not travel for a room.";
+  var panel = document.getElementById("set-panel");
+  var log = document.getElementById("set-log");
+  var input = document.getElementById("set-q");
+  function say(text, who) {
+    var m = document.createElement("p");
+    m.className = "set-msg " + who;
+    m.textContent = text;
+    log.appendChild(m);
+  }
+  function answer(q) {
+    q = q.toLowerCase();
+    if (/suicid|self-harm|hurt myself|end my life/.test(q)) return "If you are in a mental-health crisis, call or text 988. If someone is in immediate danger, call 911.";
+    if (/elder|mile|acre|path|road|hecate/.test(q)) return "Mile 1 is the Elders' Road. Five acres, a five-hundred-dollar mortgage split among the people who live there, food raised on the land, and tools built for the elder who asks. It is a proposal. It is not built.";
+    if (/reply|email|phone|write/.test(q)) return "Email revjonbradley@ravensnesttemple.com with the subject Mile 1, The Elders' Road. Or call 572-472-6762. This page keeps no accounts.";
+    return "I only know this hall. Ask about the paths, or how to reply. If you are in danger, call 911.";
+  }
+  function openSet() {
+    panel.classList.add("open");
+    if (!log.childElementCount) say(welcome, "bot");
+  }
+  document.getElementById("set-link").addEventListener("click", function (e) {
+    e.preventDefault();
+    if (panel.classList.contains("open")) panel.classList.remove("open");
+    else openSet();
+  });
+  document.getElementById("set-close").addEventListener("click", function () { panel.classList.remove("open"); });
+  document.getElementById("set-form").addEventListener("submit", function (e) {
+    e.preventDefault();
+    var question = input.value.trim();
+    if (!question) return;
+    say(question, "you");
+    say(answer(question), "bot");
+    input.value = "";
+  });
+}());
+</script>
+</body>
+</html>

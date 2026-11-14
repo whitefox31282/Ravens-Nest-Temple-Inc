@@ -1,3 +1,6 @@
+Full file with the fog and the text color set to `#ff9a9a` so it stays readable over the lighter fog. Upload `values-wheell.jpg` to the root, then replace `index.html` with this.
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,23 +10,41 @@
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Almendra:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Raven's Nest Temple | Sanctuary in Progress</title>
-  <meta name="description" content="We are the Ravens Evermore. A place being built for belonging, hands-on trades, and food and parts at cost plus fifteen percent. The first lot is not open.">
+  <meta name="description" content="You belong. You are accepted. Pull up a chair. Live a little. Love a lot. The lot is not open yet.">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <style>
-    :root { color-scheme: dark; --gold: #e6c15a; --red: #c62828; --ink: #ff4d4d; --glass: rgba(0, 0, 0, 0.72); }
+    :root { color-scheme: dark; --gold: #e6c15a; --red: #c62828; --ink: #ff9a9a; --glass: rgba(0, 0, 0, 0.72); }
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
     body { margin: 0; min-height: 100vh; background: #000 url("Homepage_Welcome.jpg") center/cover fixed; color: var(--ink); font-family: Almendra, Georgia, serif; line-height: 1.65; }
+    .fog {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 1;
+      background:
+        radial-gradient(ellipse at 70% 80%, rgba(180, 180, 180, 0.35) 0%, transparent 50%),
+        radial-gradient(ellipse at 30% 60%, rgba(200, 200, 200, 0.25) 0%, transparent 45%),
+        radial-gradient(ellipse at 50% 40%, rgba(160, 160, 160, 0.2) 0%, transparent 60%);
+      animation: drift 18s ease-in-out infinite alternate;
+    }
+    @keyframes drift {
+      from { opacity: 0.55; transform: translateX(0); }
+      to { opacity: 0.8; transform: translateX(-3%); }
+    }
     header { position: sticky; top: 0; z-index: 10; padding: 12px 16px; background: rgba(0, 0, 0, 0.78); border-bottom: 3px solid var(--gold); }
     nav ul { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px 24px; margin: 0; padding: 0; list-style: none; }
     nav a { color: var(--gold); font-family: Cinzel, Georgia, serif; font-size: 0.85rem; font-weight: 700; letter-spacing: 0.12em; text-decoration: none; text-transform: uppercase; }
     nav a:hover, nav a:focus-visible { text-decoration: underline; }
-    main { width: min(820px, 100%); margin: 0 auto; padding: 28px 16px 40px; }
-    h1 { color: var(--gold); font-family: Cinzel, Georgia, serif; letter-spacing: 0.04em; line-height: 1.2; margin: 0 0 8px; font-size: clamp(2rem, 5vw, 3.2rem); text-shadow: 0 2px 4px #000, 0 0 10px #000; }
+    main { position: relative; z-index: 2; width: min(820px, 100%); margin: 0 auto; padding: 28px 16px 40px; }
+    h1 { color: var(--gold); font-family: Cinzel, Georgia, serif; letter-spacing: 0.04em; line-height: 1.2; margin: 0 0 8px; font-size: clamp(2rem, 5vw, 3.2rem); text-shadow: 0 2px 4px #000, 0 0 10px #000; text-align: center; }
+    h2 { color: var(--gold); font-family: Cinzel, Georgia, serif; font-size: 1.4rem; margin: 28px 0 12px; text-shadow: 0 1px 3px #000; }
     p { color: var(--ink); font-size: 1.12rem; text-shadow: 0 1px 2px #000, 0 0 6px #000, 0 0 1px #000; }
-    .card, .truth { background: none; border: none; box-shadow: none; }
-    .closing { font-size: 1.15rem; font-style: italic; }
-    footer { padding: 26px 16px 40px; background: rgba(0, 0, 0, 0.35); text-align: center; }
+    .closing { font-size: 1.15rem; font-style: italic; text-align: center; }
+    .wheel { display: block; width: min(520px, 92%); margin: 12px auto 20px; border-radius: 50%; box-shadow: 0 0 24px rgba(0,0,0,0.6); }
+    .principles { list-style: none; padding: 0; margin: 16px 0; }
+    .principles li { margin: 10px 0; padding: 12px 14px; background: rgba(0, 0, 0, 0.55); border-left: 3px solid var(--gold); }
+    footer { position: relative; z-index: 2; padding: 26px 16px 40px; background: rgba(0, 0, 0, 0.35); text-align: center; }
     footer a { color: var(--gold); }
     #set-link { position: fixed; right: 18px; bottom: 18px; z-index: 1000; display: block; width: 82px; height: 82px; overflow: hidden; border: 3px solid var(--gold); border-radius: 50%; background: var(--glass); line-height: 0; }
     #set-link img { display: block; width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
@@ -38,9 +59,11 @@
     #set-form { display: flex; gap: 6px; padding: 10px 12px 12px; border-top: 1px solid var(--red); }
     #set-q { min-width: 0; flex: 1; padding: 8px; border: 1px solid var(--gold); background: #000; color: var(--ink); font-size: 16px; }
     @media (max-width: 700px) { body { background-attachment: scroll; } #set-panel { right: 8px; left: 8px; bottom: 110px; width: auto; } }
+    @media (prefers-reduced-motion: reduce) { .fog { animation: none; } }
   </style>
 </head>
 <body>
+  <div class="fog" aria-hidden="true"></div>
   <header>
     <nav aria-label="Main navigation">
       <ul>
@@ -54,15 +77,26 @@
     </nav>
   </header>
   <main>
-    <section class="card" aria-labelledby="mission-title">
-      <h1 id="mission-title">We are the Ravens Evermore.</h1>
+    <section>
+      <img class="wheel" src="values-wheell.jpg" alt="Values wheel: Honor, Community, Purpose, Belonging, Service, Abundance for All. Set in the hub.">
       <p class="closing">You belong. You are accepted. Pull up a chair.</p>
-      <p>Raven's Nest Temple Inc. is an Oklahoma non-profit corporation. If anything, we are the anti-government. It is a place being built so a person can wake up, walk outside, and learn a real trade with their hands. An electronics shop. Water and septic. A forge. Animals are sacred, the same as we are. We honor them from birth, through their life, and through their death. On the day their life is given, they have a party, the best day of their lives. They go to sleep in peace, and their energy passes on to the person who receives them. Gardens thick enough that a family picks the tomatoes instead of paying a store for a bag. A pond you can fish. People from town can pay a fee, and that fee buys more help.</p>
-      <p>Food and parts at cost plus fifteen percent. Not the price a company charges because it can. A part we can print, the kind a store sells for a hundred and twenty dollars, should cost what it costs to make, plus fifteen percent. If that part breaks inside a year, we replace it.</p>
-      <p>Someone who wants off the street will have a place to be warm, to work, and to be wanted. Hang with the animals. Learn the plants. Play a game. Take a class. Our elders deserve respect, not abuse, and not a system that has refused to fix itself. Here is the Raven's Nest answer. A five-acre lot, a mortgage of five hundred dollars a month, split among the people who live there. Food and animals raised on that land, so food is not a second bill. Tech students learn in real life by building what that elder asks for, a way to the pond, a chair, a cart, a tool fitted to their body, and the elder uses it to fish, to sit with the animals, and to spend the day as they choose. Nobody signs over their savings or their land to stay. Meth and fentanyl have no place here. A gift is not a debt. You owe nothing for kindness. No one here overrides your choices.</p>
-      <p class="closing">We are the Ravens Evermore, and we are here for you.</p>
-      <p class="truth">The first lot is not open. The pond, the shops, the animals, and the longhouse are not built yet. Do not come here tonight for a bed, a meal, or a part. This is the mission. The work is still ahead. Help that exists today is on the Get Help page, or by phone.</p>
+      <p class="closing">Live a little. Love a lot.</p>
     </section>
+
+    <h2>What we believe</h2>
+    <ul class="principles">
+      <li>Honor</li>
+      <li>Community</li>
+      <li>Purpose</li>
+      <li>Belonging</li>
+      <li>Service</li>
+      <li>Abundance for All</li>
+    </ul>
+
+    <h2>What we are building</h2>
+    <p>A place where a person can wake up, walk outside, and learn a real trade with their hands. Gardens thick enough that a family picks the tomatoes. A pond you can fish. Animals honored from birth through death. Elders who keep their savings and their choices. Food and parts at cost plus fifteen percent.</p>
+    <p>Raven's Nest Temple Inc. is an Oklahoma non-profit. The first lot is not open. The pond, the shops, the animals, and the longhouse are not built yet. Do not come here tonight for a bed, a meal, or a part. Help that exists today is on the Get Help page, or by phone.</p>
+    <p class="closing">Ravens Evermore. We have landed. Opening soon.</p>
   </main>
   <footer>
     <p><strong>Temple Line:</strong> <a href="tel:5724726762">572-472-6762</a> &nbsp;|&nbsp; <strong>Email:</strong> <a href="mailto:revjonbradley@ravensnesttemple.com">revjonbradley@ravensnesttemple.com</a></p>
@@ -83,8 +117,8 @@
   <script>
     (function () {
       var welcome = [
-        "Get the joke, they will not, young Patty warmer.",
         "Would you like to learn about our Lord and Savior SetTheSloth?",
+        "Get the joke, they will not, young Patty warmer.",
         "Whoa... hey there, traveler. Take a breath, man. Welcome to Raven's Nest. You belong.",
         "Everything is not built yet, but good things come to those who wait, my dude. People are coming together. Things are happening. It takes time, young one."
       ];
@@ -116,7 +150,7 @@
         if (/\b911\b|emergency|in danger|overdose|assault/.test(q)) return "If someone is in immediate danger, call 911. For a mental-health crisis, call or text 988. The temple line is 572-472-6762. It is not a substitute for 911.";
         if (/988|mental|crisis|panic/.test(q)) return "For a mental-health crisis, call or text 988. If someone is in immediate danger, call 911.";
         if (/hour|phone|call|email|contact|number/.test(q)) return "Temple line 572-472-6762. Email revjonbradley@ravensnesttemple.com. Hours: 7 days a week, except Sabbats and Esbats, 8:00 AM to 9:00 PM. The lot is not a walk-in.";
-        if (/who|mission|raven|belong|pond|cost|percent|forge|shop|elder|animal/.test(q)) return "We are the Ravens Evermore. You belong. This is a place being built, not a finished sanctuary. The lot is not open. Animals are sacred. Food and parts at cost plus fifteen percent. Elders get respect, not a warehouse. Meth and fentanyl are not welcome. A gift is not a debt. Call 572-472-6762 or email revjonbradley@ravensnesttemple.com.";
+        if (/who|mission|raven|belong|pond|cost|percent|forge|shop|elder|animal|honor|purpose|service|abundance/.test(q)) return "We are the Ravens Evermore. You belong. This is a place being built, not a finished sanctuary. The lot is not open. Honor, Community, Purpose, Belonging, Service, Abundance for All. Food and parts at cost plus fifteen percent. A gift is not a debt. Call 572-472-6762 or email revjonbradley@ravensnesttemple.com.";
         if (/lot|land|built|visit|open|shelter|bed|food/.test(q)) return "The first lot is not open. Nothing is built yet. Do not come here tonight for a bed, a meal, or a part. Help that exists today is on the Get Help page, or call 572-472-6762.";
         return "I only know this website. Ask about the mission, the lot, or how to get help. If you are in danger, call 911. In a mental-health crisis, call or text 988.";
       }
@@ -146,3 +180,6 @@
   </script>
 </body>
 </html>
+```
+
+Fog drifts slowly across the background. Text is `#ff9a9a` with the existing shadow. Set still speaks the joke first. Upload the wheel image, replace the file, and commit.

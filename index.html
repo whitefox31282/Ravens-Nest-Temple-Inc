@@ -1,6 +1,3 @@
-Full file with the fog and the text color set to `#ff9a9a` so it stays readable over the lighter fog. Upload `values-wheell.jpg` to the root, then replace `index.html` with this.
-
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,20 +15,35 @@ Full file with the fog and the text color set to `#ff9a9a` so it stays readable 
     html { scroll-behavior: smooth; }
     body { margin: 0; min-height: 100vh; background: #000 url("Homepage_Welcome.jpg") center/cover fixed; color: var(--ink); font-family: Almendra, Georgia, serif; line-height: 1.65; }
     .fog {
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      z-index: 1;
+      position: fixed; inset: 0; pointer-events: none; z-index: 1;
       background:
-        radial-gradient(ellipse at 70% 80%, rgba(180, 180, 180, 0.35) 0%, transparent 50%),
-        radial-gradient(ellipse at 30% 60%, rgba(200, 200, 200, 0.25) 0%, transparent 45%),
-        radial-gradient(ellipse at 50% 40%, rgba(160, 160, 160, 0.2) 0%, transparent 60%);
-      animation: drift 18s ease-in-out infinite alternate;
+        radial-gradient(ellipse at 72% 78%, rgba(230, 193, 90, 0.22) 0%, transparent 42%),
+        radial-gradient(ellipse at 28% 62%, rgba(200, 200, 200, 0.18) 0%, transparent 48%),
+        radial-gradient(ellipse at 50% 40%, rgba(160, 160, 160, 0.14) 0%, transparent 62%);
+      animation: drift 16s ease-in-out infinite alternate;
     }
-    @keyframes drift {
-      from { opacity: 0.55; transform: translateX(0); }
-      to { opacity: 0.8; transform: translateX(-3%); }
+    .bolt {
+      position: fixed; pointer-events: none; z-index: 1; opacity: 0;
+      width: 4px; height: 40vh; background: linear-gradient(to bottom, transparent, currentColor, transparent);
+      filter: blur(1px); transform-origin: top center;
     }
+    .bolt.green { color: #39ff14; left: 22%; top: 8%; animation: strike 11s infinite; }
+    .bolt.green::before, .bolt.green::after { content: ""; position: absolute; width: 3px; height: 18vh; background: inherit; }
+    .bolt.green::before { left: -18px; top: 30%; transform: rotate(28deg); }
+    .bolt.green::after { left: 14px; top: 45%; transform: rotate(-22deg); }
+    .bolt.gold { color: #e6c15a; right: 18%; top: 12%; animation: strike 17s infinite 4s; }
+    .bolt.gold::before { content: ""; position: absolute; width: 3px; height: 16vh; background: inherit; left: 12px; top: 35%; transform: rotate(18deg); }
+    .rune {
+      position: fixed; pointer-events: none; z-index: 1; opacity: 0;
+      font-family: Cinzel, serif; font-size: 2.4rem; color: rgba(230, 193, 90, 0.55);
+      text-shadow: 0 0 12px rgba(230, 193, 90, 0.4);
+    }
+    .rune.r1 { left: 14%; top: 28%; animation: runeFlash 19s infinite 2s; }
+    .rune.r2 { right: 12%; top: 42%; animation: runeFlash 23s infinite 8s; }
+    .rune.r3 { left: 48%; bottom: 18%; animation: runeFlash 21s infinite 13s; }
+    @keyframes drift { from { opacity: 0.5; transform: translateX(0); } to { opacity: 0.75; transform: translateX(-3%); } }
+    @keyframes strike { 0%, 92%, 100% { opacity: 0; } 93% { opacity: 0.9; } 94% { opacity: 0.2; } 95% { opacity: 0.85; } 96% { opacity: 0; } }
+    @keyframes runeFlash { 0%, 88%, 100% { opacity: 0; } 90% { opacity: 0.7; } 94% { opacity: 0; } }
     header { position: sticky; top: 0; z-index: 10; padding: 12px 16px; background: rgba(0, 0, 0, 0.78); border-bottom: 3px solid var(--gold); }
     nav ul { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px 24px; margin: 0; padding: 0; list-style: none; }
     nav a { color: var(--gold); font-family: Cinzel, Georgia, serif; font-size: 0.85rem; font-weight: 700; letter-spacing: 0.12em; text-decoration: none; text-transform: uppercase; }
@@ -59,11 +71,16 @@ Full file with the fog and the text color set to `#ff9a9a` so it stays readable 
     #set-form { display: flex; gap: 6px; padding: 10px 12px 12px; border-top: 1px solid var(--red); }
     #set-q { min-width: 0; flex: 1; padding: 8px; border: 1px solid var(--gold); background: #000; color: var(--ink); font-size: 16px; }
     @media (max-width: 700px) { body { background-attachment: scroll; } #set-panel { right: 8px; left: 8px; bottom: 110px; width: auto; } }
-    @media (prefers-reduced-motion: reduce) { .fog { animation: none; } }
+    @media (prefers-reduced-motion: reduce) { .fog, .bolt, .rune { animation: none; opacity: 0.15; } }
   </style>
 </head>
 <body>
   <div class="fog" aria-hidden="true"></div>
+  <div class="bolt green" aria-hidden="true"></div>
+  <div class="bolt gold" aria-hidden="true"></div>
+  <div class="rune r1" aria-hidden="true">ᚠ</div>
+  <div class="rune r2" aria-hidden="true">ᚱ</div>
+  <div class="rune r3" aria-hidden="true">ᚦ</div>
   <header>
     <nav aria-label="Main navigation">
       <ul>
@@ -82,7 +99,6 @@ Full file with the fog and the text color set to `#ff9a9a` so it stays readable 
       <p class="closing">You belong. You are accepted. Pull up a chair.</p>
       <p class="closing">Live a little. Love a lot.</p>
     </section>
-
     <h2>What we believe</h2>
     <ul class="principles">
       <li>Honor</li>
@@ -92,7 +108,6 @@ Full file with the fog and the text color set to `#ff9a9a` so it stays readable 
       <li>Service</li>
       <li>Abundance for All</li>
     </ul>
-
     <h2>What we are building</h2>
     <p>A place where a person can wake up, walk outside, and learn a real trade with their hands. Gardens thick enough that a family picks the tomatoes. A pond you can fish. Animals honored from birth through death. Elders who keep their savings and their choices. Food and parts at cost plus fifteen percent.</p>
     <p>Raven's Nest Temple Inc. is an Oklahoma non-profit. The first lot is not open. The pond, the shops, the animals, and the longhouse are not built yet. Do not come here tonight for a bed, a meal, or a part. Help that exists today is on the Get Help page, or by phone.</p>
@@ -180,6 +195,3 @@ Full file with the fog and the text color set to `#ff9a9a` so it stays readable 
   </script>
 </body>
 </html>
-```
-
-Fog drifts slowly across the background. Text is `#ff9a9a` with the existing shadow. Set still speaks the joke first. Upload the wheel image, replace the file, and commit.

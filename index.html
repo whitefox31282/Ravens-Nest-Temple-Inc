@@ -1,131 +1,223 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="You belong. You are accepted. Pull up a chair. Raven's Nest Temple is a community and mutual aid project in progress.">
+  <meta name="theme-color" content="#090d0b">
+  <title>Raven's Nest Temple | Sanctuary in Progress</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Almendra:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Raven's Nest Temple | Sanctuary in Progress</title>
-  <meta name="description" content="You belong. You are accepted. Pull up a chair. Live a little. Love a lot. ">
-  <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <style>
-    :root { color-scheme: dark; --gold: #e6c15a; --red: #c62828; --ink: #ff9a9a; --glass: rgba(0, 0, 0, 0.72); }
+    :root {
+      color-scheme: dark;
+      --gold: #e6c15a;
+      --cream: #f5ede3;
+      --muted: #d3c8b7;
+      --panel: rgba(8, 13, 10, .84);
+      --line: rgba(230, 193, 90, .48);
+    }
+
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
-    body { margin: 0; min-height: 100vh; background: #000 url("Homepage_Welcome.jpg") center/cover fixed; color: var(--ink); font-family: Almendra, Georgia, serif; line-height: 1.65; }
-    .fog {
-      position: fixed; inset: 0; pointer-events: none; z-index: 1;
+    body {
+      min-width: 320px;
+      min-height: 100vh;
+      margin: 0;
+      color: var(--cream);
+      background: #090d0b url("Homepage_Welcome.jpg") center / cover fixed;
+      font-family: Almendra, Georgia, serif;
+      font-size: 1.08rem;
+      line-height: 1.7;
+    }
+    a { color: var(--gold); }
+    a:focus-visible, button:focus-visible, input:focus-visible { outline: 3px solid var(--cream); outline-offset: 3px; }
+
+    /* Several broad, blurred bands create dense rolling smoke rather than small dots. */
+    .smoke-field { position: fixed; inset: 0; z-index: 1; overflow: hidden; pointer-events: none; }
+    .smoke {
+      position: absolute;
+      left: -20%;
+      width: 140%;
+      height: 42vh;
+      min-height: 240px;
+      border-radius: 50%;
+      filter: blur(36px);
       background:
-        radial-gradient(ellipse at 72% 78%, rgba(230, 193, 90, 0.22) 0%, transparent 2%),
-        radial-gradient(ellipse at 28% 62%, rgba(200, 200, 200, 0.18) 0%, transparent 8%),
-        radial-gradient(ellipse at 50% 40%, rgba(160, 160, 160, 0.14) 0%, transparent 12%);
-      animation: drift 16s ease-in-out infinite alternate;
+        radial-gradient(ellipse at 18% 55%, rgba(210, 216, 212, .24) 0 8%, transparent 34%),
+        radial-gradient(ellipse at 38% 44%, rgba(190, 199, 193, .28) 0 10%, transparent 38%),
+        radial-gradient(ellipse at 62% 58%, rgba(220, 223, 215, .22) 0 9%, transparent 36%),
+        radial-gradient(ellipse at 83% 42%, rgba(176, 187, 181, .25) 0 11%, transparent 39%);
+      opacity: .8;
+      animation: roll 27s ease-in-out infinite alternate;
     }
-    .bolt {
-      position: fixed; pointer-events: none; z-index: 1; opacity: 0;
-      width: 4px; height: 40vh; background: linear-gradient(to bottom, transparent, currentColor, transparent);
-      filter: blur(1px); transform-origin: top center;
+    .smoke.one { bottom: -12vh; }
+    .smoke.two { bottom: 12vh; transform: scale(1.12); opacity: .58; animation-duration: 36s; animation-direction: alternate-reverse; }
+    .smoke.three { bottom: 34vh; transform: scale(.92); opacity: .38; animation-duration: 44s; }
+    @keyframes roll {
+      from { translate: -5% 2%; scale: .98 1; }
+      to { translate: 5% -4%; scale: 1.06 1.12; }
     }
-    .bolt.green { color: #39ff14; left: 22%; top: 8%; animation: strike 11s infinite; }
-    .bolt.green::before, .bolt.green::after { content: ""; position: absolute; width: 3px; height: 18vh; background: inherit; }
-    .bolt.green::before { left: -18px; top: 30%; transform: rotate(28deg); }
-    .bolt.green::after { left: 14px; top: 45%; transform: rotate(-22deg); }
-    .bolt.gold { color: #e6c15a; right: 18%; top: 12%; animation: strike 17s infinite 4s; }
-    .bolt.gold::before { content: ""; position: absolute; width: 3px; height: 16vh; background: inherit; left: 12px; top: 35%; transform: rotate(18deg); }
-    .rune {
-      position: fixed; pointer-events: none; z-index: 1; opacity: 0;
-      font-family: Cinzel, serif; font-size: 2.4rem; color: rgba(230, 193, 90, 0.55);
-      text-shadow: 0 0 12px rgba(230, 193, 90, 0.4);
+
+    header { position: sticky; top: 0; z-index: 10; border-bottom: 1px solid var(--line); background: rgba(8, 13, 10, .95); }
+    .nav-wrap { width: min(1120px, 100%); min-height: 72px; margin: 0 auto; padding: 10px 24px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .brand { display: inline-flex; align-items: center; gap: 12px; color: var(--gold); font: 700 .88rem/1.3 Cinzel, Georgia, serif; letter-spacing: .08em; text-decoration: none; text-transform: uppercase; }
+    .brand img { width: 46px; height: 46px; border-radius: 50%; object-fit: cover; }
+    nav ul { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 8px 18px; margin: 0; padding: 0; list-style: none; }
+    nav a { font: 700 .73rem Cinzel, Georgia, serif; letter-spacing: .07em; text-decoration: none; text-transform: uppercase; }
+    nav a:hover { text-decoration: underline; }
+
+    main { position: relative; z-index: 2; width: min(1000px, 100%); margin: 0 auto; padding: 44px 22px 64px; }
+    .hero {
+      position: relative;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(220px, 340px);
+      align-items: center;
+      gap: 16px;
+      min-height: 470px;
+      padding: clamp(26px, 6vw, 62px);
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: linear-gradient(110deg, rgba(5, 9, 7, .93) 0%, rgba(5, 9, 7, .78) 58%, rgba(5, 9, 7, .28) 100%);
+      box-shadow: 0 18px 60px rgba(0, 0, 0, .35);
     }
-    .rune.r1 { left: 14%; top: 28%; animation: runeFlash 19s infinite 2s; }
-    .rune.r2 { right: 12%; top: 42%; animation: runeFlash 23s infinite 8s; }
-    .rune.r3 { left: 48%; bottom: 18%; animation: runeFlash 21s infinite 13s; }
-    @keyframes drift { from { opacity: 0.5; transform: translateX(0); } to { opacity: 0.75; transform: translateX(-3%); } }
-    @keyframes strike { 0%, 92%, 100% { opacity: 0; } 93% { opacity: 0.9; } 94% { opacity: 0.2; } 95% { opacity: 0.85; } 96% { opacity: 0; } }
-    @keyframes runeFlash { 0%, 88%, 100% { opacity: 0; } 90% { opacity: 0.7; } 94% { opacity: 0; } }
-    header { position: sticky; top: 0; z-index: 10; padding: 12px 16px; background: rgba(0, 0, 0, 0.78); border-bottom: 3px solid var(--gold); }
-    nav ul { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px 24px; margin: 0; padding: 0; list-style: none; }
-    nav a { color: var(--gold); font-family: Cinzel, Georgia, serif; font-size: 0.85rem; font-weight: 700; letter-spacing: 0.12em; text-decoration: none; text-transform: uppercase; }
-    nav a:hover, nav a:focus-visible { text-decoration: underline; }
-    main { position: relative; z-index: 2; width: min(820px, 100%); margin: 0 auto; padding: 28px 16px 40px; }
-    h1 { color: var(--gold); font-family: Cinzel, Georgia, serif; letter-spacing: 0.04em; line-height: 1.2; margin: 0 0 8px; font-size: clamp(2rem, 5vw, 3.2rem); text-shadow: 0 2px 4px #000, 0 0 10px #000; text-align: center; }
-    h2 { color: var(--gold); font-family: Cinzel, Georgia, serif; font-size: 1.4rem; margin: 28px 0 12px; text-shadow: 0 1px 3px #000; }
-    p { color: var(--ink); font-size: 1.12rem; text-shadow: 0 1px 2px #000, 0 0 6px #000, 0 0 1px #000; }
-    .closing { font-size: 1.15rem; font-style: italic; text-align: center; }
-    .wheel { display: block; width: min(520px, 92%); margin: 12px auto 20px; border-radius: 50%; box-shadow: 0 0 24px rgba(0,0,0,0.6); }
-    .principles { list-style: none; padding: 0; margin: 16px 0; }
-    .principles li { margin: 10px 0; padding: 12px 14px; background: rgba(0, 0, 0, 0.55); border-left: 3px solid var(--gold); }
-    footer { position: relative; z-index: 2; padding: 26px 16px 40px; background: rgba(0, 0, 0, 0.35); text-align: center; }
-    footer a { color: var(--gold); }
-    #set-link { position: fixed; right: 18px; bottom: 18px; z-index: 1000; display: block; width: 82px; height: 82px; overflow: hidden; border: 3px solid var(--gold); border-radius: 50%; background: var(--glass); line-height: 0; }
-    #set-link img { display: block; width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
-    #set-panel { position: fixed; right: 18px; bottom: 112px; z-index: 1000; display: none; flex-direction: column; width: min(380px, calc(100vw - 24px)); height: min(68vh, 500px); background: rgba(0, 0, 0, 0.9); border: 3px solid var(--gold); }
+    .hero-copy { position: relative; z-index: 2; }
+    .eyebrow { margin: 0 0 10px; color: var(--gold); font: 700 .78rem Cinzel, Georgia, serif; letter-spacing: .22em; text-transform: uppercase; }
+    h1, h2 { color: var(--gold); font-family: Cinzel, Georgia, serif; line-height: 1.25; }
+    h1 { margin: 0; font-size: clamp(2.2rem, 5vw, 3.8rem); }
+    .tagline { margin: 14px 0 0; color: var(--cream); font-size: clamp(1.2rem, 3vw, 1.55rem); font-style: italic; }
+    .welcome { max-width: 610px; margin: 18px 0 0; color: var(--muted); }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 24px; }
+    .button { display: inline-block; padding: 10px 17px; border: 1px solid var(--gold); border-radius: 4px; color: #14140e; background: var(--gold); font: 700 .77rem Cinzel, Georgia, serif; letter-spacing: .06em; text-decoration: none; text-transform: uppercase; }
+    .button.secondary { color: var(--gold); background: rgba(0, 0, 0, .45); }
+    .button:hover { filter: brightness(1.12); }
+    .set-hero { position: relative; z-index: 2; display: block; width: 100%; max-height: 390px; object-fit: contain; filter: drop-shadow(0 10px 24px rgba(0, 0, 0, .7)); }
+
+    .content-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin-top: 18px; }
+    .card { position: relative; z-index: 2; padding: 23px; border: 1px solid var(--line); border-radius: 6px; background: var(--panel); }
+    h2 { margin: 0 0 10px; font-size: 1.3rem; }
+    .card p { margin: 0; color: var(--muted); }
+    .values { grid-column: 1 / -1; }
+    .values-list { display: flex; flex-wrap: wrap; gap: 9px; margin: 15px 0 0; padding: 0; list-style: none; }
+    .values-list li { padding: 5px 12px; border: 1px solid var(--line); border-radius: 99px; }
+    .reality { border-left: 4px solid var(--gold); }
+    footer { position: relative; z-index: 2; padding: 25px 20px 34px; border-top: 1px solid var(--line); background: rgba(8, 13, 10, .94); text-align: center; }
+    footer p { margin: 6px 0; color: var(--muted); }
+    footer a { overflow-wrap: anywhere; }
+    .small { font-size: .92rem; }
+
+    /* Set remains available in the corner; opening it does not play audio automatically. */
+    #set-link { position: fixed; right: 18px; bottom: 18px; z-index: 20; display: block; width: 78px; height: 78px; overflow: hidden; border: 3px solid var(--gold); border-radius: 50%; background: #080d0a; box-shadow: 0 3px 18px #000; }
+    #set-link img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    #set-panel { position: fixed; right: 18px; bottom: 108px; z-index: 20; display: none; flex-direction: column; width: min(370px, calc(100vw - 28px)); height: min(65vh, 470px); border: 2px solid var(--gold); border-radius: 8px; background: rgba(5, 8, 7, .97); box-shadow: 0 8px 32px #000; }
     #set-panel.open { display: flex; }
-    #set-head { display: flex; justify-content: space-between; align-items: center; gap: 8px; padding: 10px 12px; border-bottom: 1px solid var(--red); color: var(--gold); font-weight: 700; }
-    #set-head button, #set-form button { padding: 7px 10px; border: 1px solid var(--gold); background: var(--red); color: var(--gold); font-weight: 700; cursor: pointer; }
+    #set-head { display: flex; justify-content: space-between; align-items: center; padding: 9px 12px; border-bottom: 1px solid var(--line); color: var(--gold); font: 700 1rem Cinzel, Georgia, serif; }
+    #set-head button, #set-form button { padding: 7px 10px; border: 1px solid var(--gold); border-radius: 3px; color: #17140b; background: var(--gold); font-weight: 700; cursor: pointer; }
     #set-log { display: flex; flex: 1; flex-direction: column; gap: 8px; overflow: auto; padding: 12px; }
-    .set-msg { max-width: 95%; margin: 0; padding: 8px 10px; color: var(--ink); }
-    .set-msg.bot { border-left: 3px solid var(--gold); background: rgba(0, 0, 0, 0.72); }
-    .set-msg.you { align-self: flex-end; background: rgba(198, 40, 40, 0.35); }
-    #set-form { display: flex; gap: 6px; padding: 10px 12px 12px; border-top: 1px solid var(--red); }
-    #set-q { min-width: 0; flex: 1; padding: 8px; border: 1px solid var(--gold); background: #000; color: var(--ink); font-size: 16px; }
-    @media (max-width: 700px) { body { background-attachment: scroll; } #set-panel { right: 8px; left: 8px; bottom: 110px; width: auto; } }
-    @media (prefers-reduced-motion: reduce) { .fog, .bolt, .rune { animation: none; opacity: 0.15; } }
+    .set-msg { max-width: 95%; margin: 0; padding: 8px 10px; color: var(--cream); }
+    .set-msg.bot { border-left: 3px solid var(--gold); background: rgba(255, 255, 255, .06); }
+    .set-msg.you { align-self: flex-end; background: rgba(230, 193, 90, .16); }
+    #set-form { display: flex; gap: 6px; padding: 10px 12px; border-top: 1px solid var(--line); }
+    #set-q { min-width: 0; flex: 1; padding: 8px; border: 1px solid var(--line); border-radius: 3px; color: var(--cream); background: #090d0b; font-size: 16px; }
+
+    @media (max-width: 760px) {
+      body { background-attachment: scroll; }
+      .nav-wrap { flex-direction: column; padding: 10px 14px; }
+      nav ul { justify-content: center; gap: 8px 13px; }
+      main { padding: 24px 12px 40px; }
+      .hero { grid-template-columns: 1fr; min-height: 0; gap: 4px; padding: 28px 22px; text-align: center; }
+      .actions { justify-content: center; }
+      .set-hero { width: min(250px, 80%); max-height: 250px; margin: 0 auto; }
+      .content-grid { grid-template-columns: 1fr; }
+      .values { grid-column: auto; }
+      #set-panel { right: 8px; left: 8px; bottom: 104px; width: auto; }
+      #set-link { right: 14px; bottom: 14px; width: 68px; height: 68px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .smoke { animation: none; }
+    }
   </style>
 </head>
 <body>
-  <div class="fog" aria-hidden="true"></div>
-  <div class="bolt green" aria-hidden="true"></div>
-  <div class="bolt gold" aria-hidden="true"></div>
-  <div class="fog" aria-hidden="true"></div>
-  <div class="rune r1" aria-hidden="true">ᚠ</div>
-  <div class="rune r2" aria-hidden="true">ᚱ</div>
-  <div class="fog" aria-hidden="true"></div>
-  <div class="rune r3" aria-hidden="true">ᚦ</div>
-  <div class="fog" aria-hidden="true"></div>
+  <div class="smoke-field" aria-hidden="true">
+    <div class="smoke one"></div>
+    <div class="smoke two"></div>
+    <div class="smoke three"></div>
+  </div>
+
   <header>
-    <nav aria-label="Main navigation">
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="get-help.html">Get help</a></li>
-        <li><a href="community-care.html">Community care</a></li>
-        <li><a href="witchmart.html">WitchMart</a></li>
-        <li><a href="witches-coop.html">Witches Co-op</a></li>
-        <li><a href="hecates-highways.html">Hecate's Highways</a></li>
-        <li><a href="about.html</a></li>
-      </ul>
-    </nav>
+    <div class="nav-wrap">
+      <a class="brand" href="index.html" aria-label="Raven's Nest Temple home">
+        <img src="raven-logo.jpg" alt="">
+        <span>Raven's Nest Temple</span>
+      </a>
+      <nav aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html" aria-current="page">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="four-pillars.html">Our work</a></li>
+          <li><a href="community-care.html">Community care</a></li>
+          <li><a href="get-help.html">Get help</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
+
   <main>
-    <section>
-      <img class="wheel" src="Values-wheel.jpg" alt="Values wheel: Honor, Community, Purpose, Belonging, Service, Abundance for All. Set in the hub.">
-      <p class="closing">You belong. You are accepted. Pull up a chair.</p>
-      <p class="closing">Live a little. Love a lot.</p>
+    <section class="hero" aria-labelledby="page-title">
+      <div class="hero-copy">
+        <p class="eyebrow">Ravens Evermore</p>
+        <h1 id="page-title">A place for the weary and downtrodden</h1>
+        <p class="tagline">You belong. You are accepted. Pull up a chair.</p>
+        <p class="welcome">Raven's Nest Temple is a grassroots community project focused on practical skills, growing food, and mutual aid. We are building this step by step, with honesty about what is here today and what is still a hope for tomorrow.</p>
+        <div class="actions">
+          <a class="button" href="about.html">Learn about us</a>
+          <a class="button secondary" href="get-help.html">Find help now</a>
+        </div>
+      </div>
+      <img class="set-hero" src="set-sloth-clear.png" alt="Set the Sloth, with his blunt, emerging through rolling smoke">
     </section>
-    <h2>What we believe</h2>
-    <ul class="principles">
-      <li>Honor</li>
-      <li>Community</li>
-      <li>Purpose</li>
-      <li>Belonging</li>
-      <li>Service</li>
-      <li>Abundance for All</li>
-    </ul>
-    <h2>What we are building</h2>
-    <p>A place where a person can wake up, walk outside, and learn a real trade with their hands. Gardens thick enough that a family picks the tomatoes. A pond you can fish. Animals honored from birth through death. Elders who keep their savings and their choices. Food and parts at cost plus fifteen percent.</p>
-    <p>Raven's Nest Temple Inc. is an Oklahoma non-profit. The first lot is not open. The pond, the shops, the animals, and the longhouse are not built yet. Do not come here tonight for a bed, a meal, or a part. Help that exists today is on the Get Help page, or by phone.</p>
-    <p class="closing">Ravens Evermore. We have landed. Opening soon.</p>
+
+    <div class="content-grid">
+      <section class="card">
+        <h2>What we are building</h2>
+        <p>A refuge rooted in community and hands-on learning: trade skills, food growing, resilient infrastructure, and ways to support one another. The work is underway one step at a time.</p>
+      </section>
+      <section class="card values">
+        <h2>What guides us</h2>
+        <p>These are the values at the heart of Raven's Nest.</p>
+        <ul class="values-list">
+          <li>Honor</li><li>Community</li><li>Purpose</li><li>Belonging</li><li>Service</li><li>Abundance for All</li>
+        </ul>
+      </section>
+      <section class="card reality">
+        <h2>A note about right now</h2>
+        <p>Raven's Nest Temple, Inc. is still in progress. The first lot is not open, and the planned facilities are not built yet. Please do not travel here expecting a bed, meal, or on-site services. Visit <a href="get-help.html">Get Help</a> for resources available today.</p>
+      </section>
+      <section class="card">
+        <h2>Be part of the conversation</h2>
+        <p>Questions or want to connect? Reach us by phone or email. For immediate danger, call 911. For a mental-health crisis in the United States, call or text 988.</p>
+        <p style="margin-top: 12px"><a href="tel:5724726762">572-472-6762</a><br><a href="mailto:revjonbradley@ravensnesttemple.com">revjonbradley@ravensnesttemple.com</a></p>
+      </section>
+    </div>
   </main>
+
   <footer>
-    <p><strong>Temple Line:</strong> <a href="tel:5724726762">572-472-6762</a> &nbsp;|&nbsp; <strong>Email:</strong> <a href="mailto:revjonbradley@ravensnesttemple.com">revjonbradley@ravensnesttemple.com</a></p>
-    <p>In immediate danger, call 911. For a mental-health crisis, call or text 988.</p>
-    <p><em>This site stores no accounts and does not track visitors.</em></p>
+    <p><strong>Raven's Nest Temple, Inc.</strong></p>
+    <p class="small">You belong. Live a little. Love a lot.</p>
+    <p class="small">This site stores no accounts and does not track visitors.</p>
+    <p class="small">In immediate danger, call 911. For a mental-health crisis, call or text 988.</p>
   </footer>
-  <a id="set-link" href="index.html#help" aria-label="Open Set">
+
+  <a id="set-link" href="#set-panel" aria-label="Open Set's chat">
     <img src="Set.jpg" alt="Set">
   </a>
-  <section id="set-panel" aria-label="Set" aria-live="polite">
+  <section id="set-panel" aria-label="Set chat" aria-live="polite">
     <div id="set-head">Set <button type="button" id="set-close">Close</button></div>
     <div id="set-log"></div>
     <form id="set-form">
@@ -135,16 +227,9 @@
   </section>
   <script>
     (function () {
-      var welcome = [
-        "Would you like to learn about our Lord and Savior SetTheSloth?",
-        "Get the joke, they will not, young Patty warmer.",
-        "Whoa... hey there, traveler. Take a breath, man. Welcome to Raven's Nest. You belong.",
-        "Everything is not built yet, but good things come to those who wait, my dude. People are coming together. Things are happening. It takes time, young one."
-      ];
       var panel = document.getElementById("set-panel");
       var log = document.getElementById("set-log");
       var input = document.getElementById("set-q");
-      var spoken = false;
       function say(text, who) {
         var message = document.createElement("p");
         message.className = "set-msg " + who;
@@ -152,37 +237,20 @@
         log.appendChild(message);
         log.scrollTop = log.scrollHeight;
       }
-      function speakWelcome(force) {
-        if (!window.speechSynthesis) return;
-        if (spoken && !force) return;
-        spoken = true;
-        window.speechSynthesis.cancel();
-        var voice = new SpeechSynthesisUtterance(welcome.join(" "));
-        voice.lang = "en-US";
-        voice.rate = 0.92;
-        voice.onerror = function () { spoken = false; };
-        window.speechSynthesis.speak(voice);
-      }
       function answer(question) {
         var q = question.toLowerCase();
         if (/suicid|self-harm|hurt myself|end my life/.test(q)) return "If you are in a mental-health crisis, call or text 988. If someone is in immediate danger, call 911. I am not a crisis service.";
-        if (/\b911\b|emergency|in danger|overdose|assault/.test(q)) return "If someone is in immediate danger, call 911. For a mental-health crisis, call or text 988. The temple line is 572-472-6762. It is not a substitute for 911.";
+        if (/\b911\b|emergency|in danger|overdose|assault/.test(q)) return "If someone is in immediate danger, call 911. For a mental-health crisis, call or text 988.";
         if (/988|mental|crisis|panic/.test(q)) return "For a mental-health crisis, call or text 988. If someone is in immediate danger, call 911.";
-        if (/hour|phone|call|email|contact|number/.test(q)) return "Temple line 572-472-6762. Email revjonbradley@ravensnesttemple.com. Hours: 7 days a week, except Sabbats and Esbats, 8:00 AM to 9:00 PM. The lot is not a walk-in.";
-        if (/who|mission|raven|belong|pond|cost|percent|forge|shop|elder|animal|honor|purpose|service|abundance/.test(q)) return "We are the Ravens Evermore. You belong. This is a place being built, not a finished sanctuary. The lot is not open. Honor, Community, Purpose, Belonging, Service, Abundance for All. Food and parts at cost plus fifteen percent. A gift is not a debt. Call 572-472-6762 or email revjonbradley@ravensnesttemple.com.";
-        if (/lot|land|built|visit|open|shelter|bed|food/.test(q)) return "The first lot is not open. Nothing is built yet. Do not come here tonight for a bed, a meal, or a part. Help that exists today is on the Get Help page, or call 572-472-6762.";
-        return "I only know this website. Ask about the mission, the lot, or how to get help. If you are in danger, call 911. In a mental-health crisis, call or text 988.";
-      }
-      function openSet() {
-        panel.classList.add("open");
-        if (!log.childElementCount) welcome.forEach(function (line) { say(line, "bot"); });
-        speakWelcome();
+        if (/hour|phone|call|email|contact|number/.test(q)) return "Temple line: 572-472-6762. Email: revjonbradley@ravensnesttemple.com.";
+        if (/lot|land|built|visit|open|shelter|bed|food/.test(q)) return "The first lot is not open and the planned facilities are not built yet. Please do not travel expecting a bed, meal, or on-site services. Visit Get Help for resources available today.";
+        if (/who|mission|raven|belong|honor|purpose|service|abundance/.test(q)) return "Welcome to Raven's Nest. You belong. We are building a community rooted in practical skills, growing food, and mutual aid.";
+        return "I only know this website. Ask about the mission, the lot, contact information, or how to get help. If you are in danger, call 911. In a mental-health crisis, call or text 988.";
       }
       document.getElementById("set-link").addEventListener("click", function (event) {
         event.preventDefault();
-        if (panel.classList.contains("open")) panel.classList.remove("open");
-        else openSet();
-        speakWelcome(true);
+        panel.classList.toggle("open");
+        if (panel.classList.contains("open") && !log.childElementCount) say("Whoa... hey there, traveler. Welcome to Raven's Nest. You belong.", "bot");
       });
       document.getElementById("set-close").addEventListener("click", function () { panel.classList.remove("open"); });
       document.getElementById("set-form").addEventListener("submit", function (event) {
@@ -193,8 +261,6 @@
         say(answer(question), "bot");
         input.value = "";
       });
-      openSet();
-      document.addEventListener("pointerdown", function () { speakWelcome(true); }, { once: true });
     }());
   </script>
 </body>

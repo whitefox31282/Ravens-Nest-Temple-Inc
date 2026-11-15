@@ -19,7 +19,6 @@
       --panel: rgba(8, 13, 10, .84);
       --line: rgba(230, 193, 90, .48);
     }
-
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
     body {
@@ -34,33 +33,20 @@
     }
     a { color: var(--gold); }
     a:focus-visible, button:focus-visible, input:focus-visible { outline: 3px solid var(--cream); outline-offset: 3px; }
-
-    /* Several broad, blurred bands create dense rolling smoke rather than small dots. */
     .smoke-field { position: fixed; inset: 0; z-index: 1; overflow: hidden; pointer-events: none; }
     .smoke {
-      position: absolute;
-      left: -20%;
-      width: 140%;
-      height: 42vh;
-      min-height: 240px;
-      border-radius: 50%;
-      filter: blur(36px);
+      position: absolute; left: -20%; width: 140%; height: 42vh; min-height: 240px; border-radius: 50%; filter: blur(36px);
       background:
         radial-gradient(ellipse at 18% 55%, rgba(210, 216, 212, .24) 0 8%, transparent 34%),
         radial-gradient(ellipse at 38% 44%, rgba(190, 199, 193, .28) 0 10%, transparent 38%),
         radial-gradient(ellipse at 62% 58%, rgba(220, 223, 215, .22) 0 9%, transparent 36%),
         radial-gradient(ellipse at 83% 42%, rgba(176, 187, 181, .25) 0 11%, transparent 39%);
-      opacity: .8;
-      animation: roll 27s ease-in-out infinite alternate;
+      opacity: .8; animation: roll 27s ease-in-out infinite alternate;
     }
     .smoke.one { bottom: -12vh; }
     .smoke.two { bottom: 12vh; transform: scale(1.12); opacity: .58; animation-duration: 36s; animation-direction: alternate-reverse; }
     .smoke.three { bottom: 34vh; transform: scale(.92); opacity: .38; animation-duration: 44s; }
-    @keyframes roll {
-      from { translate: -5% 2%; scale: .98 1; }
-      to { translate: 5% -4%; scale: 1.06 1.12; }
-    }
-
+    @keyframes roll { from { translate: -5% 2%; scale: .98 1; } to { translate: 5% -4%; scale: 1.06 1.12; } }
     header { position: sticky; top: 0; z-index: 10; border-bottom: 1px solid var(--line); background: rgba(8, 13, 10, .95); }
     .nav-wrap { width: min(1120px, 100%); min-height: 72px; margin: 0 auto; padding: 10px 24px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
     .brand { display: inline-flex; align-items: center; gap: 12px; color: var(--gold); font: 700 .88rem/1.3 Cinzel, Georgia, serif; letter-spacing: .08em; text-decoration: none; text-transform: uppercase; }
@@ -68,21 +54,11 @@
     nav ul { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 8px 18px; margin: 0; padding: 0; list-style: none; }
     nav a { font: 700 .73rem Cinzel, Georgia, serif; letter-spacing: .07em; text-decoration: none; text-transform: uppercase; }
     nav a:hover { text-decoration: underline; }
-
     main { position: relative; z-index: 2; width: min(1000px, 100%); margin: 0 auto; padding: 44px 22px 64px; }
     .hero {
-      position: relative;
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(220px, 340px);
-      align-items: center;
-      gap: 16px;
-      min-height: 470px;
-      padding: clamp(26px, 6vw, 62px);
-      overflow: hidden;
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      background: linear-gradient(110deg, rgba(5, 9, 7, .93) 0%, rgba(5, 9, 7, .78) 58%, rgba(5, 9, 7, .28) 100%);
-      box-shadow: 0 18px 60px rgba(0, 0, 0, .35);
+      position: relative; display: grid; grid-template-columns: minmax(0, 1fr) minmax(220px, 340px); align-items: center; gap: 16px; min-height: 470px;
+      padding: clamp(26px, 6vw, 62px); overflow: hidden; border: 1px solid var(--line); border-radius: 8px;
+      background: linear-gradient(110deg, rgba(5, 9, 7, .93) 0%, rgba(5, 9, 7, .78) 58%, rgba(5, 9, 7, .28) 100%); box-shadow: 0 18px 60px rgba(0, 0, 0, .35);
     }
     .hero-copy { position: relative; z-index: 2; }
     .eyebrow { margin: 0 0 10px; color: var(--gold); font: 700 .78rem Cinzel, Georgia, serif; letter-spacing: .22em; text-transform: uppercase; }
@@ -95,24 +71,20 @@
     .button.secondary { color: var(--gold); background: rgba(0, 0, 0, .45); }
     .button:hover { filter: brightness(1.12); }
     .set-hero { position: relative; z-index: 2; display: block; width: 100%; max-height: 390px; object-fit: contain; filter: drop-shadow(0 10px 24px rgba(0, 0, 0, .7)); }
-
     .content-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin-top: 18px; }
     .card { position: relative; z-index: 2; padding: 23px; border: 1px solid var(--line); border-radius: 6px; background: var(--panel); }
     h2 { margin: 0 0 10px; font-size: 1.3rem; }
     .card p { margin: 0; color: var(--muted); }
     .values { grid-column: 1 / -1; }
-    .values-list { display: flex; flex-wrap: wrap; gap: 9px; margin: 15px 0 0; padding: 0; list-style: none; }
-    .values-list li { padding: 5px 12px; border: 1px solid var(--line); border-radius: 99px; }
+    .values-wheel { display: block; width: min(100%, 680px); height: auto; margin: 14px auto 0; border-radius: 4px; }
     .reality { border-left: 4px solid var(--gold); }
     footer { position: relative; z-index: 2; padding: 25px 20px 34px; border-top: 1px solid var(--line); background: rgba(8, 13, 10, .94); text-align: center; }
     footer p { margin: 6px 0; color: var(--muted); }
     footer a { overflow-wrap: anywhere; }
     .small { font-size: .92rem; }
-
-    /* Set remains available in the corner; opening it does not play audio automatically. */
-    #set-link { position: fixed; right: 18px; bottom: 18px; z-index: 20; display: block; width: 78px; height: 78px; overflow: hidden; border: 3px solid var(--gold); border-radius: 50%; background: #080d0a; box-shadow: 0 3px 18px #000; }
+    #set-link { position: fixed; right: 18px; bottom: 18px; z-index: 20; display: block; width: 78px; height: 78px; overflow: hidden; border: 3px solid var(--gold); border-radius: 50%; background: #090d0b; box-shadow: 0 4px 18px #0009; }
     #set-link img { display: block; width: 100%; height: 100%; object-fit: cover; }
-    #set-panel { position: fixed; right: 18px; bottom: 108px; z-index: 20; display: none; flex-direction: column; width: min(370px, calc(100vw - 28px)); height: min(65vh, 470px); border: 2px solid var(--gold); border-radius: 8px; background: rgba(5, 8, 7, .97); box-shadow: 0 8px 32px #000; }
+    #set-panel { position: fixed; right: 18px; bottom: 108px; z-index: 20; display: none; flex-direction: column; width: min(370px, calc(100vw - 28px)); height: min(65vh, 470px); border: 2px solid var(--gold); border-radius: 6px; background: #090d0b; box-shadow: 0 12px 40px #000b; }
     #set-panel.open { display: flex; }
     #set-head { display: flex; justify-content: space-between; align-items: center; padding: 9px 12px; border-bottom: 1px solid var(--line); color: var(--gold); font: 700 1rem Cinzel, Georgia, serif; }
     #set-head button, #set-form button { padding: 7px 10px; border: 1px solid var(--gold); border-radius: 3px; color: #17140b; background: var(--gold); font-weight: 700; cursor: pointer; }
@@ -122,7 +94,6 @@
     .set-msg.you { align-self: flex-end; background: rgba(230, 193, 90, .16); }
     #set-form { display: flex; gap: 6px; padding: 10px 12px; border-top: 1px solid var(--line); }
     #set-q { min-width: 0; flex: 1; padding: 8px; border: 1px solid var(--line); border-radius: 3px; color: var(--cream); background: #090d0b; font-size: 16px; }
-
     @media (max-width: 760px) {
       body { background-attachment: scroll; }
       .nav-wrap { flex-direction: column; padding: 10px 14px; }
@@ -136,10 +107,7 @@
       #set-panel { right: 8px; left: 8px; bottom: 104px; width: auto; }
       #set-link { right: 14px; bottom: 14px; width: 68px; height: 68px; }
     }
-    @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-      .smoke { animation: none; }
-    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .smoke { animation: none; } }
   </style>
 </head>
 <body>
@@ -174,7 +142,7 @@
         <p class="eyebrow">Ravens Evermore</p>
         <h1 id="page-title">A place for the weary and downtrodden</h1>
         <p class="tagline">You belong. You are accepted. Pull up a chair.</p>
-        <p class="welcome">Raven's Nest Temple is a grassroots community project focused on practical skills, growing food, and mutual aid. We are building this step by step, with honesty about what is here today and what is still a hope for tomorrow.</p>
+        <p class="welcome">Raven's Nest Temple is a grassroots community project focused on practical skills, growing food, and mutual aid. We are building this step by step, with honesty about where things stand today.</p>
         <div class="actions">
           <a class="button" href="about.html">Learn about us</a>
           <a class="button secondary" href="get-help.html">Find help now</a>
@@ -190,14 +158,11 @@
       </section>
       <section class="card values">
         <h2>What guides us</h2>
-        <p>These are the values at the heart of Raven's Nest.</p>
-        <ul class="values-list">
-          <li>Honor</li><li>Community</li><li>Purpose</li><li>Belonging</li><li>Service</li><li>Abundance for All</li>
-        </ul>
+        <img class="values-wheel" src="Values-wheel.jpg" alt="Raven's Nest values wheel">
       </section>
       <section class="card reality">
         <h2>A note about right now</h2>
-        <p>Raven's Nest Temple, Inc. is still in progress. The first lot is not open, and the planned facilities are not built yet. Please do not travel here expecting a bed, meal, or on-site services. Visit <a href="get-help.html">Get Help</a> for resources available today.</p>
+        <p>Raven's Nest Temple, Inc. is still in progress. The first lot is not open, and the planned facilities are not built yet. Please do not travel here expecting a bed, meal, or on-site services.</p>
       </section>
       <section class="card">
         <h2>Be part of the conversation</h2>
@@ -243,7 +208,7 @@
         if (/\b911\b|emergency|in danger|overdose|assault/.test(q)) return "If someone is in immediate danger, call 911. For a mental-health crisis, call or text 988.";
         if (/988|mental|crisis|panic/.test(q)) return "For a mental-health crisis, call or text 988. If someone is in immediate danger, call 911.";
         if (/hour|phone|call|email|contact|number/.test(q)) return "Temple line: 572-472-6762. Email: revjonbradley@ravensnesttemple.com.";
-        if (/lot|land|built|visit|open|shelter|bed|food/.test(q)) return "The first lot is not open and the planned facilities are not built yet. Please do not travel expecting a bed, meal, or on-site services. Visit Get Help for resources available today.";
+        if (/lot|land|built|visit|open|shelter|bed|food/.test(q)) return "The first lot is not open and the planned facilities are not built yet. Please do not travel expecting a bed, meal, or on-site services.";
         if (/who|mission|raven|belong|honor|purpose|service|abundance/.test(q)) return "Welcome to Raven's Nest. You belong. We are building a community rooted in practical skills, growing food, and mutual aid.";
         return "I only know this website. Ask about the mission, the lot, contact information, or how to get help. If you are in danger, call 911. In a mental-health crisis, call or text 988.";
       }

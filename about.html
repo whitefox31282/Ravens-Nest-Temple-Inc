@@ -1,64 +1,81 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>About Us | Raven's Nest</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
-<style>
-:root{--gold:#d4af37;--copper:#b87333;--blue-deep:#1a3a52;--blue-dark:#0f1f2e;--warm-white:#f5ede3;--fire-orange:#d97706;--text-light:#f5ede3;--text-dim:#b8a895}
-*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
-body{background:linear-gradient(135deg,var(--blue-dark) 0%,var(--blue-deep) 40%,#051015 100%);color:var(--text-light);font-family:'Courier Prime',monospace;font-size:16px;line-height:1.7}
-header{position:fixed;top:0;left:0;right:0;z-index:950;background:rgba(15,31,46,0.97);backdrop-filter:blur(12px);border-bottom:3px solid var(--gold);padding:18px 50px;display:flex;justify-content:space-between;align-items:center;box-shadow:0 0 40px rgba(212,175,55,0.2)}
-.brand{display:flex;align-items:center;gap:12px;text-decoration:none}.brand-logo{width:40px;height:40px}
-.brand-text{font-family:'Cinzel',serif;font-size:18px;font-weight:900;letter-spacing:2px;color:var(--gold);text-transform:uppercase;text-shadow:0 0 15px rgba(212,175,55,0.3)}
-nav{display:flex;gap:40px}nav a{color:var(--text-light);text-decoration:none;font-size:11px;text-transform:uppercase;letter-spacing:2px;cursor:pointer;transition:all 0.3s}nav a:hover{color:var(--gold)}
-main{margin-top:70px;min-height:calc(100vh - 250px);padding:80px 50px}
-.page-title{font-family:'Cinzel',serif;font-size:3.5rem;font-weight:900;text-transform:uppercase;letter-spacing:3px;color:var(--gold);text-shadow:0 0 20px rgba(212,175,55,0.4);text-align:center;margin-bottom:60px}
-.content{max-width:1000px;margin:0 auto}
-.section{margin-bottom:80px}
-.section h2{font-family:'Cinzel',serif;font-size:2rem;color:var(--gold);margin-bottom:30px;text-transform:uppercase;letter-spacing:2px}
-.section p{font-size:1.05rem;line-height:1.9;margin-bottom:20px;color:var(--warm-white)}
-.emphasis{color:var(--fire-orange);font-weight:bold}
-footer{background:rgba(15,31,46,0.95);border-top:2px solid var(--gold);padding:40px 50px;text-align:center;color:var(--text-dim);margin-top:80px}
-footer p{margin:10px 0;font-size:0.9rem}
-@media(max-width:768px){header{padding:12px 20px;flex-direction:column;gap:12px}nav{gap:20px}main{padding:40px 20px}.page-title{font-size:2rem}}
-</style>
+  <meta charset="UTF-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Almendra:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>About | Raven's Nest Temple</title>
+  <meta name="description" content="Who we are and what we are building. The lot is not open yet.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <style>
+    :root { color-scheme: dark; --gold: #e6c15a; --red: #c62828; --ink: #ff9a9a; --glass: rgba(0, 0, 0, 0.72); }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; min-height: 100vh; background: #000 url("Homepage_Welcome.jpg") center/cover fixed; color: var(--ink); font-family: Almendra, Georgia, serif; line-height: 1.65; }
+    header { position: sticky; top: 0; z-index: 10; padding: 12px 16px; background: rgba(0, 0, 0, 0.78); border-bottom: 3px solid var(--gold); }
+    nav ul { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px 24px; margin: 0; padding: 0; list-style: none; }
+    nav a { color: var(--gold); font-family: Cinzel, Georgia, serif; font-size: 0.85rem; font-weight: 700; letter-spacing: 0.12em; text-decoration: none; text-transform: uppercase; }
+    nav a:hover, nav a:focus-visible { text-decoration: underline; }
+    main { width: min(820px, 100%); margin: 0 auto; padding: 28px 16px 40px; }
+    h1 { color: var(--gold); font-family: Cinzel, Georgia, serif; letter-spacing: 0.04em; line-height: 1.2; margin: 0 0 12px; font-size: clamp(2rem, 5vw, 2.8rem); text-shadow: 0 2px 4px #000, 0 0 10px #000; text-align: center; }
+    h2 { color: var(--gold); font-family: Cinzel, Georgia, serif; font-size: 1.4rem; margin: 28px 0 12px; text-shadow: 0 1px 3px #000; }
+    p { color: var(--ink); font-size: 1.12rem; text-shadow: 0 1px 2px #000, 0 0 6px #000, 0 0 1px #000; }
+    .closing { font-size: 1.15rem; font-style: italic; text-align: center; }
+    .principles { list-style: none; padding: 0; margin: 16px 0; }
+    .principles li { margin: 10px 0; padding: 12px 14px; background: rgba(0, 0, 0, 0.55); border-left: 3px solid var(--gold); }
+    footer { padding: 26px 16px 40px; background: rgba(0, 0, 0, 0.35); text-align: center; }
+    footer a { color: var(--gold); }
+    @media (max-width: 700px) { body { background-attachment: scroll; } }
+  </style>
 </head>
 <body>
-<header>
-<a href="index.html" class="brand"><img src="raven-logo.jpg" alt="Raven's Nest" class="brand-logo"><span class="brand-text">RAVEN'S NEST</span></a>
-<nav><a href="index.html">Home</a><a href="about.html">About</a><a href="four-pillars.html">Our Work</a><a href="get-help.html">Get Help</a><a href="contact.html">Contact</a></nav>
-</header>
-<main>
-<h1 class="page-title">We Are Building This</h1>
-<div class="content">
-<div class="section">
-<h2>The Reality Right Now</h2>
-<p>Raven's Nest Temple, Inc. is newly incorporated. We are <span class="emphasis">acquiring our first land parcel</span>. We are building foundational infrastructure step-by-step. We are establishing the first refuge in a network that will eventually span continents.</p>
-<p>We are not yet a massive compound. We don't have a 24/7 crisis center. But we are honest, we are moving fast, and we are building something that cannot be stopped because it is built by people who have nothing left to lose and everything to gain.</p>
-</div>
-<div class="section">
-<h2>Why This Matters Right Now</h2>
-<p>The systems designed to protect you have failed. Governments extract. Corporations exploit. If you are vulnerable, neurodivergent, queer, disabled, formerly unhoused, or traumatized—the world wasn't built for you to survive with dignity.</p>
-<p>We are not waiting for permission. We are <span class="emphasis">building infrastructure for sovereignty</span>. Off-grid systems. Trade networks. Shelter. Education. The kind of mutual aid that actually works because we are doing it for each other, not for a paycheck or a reputation.</p>
-</div>
-<div class="section">
-<h2>What We're Establishing</h2>
-<p><span class="emphasis">Our first sanctuary site</span> will have off-grid energy, water systems, hobbit-style housing, animals roaming free, and microgreens on every roof. We're building this step-by-step with the people who will live there.</p>
-<p>We're establishing <span class="emphasis">WitchMart</span>—a cost-plus-15% marketplace where you keep what you create. We're building <span class="emphasis">Mad Goose Show</span>—education for people the system left behind. We're setting up <span class="emphasis">Ravens Roads</span>—a mutual aid network for safe passage.</p>
-<p>This is not hypothetical. We are doing the work. Every dollar goes to land, infrastructure, tools, and people. Every decision is made with the people it affects.</p>
-</div>
-<div class="section">
-<h2>We Are Governed By Ma'at</h2>
-<p>Truth. Justice. Harmony. Balance. We don't hide who we are or what we're doing. We make decisions by consensus. We protect the vulnerable. We share what we build.</p>
-<p>This is not charity. This is not an NGO that manages poverty. <span class="emphasis">This is mutual aid from the ground up.</span> We invite you to build with us—not as beneficiaries of someone else's vision, but as architects of a future that actually works.</p>
-</div>
-</div>
-</main>
-<footer><p>Raven's Nest Temple, Inc. | We Are Ravens Evermore | 2026</p><p>Newly established. Acquiring land. Building infrastructure. Open to all.</p></footer>
-<footer style="text-align:center;padding:1rem;font-size:.85rem;">This site stores no accounts and does not track visitors.</footer>
+  <header>
+    <nav aria-label="Main navigation">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="get-help.html">Get help</a></li>
+        <li><a href="community-care.html">Community care</a></li>
+        <li><a href="witchmart.html">WitchMart</a></li>
+        <li><a href="witches-coop.html">Witches Co-op</a></li>
+        <li><a href="hecates-highways.html">Hecate's Highways</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <h1>About Raven's Nest Temple</h1>
+    <p class="closing">You belong. You are accepted. Pull up a chair.</p>
+
+    <h2>Who we are</h2>
+    <p>Raven's Nest Temple Inc. is an Oklahoma non-profit. We are building a place where people can eat, rest, learn a trade, and belong without having to earn the right to any of it. We are not here to make people obey. We are here to help people live.</p>
+    <p>We believe people with different beliefs can share the same table. We believe knowledge should be shared, compassion should be practiced, and power should serve people rather than control them. We believe community is something we build together.</p>
+
+    <h2>What we believe</h2>
+    <ul class="principles">
+      <li>Honor</li>
+      <li>Community</li>
+      <li>Purpose</li>
+      <li>Belonging</li>
+      <li>Service</li>
+      <li>Abundance for All</li>
+    </ul>
+
+    <h2>What we are building</h2>
+    <p>A place where a person can wake up, walk outside, and learn a real trade with their hands. Gardens thick enough that a family picks the tomatoes. A pond you can fish. Animals honored from birth through death. Elders who keep their savings and their choices. Food and parts at cost plus fifteen percent so the middleman is gone.</p>
+    <p>WitchMart is the marketplace side of that. The Witches Co-op is where people list skills and services. Hecate's Highways is where ideas get talked through. None of it is finished.</p>
+
+    <h2>The truth right now</h2>
+    <p>The first lot is not open. The pond, the shops, the animals, and the longhouse are not built yet. Do not come here tonight for a bed, a meal, or a part. Help that exists today is on the Get Help page, or by phone.</p>
+    <p>We are applying for grants and working as fast as we can. When money and land allow, the work starts. Until then we stay honest about what is real.</p>
+
+    <p class="closing">Ravens Evermore. We have landed. Opening soon.</p>
+    <p class="closing">Live a little. Love a lot.</p>
+  </main>
+  <footer>
+    <p><strong>Temple Line:</strong> <a href="tel:5724726762">572-472-6762</a> &nbsp;|&nbsp; <strong>Email:</strong> <a href="mailto:revjonbradley@ravensnesttemple.com">revjonbradley@ravensnesttemple.com</a></p>
+    <p>In immediate danger, call 911. For a mental-health crisis, call or text 988.</p>
+    <p><em>This site stores no accounts and does not track visitors.</em></p>
+  </footer>
 </body>
 </html>

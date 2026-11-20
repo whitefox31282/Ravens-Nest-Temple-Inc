@@ -130,6 +130,7 @@
           <li><a href="four-pillars.html">Our work</a></li>
           <li><a href="community-care.html">Community care</a></li>
           <li><a href="get-help.html">Get help</a></li>
+          <li><a href="merch.html">Merch</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </nav>
@@ -163,6 +164,11 @@
       <section class="card reality">
         <h2>A note about right now</h2>
         <p>Raven's Nest Temple, Inc. is still in progress. The first lot is not open, and the planned facilities are not built yet. Please do not travel here expecting a bed, meal, or on-site services.</p>
+      </section>
+      <section class="card">
+        <h2>Merchandise</h2>
+        <p>Prepaid, made-to-order pieces starting March 2027. Made at the Shawnee library Maker Lab. Nothing is for sale yet. See the ideas and the rules.</p>
+        <p style="margin-top: 12px"><a class="button" href="merch.html">See the merch line</a></p>
       </section>
       <section class="card">
         <h2>Be part of the conversation</h2>
@@ -209,8 +215,9 @@
         if (/988|mental|crisis|panic/.test(q)) return "For a mental-health crisis, call or text 988. If someone is in immediate danger, call 911.";
         if (/hour|phone|call|email|contact|number/.test(q)) return "Temple line: 572-472-6762. Email: revjonbradley@ravensnesttemple.com.";
         if (/lot|land|built|visit|open|shelter|bed|food/.test(q)) return "The first lot is not open and the planned facilities are not built yet. Please do not travel expecting a bed, meal, or on-site services.";
+        if (/merch|shirt|tee|hoodie|store|buy|sale/.test(q)) return "Merch is prepaid and made-to-order. Sales start March 2027. Nothing is for sale yet. See the Merch page for the ideas and the rules.";
         if (/who|mission|raven|belong|honor|purpose|service|abundance/.test(q)) return "Welcome to Raven's Nest. You belong. We are building a community rooted in practical skills, growing food, and mutual aid.";
-        return "I only know this website. Ask about the mission, the lot, contact information, or how to get help. If you are in danger, call 911. In a mental-health crisis, call or text 988.";
+        return "I only know this website. Ask about the mission, the lot, contact information, merch, or how to get help. If you are in danger, call 911. In a mental-health crisis, call or text 988.";
       }
       document.getElementById("set-link").addEventListener("click", function (event) {
         event.preventDefault();
